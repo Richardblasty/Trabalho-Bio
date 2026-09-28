@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>gmx_MMPBSA Documentation</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="header-left">
+
+            <button class="menu-button" id="menuButton">
+                ☰
+            </button>
+
+            <div class="brand">
+                <div class="brand-symbol">F</div>
+
+                <div>
+                    <span class="brand-name">FIOCRUZ</span>
+                    <small>Scientific Documentation</small>
+                </div>
+            </div>
+
+        </div>
+
+        <nav class="top-navigation">
+            <a href="#documentation">Documentation</a>
+            <a href="#installation">Installation</a>
+            <a href="#examples">Examples</a>
+            <a href="#references">References</a>
+        </nav>
+
+    </header>
+
+
+    <!-- LAYOUT PRINCIPAL -->
+    <div class="layout">
+
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-title">
+                DOCUMENTATION
+            </div>
+
+            <nav class="sidebar-navigation">
+
+                <a href="#introduction" class="active">
+                    Introduction
+                </a>
+
+                <a href="#installation">
+                    Installation
+                </a>
+
+                <a href="#getting-started">
+                    Getting started
+                </a>
+
+                <a href="#usage">
+                    Usage
+                </a>
+
+                <a href="#examples">
+                    Examples
+                </a>
+
+                <a href="#configuration">
+                    Configuration
+                </a>
+
+                <a href="#api">
+                    API
+                </a>
+
+                <a href="#references">
+                    References
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- CONTEÚDO -->
+        <main class="content" id="documentation">
+
+
+            <!-- HERO -->
+            <section class="hero">
+
+                <div class="hero-content">
+
+                    <span class="eyebrow">
+                        SCIENTIFIC SOFTWARE
+                    </span>
+
+                    <h1>
+                        gmx_MMPBSA
+                    </h1>
+
+                    <p>
+                        A GROMACS tool for Molecular Mechanics Poisson-Boltzmann
+                        Surface Area calculations.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#installation" class="button primary">
+                            Get started
+                        </a>
+
+                        <a href="#documentation" class="button secondary">
+                            Documentation
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="hero-decoration">
+                    <div class="molecule molecule-one"></div>
+                    <div class="molecule molecule-two"></div>
+                    <div class="molecule molecule-three"></div>
+                </div>
+
+            </section>
+
+
+            <!-- INTRODUCTION -->
+            <section class="documentation-section" id="introduction">
+
+                <div class="section-number">
+                    01
+                </div>
+
+                <div class="section-content">
+
+                    <h2>
+                        Introduction
+                    </h2>
+
+                    <p>
+                        gmx_MMPBSA is a tool designed to perform Molecular
+                        Mechanics Poisson-Boltzmann Surface Area calculations
+                        using GROMACS molecular dynamics trajectories.
+                    </p>
+
+                    <p>
+                        The program provides an interface for analyzing
+                        molecular systems and estimating binding free energies.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- INSTALLATION -->
+            <section class="documentation-section" id="installation">
+
+                <div class="section-number">
+                    02
+                </div>
+
+                <div class="section-content">
+
+                    <h2>
+                        Installation
+                    </h2>
+
+                    <p>
+                        The installation process requires a compatible
+                        environment and the necessary dependencies.
+                    </p>
+
+                    <div class="code-block">
+
+                        <div class="code-header">
+                            <span>Terminal</span>
+
+                            <button class="copy-button">
+                                Copy
+                            </button>
+                        </div>
+
+                        <pre><code>pip install gmx_MMPBSA</code></pre>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- GETTING STARTED -->
+            <section class="documentation-section" id="getting-started">
+
+                <div class="section-number">
+                    03
+                </div>
+
+                <div class="section-content">
+
+                    <h2>
+                        Getting started
+                    </h2>
+
+                    <p>
+                        After installation, the software can be configured
+                        according to the requirements of the molecular system.
+                    </p>
+
+                    <div class="info-box">
+
+                        <strong>Information</strong>
+
+                        <p>
+                            Consult the documentation before running your
+                            first calculation.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- USAGE -->
+            <section class="documentation-section" id="usage">
+
+                <div class="section-number">
+                    04
+                </div>
+
+                <div class="section-content">
+
+                    <h2>
+                        Usage
+                    </h2>
+
+                    <p>
+                        The following example demonstrates a basic workflow.
+                    </p>
+
+                    <div class="code-block">
+
+                        <div class="code-header">
+                            <span>Command</span>
+
+                            <button class="copy-button">
+                                Copy
+                            </button>
+                        </div>
+
+                        <pre><code>gmx_MMPBSA -O -i input.in</code></pre>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- EXAMPLES -->
+            <section class="documentation-section" id="examples">
+
+                <div class="section-number">
+                    05
+                </div>
+
+                <div class="section-content">
+
+                    <h2>
+                        Examples
+                    </h2>
+
+                    <p>
+                        Examples can be used to understand how the program
+                        behaves in different molecular analysis scenarios.
+                    </p>
+
+                    <div class="cards">
+
+                        <article class="card">
+
+                            <span class="card-number">
+                                01
+                            </span>
+
+                            <h3>
+                                Basic calculation
+                            </h3>
+
+                            <p>
+                                Example of a basic MMPBSA calculation.
+                            </p>
+
+                            <a href="#">
+                                View example →
+                            </a>
+
+                        </article>
+
+
+                        <article class="card">
+
+                            <span class="card-number">
+                                02
+                            </span>
+
+                            <h3>
+                                Advanced analysis
+                            </h3>
+
+                            <p>
+                                Example of an advanced molecular analysis.
+                            </p>
+
+                            <a href="#">
+                                View example →
+                            </a>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CONFIGURATION -->
+            <section class="documentation-section" id="configuration">
+
+                <div class="section-number">
+                    06
+                </div>
+
+                <div class="section-content">
+
+                    <h2>
+                        Configuration
+                    </h2>
+
+                    <p>
+                        Configuration parameters allow the user to customize
+                        the calculation according to the desired workflow.
+                    </p>
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Default</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>Input</td>
+                                    <td>Input configuration file</td>
+                                    <td>input.in</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Output</td>
+                                    <td>Output file</td>
+                                    <td>results.dat</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Temperature</td>
+                                    <td>Simulation temperature</td>
+                                    <td>300 K</td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- API -->
+            <section class="documentation-section" id="api">
+
+                <div class="section-number">
+                    07
+                </div>
+
+                <div class="section-content">
+
+                    <h2>
+                        API
+                    </h2>
+
+                    <p>
+                        The API section contains information about available
+                        commands, functions and parameters.
+                    </p>
+
+                    <div class="api-item">
+
+                        <code>gmx_MMPBSA()</code>
+
+                        <span>
+                            Main program interface.
+                        </span>
+
+                    </div>
+
+                    <div class="api-item">
+
+                        <code>--help</code>
+
+                        <span>
+                            Displays available commands.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- REFERENCES -->
+            <section class="documentation-section" id="references">
+
+                <div class="section-number">
+                    08
+                </div>
+
+                <div class="section-content">
+
+                    <h2>
+                        References
+                    </h2>
+
+                    <p>
+                        References and additional resources related to the
+                        software and its scientific methodology.
+                    </p>
+
+                    <ul class="references">
+
+                        <li>
+                            GROMACS Documentation
+                        </li>
+
+                        <li>
+                            MMPBSA Methodology
+                        </li>
+
+                        <li>
+                            Scientific Publications
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div>
+
+            <strong>FIOCRUZ</strong>
+
+            <p>
+                Scientific and technological documentation.
+            </p>
+
+        </div>
+
+        <div>
+
+            <p>
+                Documentation project
+            </p>
+
+            <p>
+                © 2026
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
