@@ -1,518 +1,881 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>gmx_MMPBSA Documentation</title>
+    <title>Documentação | Projeto</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div id="seletor-versao-container"></div>
-    <!-- HEADER -->
+
+    <!-- =====================================================
+         BARRA SUPERIOR
+    ====================================================== -->
+
+    <div class="news-bar">
+
+        <div class="container news-content">
+
+            <span class="news-label">
+                NEWS
+            </span>
+
+            <span class="news-text">
+                Bem-vindo à documentação do projeto
+            </span>
+
+            <a href="#getting-started" class="news-link">
+                Saiba mais →
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         AVISO DE VERSÃO
+    ====================================================== -->
+
+    <div class="version-warning">
+
+        <div class="container">
+
+            <strong>Versão atual:</strong>
+            Esta documentação apresenta informações e recursos do projeto.
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
     <header class="header">
 
-        <div class="header-left">
+        <div class="container header-content">
 
-            <button class="menu-button" id="menuButton">
-                ☰
-            </button>
+            <a href="#home" class="logo">
 
-            <div class="brand">
-                <div class="brand-symbol">F</div>
+                <span class="logo-symbol">
+                    ◆
+                </span>
 
-                <div>
-                    <span class="brand-name">FIOCRUZ</span>
-                    <small>Scientific Documentation</small>
+                <span>
+                    PROJECT
+                </span>
+
+                <small>
+                    Documentation
+                </small>
+
+            </a>
+
+
+            <div class="header-actions">
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Pesquisar..."
+                        aria-label="Pesquisar"
+                    >
+
+                    <button
+                        id="searchButton"
+                        aria-label="Pesquisar"
+                    >
+                        <span>⌕</span>
+                    </button>
+
                 </div>
+
+
+                <a href="#" class="repository">
+
+                    <span class="github-icon">
+                        ●
+                    </span>
+
+                    Repository
+
+                </a>
+
             </div>
 
         </div>
 
-        <nav class="top-navigation">
-            <a href="#documentation">Documentation</a>
-            <a href="#installation">Installation</a>
-            <a href="#examples">Examples</a>
-            <a href="#references">References</a>
+
+        <!-- =================================================
+             NAVEGAÇÃO
+        ================================================== -->
+
+        <nav class="main-nav">
+
+            <div class="container nav-content">
+
+                <a
+                    href="#home"
+                    class="nav-link active"
+                >
+                    Home
+                </a>
+
+                <a
+                    href="#getting-started"
+                    class="nav-link"
+                >
+                    Getting started
+                </a>
+
+                <a
+                    href="#project"
+                    class="nav-link"
+                >
+                    Project
+                </a>
+
+                <a
+                    href="#installation"
+                    class="nav-link"
+                >
+                    Installation
+                </a>
+
+                <a
+                    href="#examples"
+                    class="nav-link"
+                >
+                    Examples
+                </a>
+
+                <a
+                    href="#help"
+                    class="nav-link"
+                >
+                    Help
+                </a>
+
+                <a
+                    href="#cite"
+                    class="nav-link"
+                >
+                    Cite
+                </a>
+
+            </div>
+
         </nav>
 
     </header>
 
 
-    <!-- LAYOUT PRINCIPAL -->
-    <div class="layout">
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <main>
+
+        <section
+            class="hero"
+            id="home"
+        >
+
+            <div class="container hero-content">
 
 
-        <!-- SIDEBAR -->
-        <aside class="sidebar" id="sidebar">
+                <!-- TEXTO -->
 
-            <div class="sidebar-title">
-                DOCUMENTATION
+                <div class="hero-text">
+
+                    <div class="hero-tag">
+                        DOCUMENTATION
+                    </div>
+
+
+                    <h1>
+
+                        Welcome to
+
+                        <span>
+                            Project
+                        </span>
+
+                        documentation!
+
+                    </h1>
+
+
+                    <p>
+                        Explore the documentation, learn how the project
+                        works and find everything you need to get started.
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="#getting-started"
+                            class="btn btn-primary"
+                        >
+                            Quick start
+                        </a>
+
+
+                        <a
+                            href="#help"
+                            class="btn btn-secondary"
+                        >
+                            Help
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- VISUAL -->
+
+                <div class="hero-visual">
+
+                    <div class="molecule molecule-one">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+
+                    <div class="molecule molecule-two">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+
+                    <div class="connection connection-one"></div>
+
+                    <div class="connection connection-two"></div>
+
+                    <div class="connection connection-three"></div>
+
+
+                    <div class="hero-circle circle-one"></div>
+
+                    <div class="hero-circle circle-two"></div>
+
+                    <div class="hero-circle circle-three"></div>
+
+
+                    <div class="graph">
+
+                        <div class="graph-line line-one"></div>
+
+                        <div class="graph-line line-two"></div>
+
+                        <div class="graph-line line-three"></div>
+
+                        <div class="graph-line line-four"></div>
+
+
+                        <div class="graph-point point-one"></div>
+
+                        <div class="graph-point point-two"></div>
+
+                        <div class="graph-point point-three"></div>
+
+                        <div class="graph-point point-four"></div>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <nav class="sidebar-navigation">
 
-                <a href="#introduction" class="active">
-                    Introduction
-                </a>
+            <!-- =================================================
+                 CURVA DO HERO
+            ================================================== -->
 
-                <a href="#installation">
-                    Installation
+            <div class="hero-wave">
+
+                <svg
+                    viewBox="0 0 1440 250"
+                    preserveAspectRatio="none"
+                    aria-hidden="true"
+                >
+
+                    <path
+                        d="
+                            M0 220
+
+                            C70 230,
+                            130 225,
+                            205 195
+
+                            C295 160,
+                            365 125,
+                            455 132
+
+                            C535 138,
+                            580 165,
+                            655 170
+
+                            C750 176,
+                            815 158,
+                            885 130
+
+                            C980 94,
+                            1060 72,
+                            1160 55
+
+                            C1260 38,
+                            1360 30,
+                            1440 28
+
+                            L1440 250
+                            L0 250
+
+                            Z
+                        "
+                    ></path>
+
+                </svg>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             DOCUMENTAÇÃO
+        ====================================================== -->
+
+        <section class="documentation">
+
+            <div class="container documentation-layout">
+
+
+                <!-- SIDEBAR -->
+
+                <aside class="sidebar">
+
+                    <div class="sidebar-title">
+                        Documentation
+                    </div>
+
+
+                    <ul class="sidebar-menu">
+
+                        <li>
+                            <a
+                                href="#getting-started"
+                                class="sidebar-link active"
+                            >
+                                Getting started
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="#project"
+                                class="sidebar-link"
+                            >
+                                Project
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="#installation"
+                                class="sidebar-link"
+                            >
+                                Installation
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="#examples"
+                                class="sidebar-link"
+                            >
+                                Examples
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="#help"
+                                class="sidebar-link"
+                            >
+                                Help
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="#cite"
+                                class="sidebar-link"
+                            >
+                                Cite
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </aside>
+
+
+                <!-- CONTEÚDO -->
+
+                <article class="documentation-content">
+
+
+                    <!-- GETTING STARTED -->
+
+                    <section
+                        id="getting-started"
+                        class="doc-section"
+                    >
+
+                        <span class="section-label">
+                            GETTING STARTED
+                        </span>
+
+
+                        <h2>
+                            Getting started
+                        </h2>
+
+
+                        <p>
+                            Welcome to the project documentation.
+                            This section provides the basic information
+                            necessary to understand the project and
+                            start using its main features.
+                        </p>
+
+
+                        <p>
+                            Follow the documentation step by step to
+                            understand the installation process,
+                            configuration and available resources.
+                        </p>
+
+
+                        <div class="info-card">
+
+                            <div class="info-icon">
+                                !
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Before you start
+                                </strong>
+
+                                <p>
+                                    Make sure that all required
+                                    dependencies and configurations
+                                    are available in your environment.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- PROJECT -->
+
+                    <section
+                        id="project"
+                        class="doc-section"
+                    >
+
+                        <span class="section-label">
+                            PROJECT
+                        </span>
+
+
+                        <h2>
+                            About the project
+                        </h2>
+
+
+                        <p>
+                            This project provides a structured environment
+                            for accessing information, resources and
+                            documentation in an organized way.
+                        </p>
+
+
+                        <div class="feature-grid">
+
+
+                            <div class="feature-card">
+
+                                <div class="feature-number">
+                                    01
+                                </div>
+
+                                <h3>
+                                    Simple
+                                </h3>
+
+                                <p>
+                                    An organized structure designed
+                                    to make the documentation easier
+                                    to navigate.
+                                </p>
+
+                            </div>
+
+
+                            <div class="feature-card">
+
+                                <div class="feature-number">
+                                    02
+                                </div>
+
+                                <h3>
+                                    Flexible
+                                </h3>
+
+                                <p>
+                                    Information can be expanded and
+                                    organized according to the needs
+                                    of the project.
+                                </p>
+
+                            </div>
+
+
+                            <div class="feature-card">
+
+                                <div class="feature-number">
+                                    03
+                                </div>
+
+                                <h3>
+                                    Accessible
+                                </h3>
+
+                                <p>
+                                    The interface is designed to make
+                                    important information easy to find.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- INSTALLATION -->
+
+                    <section
+                        id="installation"
+                        class="doc-section"
+                    >
+
+                        <span class="section-label">
+                            INSTALLATION
+                        </span>
+
+
+                        <h2>
+                            Installation
+                        </h2>
+
+
+                        <p>
+                            Follow the steps below to prepare the
+                            project environment.
+                        </p>
+
+
+                        <div class="code-block">
+
+                            <div class="code-header">
+
+                                <span>
+                                    Terminal
+                                </span>
+
+                                <button class="copy-button">
+                                    Copy
+                                </button>
+
+                            </div>
+
+
+                            <pre><code>git clone https://github.com/example/project.git
+cd project
+npm install
+npm start</code></pre>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- EXAMPLES -->
+
+                    <section
+                        id="examples"
+                        class="doc-section"
+                    >
+
+                        <span class="section-label">
+                            EXAMPLES
+                        </span>
+
+
+                        <h2>
+                            Examples
+                        </h2>
+
+
+                        <p>
+                            Explore examples and practical applications
+                            to understand how the project can be used.
+                        </p>
+
+
+                        <div class="example-list">
+
+
+                            <div class="example-item">
+
+                                <span>
+                                    01
+                                </span>
+
+                                <div>
+
+                                    <h3>
+                                        Basic example
+                                    </h3>
+
+                                    <p>
+                                        Example of a basic project workflow.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="example-item">
+
+                                <span>
+                                    02
+                                </span>
+
+                                <div>
+
+                                    <h3>
+                                        Advanced example
+                                    </h3>
+
+                                    <p>
+                                        Example showing a more advanced workflow.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="example-item">
+
+                                <span>
+                                    03
+                                </span>
+
+                                <div>
+
+                                    <h3>
+                                        Practical application
+                                    </h3>
+
+                                    <p>
+                                        Example of how the project can
+                                        be applied in practice.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- HELP -->
+
+                    <section
+                        id="help"
+                        class="doc-section"
+                    >
+
+                        <span class="section-label">
+                            HELP
+                        </span>
+
+
+                        <h2>
+                            Help
+                        </h2>
+
+
+                        <p>
+                            If you encounter a problem while using the
+                            project, check the available documentation
+                            and examples first.
+                        </p>
+
+
+                        <div class="help-card">
+
+                            <div class="help-card-icon">
+                                ?
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Need help?
+                                </h3>
+
+                                <p>
+                                    Check the available resources or
+                                    contact the project maintainers.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- CITE -->
+
+                    <section
+                        id="cite"
+                        class="doc-section"
+                    >
+
+                        <span class="section-label">
+                            CITE
+                        </span>
+
+
+                        <h2>
+                            Cite the project
+                        </h2>
+
+
+                        <p>
+                            If you use this project in your work,
+                            research or other applications, please
+                            refer to the appropriate citation information.
+                        </p>
+
+
+                        <div class="citation-box">
+
+                            <code>
+                                Project Documentation, 2026.
+                            </code>
+
+                        </div>
+
+                    </section>
+
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+                    ◆ PROJECT
+                </div>
+
+                <p>
+                    Documentation and resources.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#home">
+                    Home
                 </a>
 
                 <a href="#getting-started">
                     Getting started
                 </a>
 
-                <a href="#usage">
-                    Usage
+                <a href="#project">
+                    Project
                 </a>
 
-                <a href="#examples">
-                    Examples
+                <a href="#help">
+                    Help
                 </a>
 
-                <a href="#configuration">
-                    Configuration
-                </a>
-
-                <a href="#api">
-                    API
-                </a>
-
-                <a href="#references">
-                    References
-                </a>
-
-            </nav>
-
-        </aside>
-
-
-        <!-- CONTEÚDO -->
-        <main class="content" id="documentation">
-
-
-            <!-- HERO -->
-            <section class="hero">
-
-                <div class="hero-content">
-
-                    <span class="eyebrow">
-                        SCIENTIFIC SOFTWARE
-                    </span>
-
-                    <h1>
-                        gmx_MMPBSA
-                    </h1>
-
-                    <p>
-                        A GROMACS tool for Molecular Mechanics Poisson-Boltzmann
-                        Surface Area calculations.
-                    </p>
-
-                    <div class="hero-buttons">
-
-                        <a href="#installation" class="button primary">
-                            Get started
-                        </a>
-
-                        <a href="#documentation" class="button secondary">
-                            Documentation
-                        </a>
-
-                    </div>
-
-                </div>
-
-                <div class="hero-decoration">
-                    <div class="molecule molecule-one"></div>
-                    <div class="molecule molecule-two"></div>
-                    <div class="molecule molecule-three"></div>
-                </div>
-
-            </section>
-
-
-            <!-- INTRODUCTION -->
-            <section class="documentation-section" id="introduction">
-
-                <div class="section-number">
-                    01
-                </div>
-
-                <div class="section-content">
-
-                    <h2>
-                        Introduction
-                    </h2>
-
-                    <p>
-                        gmx_MMPBSA is a tool designed to perform Molecular
-                        Mechanics Poisson-Boltzmann Surface Area calculations
-                        using GROMACS molecular dynamics trajectories.
-                    </p>
-
-                    <p>
-                        The program provides an interface for analyzing
-                        molecular systems and estimating binding free energies.
-                    </p>
-
-                </div>
-
-            </section>
-
-
-            <!-- INSTALLATION -->
-            <section class="documentation-section" id="installation">
-
-                <div class="section-number">
-                    02
-                </div>
-
-                <div class="section-content">
-
-                    <h2>
-                        Installation
-                    </h2>
-
-                    <p>
-                        The installation process requires a compatible
-                        environment and the necessary dependencies.
-                    </p>
-
-                    <div class="code-block">
-
-                        <div class="code-header">
-                            <span>Terminal</span>
-
-                            <button class="copy-button">
-                                Copy
-                            </button>
-                        </div>
-
-                        <pre><code>pip install gmx_MMPBSA</code></pre>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- GETTING STARTED -->
-            <section class="documentation-section" id="getting-started">
-
-                <div class="section-number">
-                    03
-                </div>
-
-                <div class="section-content">
-
-                    <h2>
-                        Getting started
-                    </h2>
-
-                    <p>
-                        After installation, the software can be configured
-                        according to the requirements of the molecular system.
-                    </p>
-
-                    <div class="info-box">
-
-                        <strong>Information</strong>
-
-                        <p>
-                            Consult the documentation before running your
-                            first calculation.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- USAGE -->
-            <section class="documentation-section" id="usage">
-
-                <div class="section-number">
-                    04
-                </div>
-
-                <div class="section-content">
-
-                    <h2>
-                        Usage
-                    </h2>
-
-                    <p>
-                        The following example demonstrates a basic workflow.
-                    </p>
-
-                    <div class="code-block">
-
-                        <div class="code-header">
-                            <span>Command</span>
-
-                            <button class="copy-button">
-                                Copy
-                            </button>
-                        </div>
-
-                        <pre><code>gmx_MMPBSA -O -i input.in</code></pre>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- EXAMPLES -->
-            <section class="documentation-section" id="examples">
-
-                <div class="section-number">
-                    05
-                </div>
-
-                <div class="section-content">
-
-                    <h2>
-                        Examples
-                    </h2>
-
-                    <p>
-                        Examples can be used to understand how the program
-                        behaves in different molecular analysis scenarios.
-                    </p>
-
-                    <div class="cards">
-
-                        <article class="card">
-
-                            <span class="card-number">
-                                01
-                            </span>
-
-                            <h3>
-                                Basic calculation
-                            </h3>
-
-                            <p>
-                                Example of a basic MMPBSA calculation.
-                            </p>
-
-                            <a href="#">
-                                View example →
-                            </a>
-
-                        </article>
-
-
-                        <article class="card">
-
-                            <span class="card-number">
-                                02
-                            </span>
-
-                            <h3>
-                                Advanced analysis
-                            </h3>
-
-                            <p>
-                                Example of an advanced molecular analysis.
-                            </p>
-
-                            <a href="#">
-                                View example →
-                            </a>
-
-                        </article>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- CONFIGURATION -->
-            <section class="documentation-section" id="configuration">
-
-                <div class="section-number">
-                    06
-                </div>
-
-                <div class="section-content">
-
-                    <h2>
-                        Configuration
-                    </h2>
-
-                    <p>
-                        Configuration parameters allow the user to customize
-                        the calculation according to the desired workflow.
-                    </p>
-
-                    <div class="table-container">
-
-                        <table>
-
-                            <thead>
-
-                                <tr>
-                                    <th>Parameter</th>
-                                    <th>Description</th>
-                                    <th>Default</th>
-                                </tr>
-
-                            </thead>
-
-                            <tbody>
-
-                                <tr>
-                                    <td>Input</td>
-                                    <td>Input configuration file</td>
-                                    <td>input.in</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Output</td>
-                                    <td>Output file</td>
-                                    <td>results.dat</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Temperature</td>
-                                    <td>Simulation temperature</td>
-                                    <td>300 K</td>
-                                </tr>
-
-                            </tbody>
-
-                        </table>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- API -->
-            <section class="documentation-section" id="api">
-
-                <div class="section-number">
-                    07
-                </div>
-
-                <div class="section-content">
-
-                    <h2>
-                        API
-                    </h2>
-
-                    <p>
-                        The API section contains information about available
-                        commands, functions and parameters.
-                    </p>
-
-                    <div class="api-item">
-
-                        <code>gmx_MMPBSA()</code>
-
-                        <span>
-                            Main program interface.
-                        </span>
-
-                    </div>
-
-                    <div class="api-item">
-
-                        <code>--help</code>
-
-                        <span>
-                            Displays available commands.
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- REFERENCES -->
-            <section class="documentation-section" id="references">
-
-                <div class="section-number">
-                    08
-                </div>
-
-                <div class="section-content">
-
-                    <h2>
-                        References
-                    </h2>
-
-                    <p>
-                        References and additional resources related to the
-                        software and its scientific methodology.
-                    </p>
-
-                    <ul class="references">
-
-                        <li>
-                            GROMACS Documentation
-                        </li>
-
-                        <li>
-                            MMPBSA Methodology
-                        </li>
-
-                        <li>
-                            Scientific Publications
-                        </li>
-
-                    </ul>
-
-                </div>
-
-            </section>
-
-
-        </main>
-
-    </div>
-
-
-    <!-- FOOTER -->
-    <footer class="footer">
-
-        <div>
-
-            <strong>FIOCRUZ</strong>
-
-            <p>
-                Scientific and technological documentation.
-            </p>
+            </div>
 
         </div>
 
-        <div>
 
-            <p>
-                Documentation project
-            </p>
+        <div class="container footer-bottom">
 
-            <p>
-                © 2026
-            </p>
+            <span>
+                © 2026 Project Documentation
+            </span>
+
+            <span>
+                Documentation website
+            </span>
 
         </div>
 
@@ -522,5 +885,4 @@
     <script src="js/script.js"></script>
 
 </body>
-
 </html>
