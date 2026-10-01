@@ -24,6 +24,10 @@ body {
     color: #242424;
     background: #ffffff;
     line-height: 1.6;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
 }
 
 a {
@@ -97,6 +101,11 @@ input {
     font-size: 13px;
 
     padding: 9px 0;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
 }
 
 .version-warning strong {
@@ -162,7 +171,9 @@ input {
 }
 
 
-/* SEARCH */
+/* =========================================================
+   SEARCH
+========================================================= */
 
 .search-box {
     display: flex;
@@ -212,6 +223,11 @@ input {
     font-size: 23px;
 }
 
+
+/* =========================================================
+   REPOSITORY
+========================================================= */
+
 .repository {
     border: 1px solid #404040;
     border-radius: 5px;
@@ -231,6 +247,52 @@ input {
 .github-icon {
     color: #f7941d;
     margin-right: 5px;
+}
+
+
+/* =========================================================
+   THEME TOGGLE
+   NOVO - somente função de tema
+========================================================= */
+
+.theme-toggle {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #404040;
+    border-radius: 50%;
+
+    background: #171717;
+    color: #ffffff;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+    border-color: #f7941d;
+    color: #f7941d;
+
+    transform: rotate(10deg);
+}
+
+.theme-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
+
+    line-height: 1;
 }
 
 
@@ -304,19 +366,6 @@ input {
 
     overflow: hidden;
 
-    /*
-       DEGRADÊ VERTICAL
-
-       Topo:
-       vermelho/bordô escuro
-
-       Meio:
-       vermelho e laranja
-
-       Fundo:
-       laranja/dourado
-    */
-
     background:
         radial-gradient(
             circle at 82% 28%,
@@ -339,9 +388,6 @@ input {
             #f7941d 100%
         );
 }
-
-
-/* textura */
 
 .hero::before {
     content: "";
@@ -419,7 +465,7 @@ input {
 .hero h1 {
     max-width: 650px;
 
-    font-size: clamp(44px, 5vw, 72px);
+    font-size: clamp(38px, 4vw, 58px);
 
     line-height: 0.98;
 
@@ -594,7 +640,6 @@ input {
     top: 108px;
 }
 
-
 .molecule-two {
     width: 130px;
     height: 130px;
@@ -741,37 +786,29 @@ input {
 
 .line-one {
     width: 80px;
-
     left: 0;
     bottom: 45px;
-
     transform: rotate(-10deg);
 }
 
 .line-two {
     width: 80px;
-
     left: 70px;
     bottom: 58px;
-
     transform: rotate(20deg);
 }
 
 .line-three {
     width: 90px;
-
     left: 130px;
     bottom: 86px;
-
     transform: rotate(-25deg);
 }
 
 .line-four {
     width: 80px;
-
     left: 205px;
     bottom: 48px;
-
     transform: rotate(35deg);
 }
 
@@ -812,7 +849,6 @@ input {
 
 /* =========================================================
    HERO WAVE
-   MANTIDA COMO NA VERSÃO APROVADA
 ========================================================= */
 
 .hero-wave {
@@ -823,7 +859,7 @@ input {
 
     width: 100%;
 
-    height: 215px;
+    height: 140px;
 
     z-index: 5;
 
@@ -841,6 +877,10 @@ input {
     fill: #ffffff;
 }
 
+body.dark-mode .hero-wave path {
+    fill: #1b1b1b;
+}
+
 
 /* =========================================================
    DOCUMENTATION
@@ -852,6 +892,10 @@ input {
     background: #ffffff;
 
     padding: 75px 0 100px;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
 }
 
 .documentation-layout {
@@ -878,6 +922,9 @@ input {
         1px solid #e8e8e8;
 
     padding-right: 28px;
+
+    transition:
+        border-color 0.25s ease;
 }
 
 .sidebar-title {
@@ -892,6 +939,8 @@ input {
     color: #242424;
 
     margin-bottom: 20px;
+
+    transition: color 0.25s ease;
 }
 
 .sidebar-menu {
@@ -915,7 +964,9 @@ input {
 
     font-size: 13px;
 
-    transition: 0.2s ease;
+    transition:
+        0.2s ease,
+        color 0.25s ease;
 }
 
 .sidebar-link:hover,
@@ -980,6 +1031,8 @@ input {
     letter-spacing: -1px;
 
     color: #222222;
+
+    transition: color 0.25s ease;
 }
 
 .doc-section > p {
@@ -992,6 +1045,8 @@ input {
     font-size: 15px;
 
     line-height: 1.8;
+
+    transition: color 0.25s ease;
 }
 
 
@@ -1014,6 +1069,9 @@ input {
         4px solid #d95320;
 
     border-radius: 4px;
+
+    transition:
+        background-color 0.25s ease;
 }
 
 .info-icon {
@@ -1041,12 +1099,16 @@ input {
     margin-bottom: 4px;
 
     color: #333333;
+
+    transition: color 0.25s ease;
 }
 
 .info-card p {
     color: #777777;
 
     font-size: 13px;
+
+    transition: color 0.25s ease;
 }
 
 
@@ -1077,7 +1139,8 @@ input {
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease,
-        border-color 0.25s ease;
+        border-color 0.25s ease,
+        background-color 0.25s ease;
 }
 
 .feature-card:hover {
@@ -1105,6 +1168,8 @@ input {
     color: #2b2b2b;
 
     font-size: 18px;
+
+    transition: color 0.25s ease;
 }
 
 .feature-card p {
@@ -1113,6 +1178,8 @@ input {
     font-size: 13px;
 
     line-height: 1.7;
+
+    transition: color 0.25s ease;
 }
 
 
@@ -1210,6 +1277,8 @@ input {
 
     border-bottom:
         1px solid #eeeeee;
+
+    transition: border-color 0.25s ease;
 }
 
 .example-item > span {
@@ -1228,12 +1297,16 @@ input {
     font-size: 17px;
 
     color: #2c2c2c;
+
+    transition: color 0.25s ease;
 }
 
 .example-item p {
     color: #777777;
 
     font-size: 13px;
+
+    transition: color 0.25s ease;
 }
 
 
@@ -1260,6 +1333,9 @@ input {
             #fff5ef,
             #fffaf7
         );
+
+    transition:
+        background 0.25s ease;
 }
 
 .help-card-icon {
@@ -1285,12 +1361,18 @@ input {
     margin-bottom: 5px;
 
     font-size: 17px;
+
+    color: #2c2c2c;
+
+    transition: color 0.25s ease;
 }
 
 .help-card p {
     color: #777777;
 
     font-size: 13px;
+
+    transition: color 0.25s ease;
 }
 
 
@@ -1311,6 +1393,10 @@ input {
     background: #fafafa;
 
     overflow-x: auto;
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease;
 }
 
 .citation-box code {
@@ -1333,10 +1419,6 @@ input {
     position: relative;
 
     color: #ffffff;
-
-    /*
-       MESMO DEGRADÊ VERTICAL DO HERO
-    */
 
     background:
         linear-gradient(
@@ -1406,6 +1488,165 @@ input {
     color: rgba(255,255,255,0.65);
 
     font-size: 11px;
+}
+
+
+/* =========================================================
+   =========================================================
+   DARK MODE
+   NOVO - SOMENTE O TEMA ESCURO
+   =========================================================
+   ========================================================= */
+
+body.dark-mode {
+    background: #1b1b1b;
+    color: #eeeeee;
+}
+
+
+/* DOCUMENTATION */
+
+body.dark-mode .documentation {
+    background: #1b1b1b;
+    color: #eeeeee;
+}
+
+
+/* SIDEBAR */
+
+body.dark-mode .sidebar {
+    border-color: #353535;
+}
+
+body.dark-mode .sidebar-title {
+    color: #eeeeee;
+}
+
+body.dark-mode .sidebar-link {
+    color: #a9a9a9;
+}
+
+body.dark-mode .sidebar-link:hover,
+body.dark-mode .sidebar-link.active {
+    color: #f7941d;
+
+    background: rgba(247,148,29,0.10);
+}
+
+
+/* TEXT */
+
+body.dark-mode .doc-section h2 {
+    color: #f2f2f2;
+}
+
+body.dark-mode .doc-section > p {
+    color: #b7b7b7;
+}
+
+
+/* INFO CARD */
+
+body.dark-mode .info-card {
+    background: #29211c;
+}
+
+body.dark-mode .info-card strong {
+    color: #eeeeee;
+}
+
+body.dark-mode .info-card p {
+    color: #aaaaaa;
+}
+
+
+/* FEATURE CARDS */
+
+body.dark-mode .feature-card {
+    background: #242424;
+
+    border-color: #383838;
+}
+
+body.dark-mode .feature-card:hover {
+    border-color: #8d5428;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.25);
+}
+
+body.dark-mode .feature-card h3 {
+    color: #eeeeee;
+}
+
+body.dark-mode .feature-card p {
+    color: #a8a8a8;
+}
+
+
+/* EXAMPLES */
+
+body.dark-mode .example-item {
+    border-color: #353535;
+}
+
+body.dark-mode .example-item h3 {
+    color: #eeeeee;
+}
+
+body.dark-mode .example-item p {
+    color: #a8a8a8;
+}
+
+
+/* HELP */
+
+body.dark-mode .help-card {
+    background:
+        linear-gradient(
+            120deg,
+            #29211c,
+            #242424
+        );
+}
+
+body.dark-mode .help-card h3 {
+    color: #eeeeee;
+}
+
+body.dark-mode .help-card p {
+    color: #a8a8a8;
+}
+
+
+/* CITATION */
+
+body.dark-mode .citation-box {
+    background: #242424;
+
+    border-color: #383838;
+}
+
+
+/* VERSION WARNING */
+
+body.dark-mode .version-warning {
+    background: #29201b;
+
+    border-color: #493328;
+
+    color: #c9b6a9;
+}
+
+
+/* THEME BUTTON */
+
+body.dark-mode .theme-toggle {
+    background: #242424;
+
+    border-color: #4a4a4a;
+
+    color: #f7941d;
 }
 
 
@@ -1492,6 +1733,10 @@ input {
         align-items: stretch;
     }
 
+    .theme-toggle {
+        align-self: flex-start;
+    }
+
     .repository {
         text-align: center;
     }
@@ -1553,6 +1798,10 @@ input {
         padding-bottom: 20px;
 
         margin-bottom: 45px;
+    }
+
+    body.dark-mode .sidebar {
+        border-bottom-color: #353535;
     }
 
     .sidebar-menu {
