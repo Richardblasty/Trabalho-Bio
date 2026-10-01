@@ -1,336 +1,95 @@
-/* =========================================================
-   NAVEGAÇÃO SUAVE
-========================================================= */
+document.addEventListener("DOMContentLoaded", function () {
 
-document.querySelectorAll('a[href^="#"]').forEach(link => {
+    const themeToggle = document.getElementById("theme-toggle");
+    const themeIcon = document.getElementById("theme-icon");
 
-    link.addEventListener("click", function(event) {
+    if (!themeToggle) {
+        console.error("Botão de tema não encontrado.");
+        return;
+    }
 
-        const targetId =
-            this.getAttribute("href");
+    function updateTheme() {
+        const isDark = document.body.classList.contains("dark-mode");
 
-        if (!targetId || targetId === "#") {
-            return;
+        if (themeIcon) {
+            themeIcon.textContent = isDark ? "☀" : "☾";
         }
 
-        const target =
-            document.querySelector(targetId);
+        themeToggle.setAttribute(
+            "aria-label",
+            isDark
+                ? "Mudar para tema claro"
+                : "Mudar para tema escuro"
+        );
 
-        if (!target) {
-            return;
-        }
+        themeToggle.setAttribute(
+            "title",
+            isDark
+                ? "Mudar para tema claro"
+                : "Mudar para tema escuro"
+        );
+    }
 
-        event.preventDefault();
+    // Recupera o tema salvo
+    const savedTheme = localStorage.getItem("project-theme");
 
-        target.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+    } else {
+        document.body.classList.remove("dark-mode");
+    }
 
+    updateTheme();
+
+    // Alterna o tema ao clicar
+    themeToggle.addEventListener("click", function () {
+
+        document.body.classList.toggle("dark-mode");
+
+        const isDark =
+            document.body.classList.contains("dark-mode");
+
+        localStorage.setItem(
+            "project-theme",
+            isDark ? "dark" : "light"
+        );
+
+        updateTheme();
     });
 
 });
 
+// =====================================================
+// EFEITO DE INTERAÇÃO DO HERO
+// =====================================================
 
-/* =========================================================
-   NAVEGAÇÃO ATIVA
-========================================================= */
+const heroVisual = document.querySelector(".hero-visual");
 
-const sections =
-    document.querySelectorAll(
-        ".doc-section, #home"
+if (heroVisual) {
+    const visualElements = heroVisual.querySelectorAll(
+        ".molecule, .connection, .hero-circle, .graph"
     );
 
-const navLinks =
-    document.querySelectorAll(
-        ".nav-link"
-    );
+    heroVisual.addEventListener("mousemove", function (event) {
+        const rect = heroVisual.getBoundingClientRect();
 
-const sidebarLinks =
-    document.querySelectorAll(
-        ".sidebar-link"
-    );
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
 
+        visualElements.forEach(function (element, index) {
+            const strength = 8 + (index % 4) * 3;
 
-function updateActiveNavigation() {
+            const moveX = x * strength;
+            const moveY = y * strength;
 
-    let currentSection = "";
-
-    sections.forEach(section => {
-
-        const sectionTop =
-            section.getBoundingClientRect().top;
-
-        if (sectionTop <= 180) {
-
-            currentSection =
-                section.getAttribute("id");
-
-        }
-
-    });
-
-
-    navLinks.forEach(link => {
-
-        link.classList.remove("active");
-
-        if (
-            link.getAttribute("href") ===
-            `#${currentSection}`
-        ) {
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-
-    sidebarLinks.forEach(link => {
-
-        link.classList.remove("active");
-
-        if (
-            link.getAttribute("href") ===
-            `#${currentSection}`
-        ) {
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-}
-
-
-window.addEventListener(
-    "scroll",
-    updateActiveNavigation
-);
-
-updateActiveNavigation();
-
-
-/* =========================================================
-   PESQUISA
-========================================================= */
-
-const searchInput =
-    document.getElementById(
-        "searchInput"
-    );
-
-const searchButton =
-    document.getElementById(
-        "searchButton"
-    );
-
-
-function performSearch() {
-
-    const query =
-        searchInput.value
-            .trim()
-            .toLowerCase();
-
-    if (!query) {
-        return;
-    }
-
-    const elements =
-        document.querySelectorAll(
-            ".doc-section h2, .doc-section h3, .doc-section p"
-        );
-
-    let found = false;
-
-
-    elements.forEach(element => {
-
-        if (
-            !found &&
-            element.textContent
-                .toLowerCase()
-                .includes(query)
-        ) {
-
-            element.scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-            });
-
-            found = true;
-
-        }
-
-    });
-
-
-    if (!found) {
-
-        searchInput.value = "";
-
-        searchInput.placeholder =
-            "Nenhum resultado encontrado";
-
-        setTimeout(() => {
-
-            searchInput.placeholder =
-                "Pesquisar...";
-
-        }, 2000);
-
-    }
-
-}
-
-
-if (searchButton) {
-
-    searchButton.addEventListener(
-        "click",
-        performSearch
-    );
-
-}
-
-
-if (searchInput) {
-
-    searchInput.addEventListener(
-        "keydown",
-        event => {
-
-            if (event.key === "Enter") {
-
-                performSearch();
-
-            }
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   BOTÃO COPY
-========================================================= */
-
-const copyButton =
-    document.querySelector(
-        ".copy-button"
-    );
-
-
-if (copyButton) {
-
-    copyButton.addEventListener(
-        "click",
-        async () => {
-
-            const code =
-                document.querySelector(
-                    ".code-block code"
-                );
-
-            if (!code) {
-                return;
-            }
-
-            try {
-
-                await navigator.clipboard.writeText(
-                    code.textContent
-                );
-
-                copyButton.textContent =
-                    "Copied!";
-
-                setTimeout(() => {
-
-                    copyButton.textContent =
-                        "Copy";
-
-                }, 1800);
-
-            } catch (error) {
-
-                copyButton.textContent =
-                    "Error";
-
-                setTimeout(() => {
-
-                    copyButton.textContent =
-                        "Copy";
-
-                }, 1800);
-
-            }
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   EFEITO SUTIL NO HERO
-========================================================= */
-
-const hero =
-    document.querySelector(
-        ".hero"
-    );
-
-const heroVisual =
-    document.querySelector(
-        ".hero-visual"
-    );
-
-
-if (hero && heroVisual) {
-
-    hero.addEventListener(
-        "mousemove",
-        event => {
-
-            const rect =
-                hero.getBoundingClientRect();
-
-            const x =
-                (event.clientX - rect.left)
-                / rect.width;
-
-            const y =
-                (event.clientY - rect.top)
-                / rect.height;
-
-
-            const moveX =
-                (x - 0.5) * 12;
-
-            const moveY =
-                (y - 0.5) * 8;
-
-
-            heroVisual.style.transform =
+            element.style.transform =
                 `translate(${moveX}px, ${moveY}px)`;
+        });
+    });
 
-        }
-    );
-
-
-    hero.addEventListener(
-        "mouseleave",
-        () => {
-
-            heroVisual.style.transform =
-                "translate(0, 0)";
-
-        }
-    );
-
+    heroVisual.addEventListener("mouseleave", function () {
+        visualElements.forEach(function (element) {
+            element.style.transform = "";
+        });
+    });
 }
