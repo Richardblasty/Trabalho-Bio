@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Documentação | Projeto</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <link rel="stylesheet" href="css/style.css">
+    <title>Project Documentation</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
 </head>
 
 <body>
 
     <!-- =====================================================
-         BARRA SUPERIOR
+         NEWS BAR
     ====================================================== -->
 
     <div class="news-bar">
@@ -24,10 +32,13 @@
             </span>
 
             <span class="news-text">
-                Bem-vindo à documentação do projeto
+                Bem-vindo à documentação do projeto.
             </span>
 
-            <a href="#getting-started" class="news-link">
+            <a
+                href="#getting-started"
+                class="news-link"
+            >
                 Saiba mais →
             </a>
 
@@ -37,7 +48,7 @@
 
 
     <!-- =====================================================
-         AVISO DE VERSÃO
+         VERSION WARNING
     ====================================================== -->
 
     <div class="version-warning">
@@ -45,7 +56,9 @@
         <div class="container">
 
             <strong>Versão atual:</strong>
-            Esta documentação apresenta informações e recursos do projeto.
+
+            Esta documentação apresenta informações,
+            exemplos e orientações sobre o projeto.
 
         </div>
 
@@ -60,7 +73,12 @@
 
         <div class="container header-content">
 
-            <a href="#home" class="logo">
+            <!-- LOGO -->
+
+            <a
+                href="#home"
+                class="logo"
+            >
 
                 <span class="logo-symbol">
                     ◆
@@ -77,28 +95,60 @@
             </a>
 
 
+            <!-- HEADER ACTIONS -->
+
             <div class="header-actions">
 
-                <div class="search-box">
+                <!-- SEARCH -->
+
+                <form
+                    class="search-box"
+                    id="search-form"
+                >
 
                     <input
-                        type="text"
-                        id="searchInput"
+                        type="search"
+                        id="search-input"
                         placeholder="Pesquisar..."
                         aria-label="Pesquisar"
                     >
 
                     <button
-                        id="searchButton"
+                        type="submit"
                         aria-label="Pesquisar"
                     >
-                        <span>⌕</span>
+                        ⌕
                     </button>
 
-                </div>
+                </form>
 
 
-                <a href="#" class="repository">
+                <!-- THEME TOGGLE -->
+
+                <button
+                    class="theme-toggle"
+                    id="theme-toggle"
+                    type="button"
+                    aria-label="Alternar tema"
+                    title="Alternar tema"
+                >
+
+                    <span
+                        class="theme-icon"
+                        id="theme-icon"
+                    >
+                        ☀
+                    </span>
+
+                </button>
+
+
+                <!-- REPOSITORY -->
+
+                <a
+                    href="https://github.com/Richardblasty/Trabalho-Bio/blob/main/index.html"
+                    class="repository"
+                >
 
                     <span class="github-icon">
                         ●
@@ -114,7 +164,7 @@
 
 
         <!-- =================================================
-             NAVEGAÇÃO
+             NAVIGATION
         ================================================== -->
 
         <nav class="main-nav">
@@ -181,643 +231,620 @@
          HERO
     ====================================================== -->
 
-    <main>
+    <section
+        class="hero"
+        id="home"
+    >
 
-        <section
-            class="hero"
-            id="home"
-        >
-
-            <div class="container hero-content">
+        <div class="container hero-content">
 
 
-                <!-- TEXTO -->
+            <!-- HERO TEXT -->
 
-                <div class="hero-text">
+            <div class="hero-text">
 
-                    <div class="hero-tag">
-                        DOCUMENTATION
-                    </div>
+                <span class="hero-tag">
+                    DOCUMENTATION
+                </span>
 
+                <h1>
+                    Welcome to
+                    <span>Project</span>
+                    <span>documentation!</span>
+                </h1>
 
-                    <h1>
-
-                        Welcome to
-
-                        <span>
-                            Project
-                        </span>
-
-                        documentation!
-
-                    </h1>
-
-
-                    <p>
-                        Explore the documentation, learn how the project
-                        works and find everything you need to get started.
-                    </p>
+                <p>
+                    Explore the documentation, learn how the
+                    project works and find everything you need
+                    to get started.
+                </p>
 
 
-                    <div class="hero-buttons">
+                <div class="hero-buttons">
 
+                    <a
+                        href="#getting-started"
+                        class="btn btn-primary"
+                    >
+                        Quick start
+                    </a>
+
+                    <a
+                        href="#help"
+                        class="btn btn-secondary"
+                    >
+                        Help
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- HERO VISUAL -->
+
+            <div class="hero-visual">
+
+
+                <!-- MOLECULE 1 -->
+
+                <div class="molecule molecule-one">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+
+                <!-- MOLECULE 2 -->
+
+                <div class="molecule molecule-two">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+
+                <!-- CONNECTIONS -->
+
+                <div class="connection connection-one"></div>
+
+                <div class="connection connection-two"></div>
+
+                <div class="connection connection-three"></div>
+
+
+                <!-- CIRCLES -->
+
+                <div class="hero-circle circle-one"></div>
+
+                <div class="hero-circle circle-two"></div>
+
+                <div class="hero-circle circle-three"></div>
+
+
+                <!-- GRAPH -->
+
+                <div class="graph">
+
+                    <div class="graph-line line-one"></div>
+                    <div class="graph-line line-two"></div>
+                    <div class="graph-line line-three"></div>
+                    <div class="graph-line line-four"></div>
+
+                    <span class="graph-point point-one"></span>
+                    <span class="graph-point point-two"></span>
+                    <span class="graph-point point-three"></span>
+                    <span class="graph-point point-four"></span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             HERO WAVE
+        ================================================== -->
+
+        <div class="hero-wave">
+
+            <svg
+                viewBox="0 0 1440 260"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+            >
+
+                <path
+    d="
+        M0 220
+        C90 230,
+        155 220,
+        240 190
+        C330 160,
+        390 100,
+        480 105
+        C575 110,
+        620 170,
+        710 185
+        C820 205,
+        900 155,
+        1020 110
+        C1150 62,
+        1290 35,
+        1440 20
+        L1440 260
+        L0 260
+        Z
+    "
+></path>
+
+            </svg>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         DOCUMENTATION
+    ====================================================== -->
+
+    <main class="documentation">
+
+        <div class="container documentation-layout">
+
+
+            <!-- SIDEBAR -->
+
+            <aside class="sidebar">
+
+                <div class="sidebar-title">
+                    Documentation
+                </div>
+
+                <ul class="sidebar-menu">
+
+                    <li>
                         <a
                             href="#getting-started"
-                            class="btn btn-primary"
+                            class="sidebar-link active"
                         >
-                            Quick start
+                            Getting started
                         </a>
+                    </li>
 
+                    <li>
+                        <a
+                            href="#project"
+                            class="sidebar-link"
+                        >
+                            Project
+                        </a>
+                    </li>
 
+                    <li>
+                        <a
+                            href="#installation"
+                            class="sidebar-link"
+                        >
+                            Installation
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="#examples"
+                            class="sidebar-link"
+                        >
+                            Examples
+                        </a>
+                    </li>
+
+                    <li>
                         <a
                             href="#help"
-                            class="btn btn-secondary"
+                            class="sidebar-link"
                         >
                             Help
                         </a>
+                    </li>
 
-                    </div>
+                    <li>
+                        <a
+                            href="#cite"
+                            class="sidebar-link"
+                        >
+                            Cite
+                        </a>
+                    </li>
 
-                </div>
+                </ul>
 
-
-                <!-- VISUAL -->
-
-                <div class="hero-visual">
-
-                    <div class="molecule molecule-one">
-
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-
-                    </div>
+            </aside>
 
 
-                    <div class="molecule molecule-two">
+            <!-- DOCUMENTATION CONTENT -->
 
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-
-                    </div>
+            <div class="documentation-content">
 
 
-                    <div class="connection connection-one"></div>
+                <!-- GETTING STARTED -->
 
-                    <div class="connection connection-two"></div>
-
-                    <div class="connection connection-three"></div>
-
-
-                    <div class="hero-circle circle-one"></div>
-
-                    <div class="hero-circle circle-two"></div>
-
-                    <div class="hero-circle circle-three"></div>
-
-
-                    <div class="graph">
-
-                        <div class="graph-line line-one"></div>
-
-                        <div class="graph-line line-two"></div>
-
-                        <div class="graph-line line-three"></div>
-
-                        <div class="graph-line line-four"></div>
-
-
-                        <div class="graph-point point-one"></div>
-
-                        <div class="graph-point point-two"></div>
-
-                        <div class="graph-point point-three"></div>
-
-                        <div class="graph-point point-four"></div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- =================================================
-                 CURVA DO HERO
-            ================================================== -->
-
-            <div class="hero-wave">
-
-                <svg
-                    viewBox="0 0 1440 250"
-                    preserveAspectRatio="none"
-                    aria-hidden="true"
+                <section
+                    class="doc-section"
+                    id="getting-started"
                 >
 
-                    <path
-                        d="
-                            M0 220
+                    <span class="section-label">
+                        GETTING STARTED
+                    </span>
 
-                            C70 230,
-                            130 225,
-                            205 195
+                    <h2>
+                        Getting started
+                    </h2>
 
-                            C295 160,
-                            365 125,
-                            455 132
+                    <p>
+                        Welcome to the project documentation.
+                        Here you can find the main information
+                        needed to understand the project and
+                        start using its features.
+                    </p>
 
-                            C535 138,
-                            580 165,
-                            655 170
-
-                            C750 176,
-                            815 158,
-                            885 130
-
-                            C980 94,
-                            1060 72,
-                            1160 55
-
-                            C1260 38,
-                            1360 30,
-                            1440 28
-
-                            L1440 250
-                            L0 250
-
-                            Z
-                        "
-                    ></path>
-
-                </svg>
-
-            </div>
-
-        </section>
+                    <p>
+                        Follow the sections below to learn
+                        about installation, usage and examples.
+                    </p>
 
 
-        <!-- =====================================================
-             DOCUMENTAÇÃO
-        ====================================================== -->
+                    <div class="info-card">
 
-        <section class="documentation">
+                        <div class="info-icon">
+                            i
+                        </div>
 
-            <div class="container documentation-layout">
+                        <div>
 
+                            <strong>
+                                Before you begin
+                            </strong>
 
-                <!-- SIDEBAR -->
+                            <p>
+                                Make sure you have all the
+                                required dependencies and
+                                files available before
+                                continuing.
+                            </p>
 
-                <aside class="sidebar">
+                        </div>
 
-                    <div class="sidebar-title">
-                        Documentation
                     </div>
 
-
-                    <ul class="sidebar-menu">
-
-                        <li>
-                            <a
-                                href="#getting-started"
-                                class="sidebar-link active"
-                            >
-                                Getting started
-                            </a>
-                        </li>
-
-                        <li>
-                            <a
-                                href="#project"
-                                class="sidebar-link"
-                            >
-                                Project
-                            </a>
-                        </li>
-
-                        <li>
-                            <a
-                                href="#installation"
-                                class="sidebar-link"
-                            >
-                                Installation
-                            </a>
-                        </li>
-
-                        <li>
-                            <a
-                                href="#examples"
-                                class="sidebar-link"
-                            >
-                                Examples
-                            </a>
-                        </li>
-
-                        <li>
-                            <a
-                                href="#help"
-                                class="sidebar-link"
-                            >
-                                Help
-                            </a>
-                        </li>
-
-                        <li>
-                            <a
-                                href="#cite"
-                                class="sidebar-link"
-                            >
-                                Cite
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </aside>
+                </section>
 
 
-                <!-- CONTEÚDO -->
+                <!-- PROJECT -->
 
-                <article class="documentation-content">
+                <section
+                    class="doc-section"
+                    id="project"
+                >
 
+                    <span class="section-label">
+                        PROJECT
+                    </span>
 
-                    <!-- GETTING STARTED -->
+                    <h2>
+                        Project overview
+                    </h2>
 
-                    <section
-                        id="getting-started"
-                        class="doc-section"
-                    >
-
-                        <span class="section-label">
-                            GETTING STARTED
-                        </span>
-
-
-                        <h2>
-                            Getting started
-                        </h2>
-
-
-                        <p>
-                            Welcome to the project documentation.
-                            This section provides the basic information
-                            necessary to understand the project and
-                            start using its main features.
-                        </p>
+                    <p>
+                        This section presents the main
+                        concepts and organization of the
+                        project.
+                    </p>
 
 
-                        <p>
-                            Follow the documentation step by step to
-                            understand the installation process,
-                            configuration and available resources.
-                        </p>
+                    <div class="feature-grid">
 
 
-                        <div class="info-card">
+                        <article class="feature-card">
 
-                            <div class="info-icon">
-                                !
+                            <div class="feature-number">
+                                01
                             </div>
 
-                            <div>
+                            <h3>
+                                Structure
+                            </h3>
 
-                                <strong>
-                                    Before you start
-                                </strong>
+                            <p>
+                                Understand how the main
+                                components of the project
+                                are organized.
+                            </p>
 
-                                <p>
-                                    Make sure that all required
-                                    dependencies and configurations
-                                    are available in your environment.
-                                </p>
+                        </article>
 
+
+                        <article class="feature-card">
+
+                            <div class="feature-number">
+                                02
                             </div>
+
+                            <h3>
+                                Workflow
+                            </h3>
+
+                            <p>
+                                Learn the basic workflow and
+                                how the different parts work
+                                together.
+                            </p>
+
+                        </article>
+
+
+                        <article class="feature-card">
+
+                            <div class="feature-number">
+                                03
+                            </div>
+
+                            <h3>
+                                Resources
+                            </h3>
+
+                            <p>
+                                Access examples and additional
+                                resources throughout the
+                                documentation.
+                            </p>
+
+                        </article>
+
+
+                    </div>
+
+                </section>
+
+
+                <!-- INSTALLATION -->
+
+                <section
+                    class="doc-section"
+                    id="installation"
+                >
+
+                    <span class="section-label">
+                        INSTALLATION
+                    </span>
+
+                    <h2>
+                        Installation
+                    </h2>
+
+                    <p>
+                        Follow the instructions below to
+                        prepare the project environment.
+                    </p>
+
+
+                    <div class="code-block">
+
+                        <div class="code-header">
+
+                            <span>
+                                terminal
+                            </span>
+
+                            <button
+                                class="copy-button"
+                                type="button"
+                            >
+                                Copy
+                            </button>
 
                         </div>
 
-                    </section>
-
-
-                    <!-- PROJECT -->
-
-                    <section
-                        id="project"
-                        class="doc-section"
-                    >
-
-                        <span class="section-label">
-                            PROJECT
-                        </span>
-
-
-                        <h2>
-                            About the project
-                        </h2>
-
-
-                        <p>
-                            This project provides a structured environment
-                            for accessing information, resources and
-                            documentation in an organized way.
-                        </p>
-
-
-                        <div class="feature-grid">
-
-
-                            <div class="feature-card">
-
-                                <div class="feature-number">
-                                    01
-                                </div>
-
-                                <h3>
-                                    Simple
-                                </h3>
-
-                                <p>
-                                    An organized structure designed
-                                    to make the documentation easier
-                                    to navigate.
-                                </p>
-
-                            </div>
-
-
-                            <div class="feature-card">
-
-                                <div class="feature-number">
-                                    02
-                                </div>
-
-                                <h3>
-                                    Flexible
-                                </h3>
-
-                                <p>
-                                    Information can be expanded and
-                                    organized according to the needs
-                                    of the project.
-                                </p>
-
-                            </div>
-
-
-                            <div class="feature-card">
-
-                                <div class="feature-number">
-                                    03
-                                </div>
-
-                                <h3>
-                                    Accessible
-                                </h3>
-
-                                <p>
-                                    The interface is designed to make
-                                    important information easy to find.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </section>
-
-
-                    <!-- INSTALLATION -->
-
-                    <section
-                        id="installation"
-                        class="doc-section"
-                    >
-
-                        <span class="section-label">
-                            INSTALLATION
-                        </span>
-
-
-                        <h2>
-                            Installation
-                        </h2>
-
-
-                        <p>
-                            Follow the steps below to prepare the
-                            project environment.
-                        </p>
-
-
-                        <div class="code-block">
-
-                            <div class="code-header">
-
-                                <span>
-                                    Terminal
-                                </span>
-
-                                <button class="copy-button">
-                                    Copy
-                                </button>
-
-                            </div>
-
-
-                            <pre><code>git clone https://github.com/example/project.git
+                        <pre><code>git clone repository
 cd project
 npm install
 npm start</code></pre>
 
-                        </div>
+                    </div>
 
-                    </section>
-
-
-                    <!-- EXAMPLES -->
-
-                    <section
-                        id="examples"
-                        class="doc-section"
-                    >
-
-                        <span class="section-label">
-                            EXAMPLES
-                        </span>
+                </section>
 
 
-                        <h2>
-                            Examples
-                        </h2>
+                <!-- EXAMPLES -->
+
+                <section
+                    class="doc-section"
+                    id="examples"
+                >
+
+                    <span class="section-label">
+                        EXAMPLES
+                    </span>
+
+                    <h2>
+                        Examples
+                    </h2>
+
+                    <p>
+                        Explore examples showing how the
+                        project can be used in different
+                        situations.
+                    </p>
 
 
-                        <p>
-                            Explore examples and practical applications
-                            to understand how the project can be used.
-                        </p>
+                    <div class="example-list">
 
 
-                        <div class="example-list">
+                        <div class="example-item">
 
-
-                            <div class="example-item">
-
-                                <span>
-                                    01
-                                </span>
-
-                                <div>
-
-                                    <h3>
-                                        Basic example
-                                    </h3>
-
-                                    <p>
-                                        Example of a basic project workflow.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="example-item">
-
-                                <span>
-                                    02
-                                </span>
-
-                                <div>
-
-                                    <h3>
-                                        Advanced example
-                                    </h3>
-
-                                    <p>
-                                        Example showing a more advanced workflow.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="example-item">
-
-                                <span>
-                                    03
-                                </span>
-
-                                <div>
-
-                                    <h3>
-                                        Practical application
-                                    </h3>
-
-                                    <p>
-                                        Example of how the project can
-                                        be applied in practice.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </section>
-
-
-                    <!-- HELP -->
-
-                    <section
-                        id="help"
-                        class="doc-section"
-                    >
-
-                        <span class="section-label">
-                            HELP
-                        </span>
-
-
-                        <h2>
-                            Help
-                        </h2>
-
-
-                        <p>
-                            If you encounter a problem while using the
-                            project, check the available documentation
-                            and examples first.
-                        </p>
-
-
-                        <div class="help-card">
-
-                            <div class="help-card-icon">
-                                ?
-                            </div>
+                            <span>
+                                01
+                            </span>
 
                             <div>
 
                                 <h3>
-                                    Need help?
+                                    Basic example
                                 </h3>
 
                                 <p>
-                                    Check the available resources or
-                                    contact the project maintainers.
+                                    A simple example for getting
+                                    familiar with the project.
                                 </p>
 
                             </div>
 
                         </div>
 
-                    </section>
 
+                        <div class="example-item">
 
-                    <!-- CITE -->
+                            <span>
+                                02
+                            </span>
 
-                    <section
-                        id="cite"
-                        class="doc-section"
-                    >
+                            <div>
 
-                        <span class="section-label">
-                            CITE
-                        </span>
+                                <h3>
+                                    Advanced example
+                                </h3>
 
+                                <p>
+                                    A more complete example
+                                    demonstrating additional
+                                    functionality.
+                                </p>
 
-                        <h2>
-                            Cite the project
-                        </h2>
-
-
-                        <p>
-                            If you use this project in your work,
-                            research or other applications, please
-                            refer to the appropriate citation information.
-                        </p>
-
-
-                        <div class="citation-box">
-
-                            <code>
-                                Project Documentation, 2026.
-                            </code>
+                            </div>
 
                         </div>
 
-                    </section>
+
+                        <div class="example-item">
+
+                            <span>
+                                03
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Practical example
+                                </h3>
+
+                                <p>
+                                    An example focused on a
+                                    practical project workflow.
+                                </p>
+
+                            </div>
+
+                        </div>
 
 
-                </article>
+                    </div>
+
+                </section>
+
+
+                <!-- HELP -->
+
+                <section
+                    class="doc-section"
+                    id="help"
+                >
+
+                    <span class="section-label">
+                        HELP
+                    </span>
+
+                    <h2>
+                        Help
+                    </h2>
+
+                    <p>
+                        If you have questions or encounter
+                        problems, consult the available
+                        documentation and resources.
+                    </p>
+
+
+                    <div class="help-card">
+
+                        <div class="help-card-icon">
+                            ?
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Need help?
+                            </h3>
+
+                            <p>
+                                Check the documentation,
+                                examples and repository for
+                                additional information.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- CITE -->
+
+                <section
+                    class="doc-section"
+                    id="cite"
+                >
+
+                    <span class="section-label">
+                        CITE
+                    </span>
+
+                    <h2>
+                        Cite the project
+                    </h2>
+
+                    <p>
+                        If you use this project in your work,
+                        you can reference it using the
+                        appropriate citation.
+                    </p>
+
+
+                    <div class="citation-box">
+
+                        <code>
+                            Project Documentation. Project
+                            documentation and resources.
+                        </code>
+
+                    </div>
+
+                </section>
 
             </div>
 
-        </section>
+        </div>
 
     </main>
 
@@ -834,11 +861,11 @@ npm start</code></pre>
             <div class="footer-brand">
 
                 <div class="footer-logo">
-                    ◆ PROJECT
+                    PROJECT
                 </div>
 
                 <p>
-                    Documentation and resources.
+                    Project documentation.
                 </p>
 
             </div>
@@ -851,15 +878,15 @@ npm start</code></pre>
                 </a>
 
                 <a href="#getting-started">
-                    Getting started
-                </a>
-
-                <a href="#project">
-                    Project
+                    Documentation
                 </a>
 
                 <a href="#help">
                     Help
+                </a>
+
+                <a href="#cite">
+                    Cite
                 </a>
 
             </div>
@@ -874,7 +901,7 @@ npm start</code></pre>
             </span>
 
             <span>
-                Documentation website
+                Documentation
             </span>
 
         </div>
@@ -885,4 +912,5 @@ npm start</code></pre>
     <script src="js/script.js"></script>
 
 </body>
+
 </html>
