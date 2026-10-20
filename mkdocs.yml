@@ -1,9 +1,7 @@
 site_name: "Trabalho Bio"
-
 site_url: "https://richardblasty.github.io/Trabalho-Bio/"
 
 docs_dir: .versioned-docs
-
 site_dir: site
 
 theme:
