@@ -367,26 +367,27 @@ input {
     overflow: hidden;
 
     background:
-        radial-gradient(
-            circle at 82% 28%,
-            rgba(255, 190, 110, 0.20),
-            transparent 28%
-        ),
+    radial-gradient(
+        circle at 82% 28%,
+        rgba(100, 180, 210, 0.16),
+        transparent 28%
+    ),
 
-        radial-gradient(
-            circle at 25% 40%,
-            rgba(190, 0, 50, 0.10),
-            transparent 30%
-        ),
+    radial-gradient(
+        circle at 25% 40%,
+        rgba(70, 130, 160, 0.12),
+        transparent 30%
+    ),
 
-        linear-gradient(
-            to bottom,
-            #8f0d0d 0%,
-            #a92712 25%,
-            #c94b12 50%,
-            #e8750d 75%,
-            #f7941d 100%
-        );
+    linear-gradient(
+        to bottom,
+        #050505 0%,
+        #111820 18%,
+        #182b38 38%,
+        #214b62 60%,
+        #2d6680 80%,
+        #397d96 100%
+    );
 }
 
 .hero::before {
@@ -578,6 +579,21 @@ input {
     height: 430px;
 
     width: 100%;
+}
+
+/* IMAGEM DA PROTEÍNA */
+
+.protein-image {
+    display: block;
+    width: 135%;
+    max-width: 780px;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    margin-left: -12%;
+    margin-top: 6%;
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.16));
+    transition: transform 0.2s ease;
 }
 
 
@@ -859,7 +875,7 @@ input {
 
     width: 100%;
 
-    height: 140px;
+    height: 305px;
 
     z-index: 5;
 
@@ -1420,15 +1436,20 @@ body.dark-mode .hero-wave path {
 
     color: #ffffff;
 
-    background:
-        linear-gradient(
-            to bottom,
-            #8f0d0d 0%,
-            #b83212 45%,
-            #e8750d 75%,
-            #f7941d 100%
-        );
+   
+background:
+    linear-gradient(
+        to bottom,
+        #397d96 0%,
+        #2d6680 18%,
+        #214b62 38%,
+        #182b38 60%,
+        #111820 80%,
+        #050505 100%
+    );
 }
+
+
 
 .footer-content {
     display: flex;
