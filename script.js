@@ -66,9 +66,9 @@ document.addEventListener("DOMContentLoaded", function () {
 const heroVisual = document.querySelector(".hero-visual");
 
 if (heroVisual) {
-    const visualElements = heroVisual.querySelectorAll(
-        ".molecule, .connection, .hero-circle, .graph"
-    );
+   const visualElements = heroVisual.querySelectorAll(
+    ".protein-image"
+);
 
     heroVisual.addEventListener("mousemove", function (event) {
         const rect = heroVisual.getBoundingClientRect();
