@@ -36,6 +36,21 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+      - name: Prepare existing HTML site
+        run: |
+          python scripts/prepare_site.py
+
+      - name: Verify documentation source
+        run: |
+          test -f .versioned-docs/index.html
+          test -f .versioned-docs/style.css
+          test -f .versioned-docs/script.js
+          test -f .versioned-docs/version-selector.js
+
+      - name: Validate MkDocs build
+        run: |
+          mkdocs build
+
       - name: Deploy development version
         if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
         run: |
