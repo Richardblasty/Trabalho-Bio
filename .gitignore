@@ -1,0 +1,4 @@
+.venv/
+site/
+.versioned-docs/
+_pycache_/
