@@ -29,6 +29,15 @@ for dirname in ("images", "img", "assets", "fonts"):
 
     if source.is_dir():
         shutil.copytree(source, DEST / dirname)
+image_source = ROOT / "proteina-ligante.png"
+image_dest = DEST / "images" / "proteina-ligante.png"
+
+if not image_source.is_file():
+    raise FileNotFoundError(f"Imagem não encontrada: {image_source}")
+
+image_dest.parent.mkdir(parents=True, exist_ok=True)
+shutil.copy2(image_source, image_dest)
+
 
 # Corrigir caminhos somente na cópia do HTML
 html_path = DEST / "index.html"
