@@ -1,3 +1,4 @@
+
 name: Deploy Documentation
 
 on:
@@ -10,6 +11,12 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: documentation-deploy
+  cancel-in-progress: false
 
 jobs:
   deploy-docs:
@@ -24,12 +31,12 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.x"
+          python-version: "3.12"
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          python -m pip install -r requirements.txt
 
       - name: Configure Git
         run: |
@@ -52,15 +59,37 @@ jobs:
           mkdocs build
 
       - name: Deploy development version
-        if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+        if: github.ref == 'refs/heads/main'
         run: |
           mike deploy --push dev
-          mike set-default --push dev
 
       - name: Deploy release version
         if: startsWith(github.ref, 'refs/tags/v')
         env:
           VERSION: ${{ github.ref_name }}
         run: |
-          mike deploy --push "$VERSION" latest
+          mike deploy --push --update-aliases --alias-type=copy "$VERSION" latest
           mike set-default --push "$VERSION"
+
+  publish-pages:
+    needs: deploy-docs
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout gh-pages
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
