@@ -1900,3 +1900,15 @@ body.dark-mode .theme-toggle {
     border-color: #397d96;
     color: #397d96;
 }
+
+/* Centralizar os itens do menu superior */
+.main-nav .nav-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 24px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
