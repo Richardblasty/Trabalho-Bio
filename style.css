@@ -1881,3 +1881,34 @@ body.dark-mode .theme-toggle {
         height: 150px;
     }
 }
+.language-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 12px;
+    border: 1px solid #454545;
+    border-radius: 8px;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-size: 12px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.language-toggle:hover {
+    border-color: #397d96;
+    color: #397d96;
+}
+
+/* Centralizar os itens do menu superior */
+.main-nav .nav-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 24px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
