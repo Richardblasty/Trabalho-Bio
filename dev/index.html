@@ -1,883 +1,686 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title data-en="Project Documentation" data-pt="Documentação do Projeto">Project Documentation</title>
 
-    <title>Project Documentation</title>
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- =====================================================
-         NEWS BAR
-    ====================================================== -->
-
+    <!-- NEWS BAR -->
     <div class="news-bar">
-
         <div class="container news-content">
+            <span class="news-label"
+                data-en="NEWS"
+                data-pt="NOVIDADES">NEWS</span>
 
-            <span class="news-label">
-                NEWS
-            </span>
+            <span class="news-text"
+                data-en="Welcome to the project documentation."
+                data-pt="Bem-vindo à documentação do projeto.">Welcome to the project documentation.</span>
 
-            <span class="news-text">
-                Bem-vindo à documentação do projeto.
-            </span>
-
-            <a
-                href="#getting-started"
-                class="news-link"
-            >
-                Saiba mais →
-            </a>
-
+            <a href="#getting-started" class="news-link"
+                data-en="Learn more →"
+                data-pt="Saiba mais →">Learn more →</a>
         </div>
-
     </div>
 
-
-    <!-- =====================================================
-         VERSION WARNING
-    ====================================================== -->
-
+    <!-- VERSION WARNING -->
     <div class="version-warning">
-
         <div class="container">
+            <strong data-en="Current version:"
+                data-pt="Versão atual:">Current version:</strong>
 
-            <strong>Versão atual:</strong>
-
-            Esta documentação apresenta informações,
-            exemplos e orientações sobre o projeto.
-
+            <span
+                data-en="This documentation provides information, examples and guidelines about the project."
+                data-pt="Esta documentação apresenta informações, exemplos e orientações sobre o projeto.">
+                This documentation provides information, examples and guidelines about the project.
+            </span>
         </div>
-
     </div>
 
-
-    <!-- =====================================================
-         HEADER
-    ====================================================== -->
-
+    <!-- HEADER -->
     <header class="header">
-
         <div class="container header-content">
 
             <!-- LOGO -->
-
-            <a
-                href="#home"
-                class="logo"
-            >
-
-                <span class="logo-symbol">
-                    ◆
-                </span>
-
-                <span>
-                    PROJECT
-                </span>
-
-                <small>
-                    Documentation
-                </small>
-
+            <a href="#home" class="logo">
+                <span class="logo-symbol">◆</span>
+                <span>PROJECT</span>
+                <small
+                    data-en="Documentation"
+                    data-pt="Documentação">Documentation</small>
             </a>
 
-
             <!-- HEADER ACTIONS -->
-
             <div class="header-actions">
 
                 <!-- SEARCH -->
-
-                <form
-                    class="search-box"
-                    id="search-form"
-                >
-
+                <form class="search-box" id="search-form">
                     <input
                         type="search"
                         id="search-input"
-                        placeholder="Pesquisar..."
-                        aria-label="Pesquisar"
+                        placeholder="Search..."
+                        aria-label="Search"
+                        data-placeholder-en="Search..."
+                        data-placeholder-pt="Pesquisar..."
+                        data-aria-label-en="Search"
+                        data-aria-label-pt="Pesquisar"
                     >
 
                     <button
                         type="submit"
-                        aria-label="Pesquisar"
-                    >
-                        ⌕
-                    </button>
-
+                        aria-label="Search"
+                        data-aria-label-en="Search"
+                        data-aria-label-pt="Pesquisar"
+                    >⌕</button>
                 </form>
 
+                <!-- LANGUAGE TOGGLE -->
+                <button
+                    class="language-toggle"
+                    id="language-toggle"
+                    type="button"
+                    aria-label="Switch language to Portuguese"
+                    title="Switch language to Portuguese"
+                >EN | PT</button>
 
                 <!-- THEME TOGGLE -->
-
                 <button
                     class="theme-toggle"
                     id="theme-toggle"
                     type="button"
-                    aria-label="Alternar tema"
-                    title="Alternar tema"
+                    aria-label="Switch to light theme"
+                    title="Switch to light theme"
+                    data-aria-label-en="Switch to light theme"
+                    data-aria-label-pt="Mudar para tema claro"
                 >
-
-                    <span
-                        class="theme-icon"
-                        id="theme-icon"
-                    >
-                        ☀
-                    </span>
-
+                    <span class="theme-icon" id="theme-icon">☀</span>
                 </button>
 
-
                 <!-- REPOSITORY -->
-
                 <a
                     href="https://github.com/Richardblasty/Trabalho-Bio/blob/main/index.html"
                     class="repository"
                     target="_blank"
                     rel="noopener noreferrer"
->
-
-                    <span class="github-icon">
-                        ●
-                    </span>
-
-                    Repository
-
+                >
+                    <span class="github-icon">●</span>
+                    <span
+                        data-en="Repository"
+                        data-pt="Repositório">Repository</span>
                 </a>
-
             </div>
-
         </div>
 
-
-        <!-- =================================================
-             NAVIGATION
-        ================================================== -->
-
+        <!-- NAVIGATION -->
         <nav class="main-nav">
-
             <div class="container nav-content">
+                <a href="#home" class="nav-link active"
+                    data-en="Home" data-pt="Início">Home</a>
 
-                <a
-                    href="#home"
-                    class="nav-link active"
-                >
-                    Home
-                </a>
+                <a href="#getting-started" class="nav-link"
+                    data-en="Getting started" data-pt="Primeiros passos">Getting started</a>
 
-                <a
-                    href="#getting-started"
-                    class="nav-link"
-                >
-                    Getting started
-                </a>
+                <a href="#project" class="nav-link"
+                    data-en="Project" data-pt="Projeto">Project</a>
 
-                <a
-                    href="#project"
-                    class="nav-link"
-                >
-                    Project
-                </a>
+                <a href="#installation" class="nav-link"
+                    data-en="Installation" data-pt="Instalação">Installation</a>
 
-                <a
-                    href="#installation"
-                    class="nav-link"
-                >
-                    Installation
-                </a>
+                <a href="#examples" class="nav-link"
+                    data-en="Examples" data-pt="Exemplos">Examples</a>
 
-                <a
-                    href="#examples"
-                    class="nav-link"
-                >
-                    Examples
-                </a>
+                <a href="#help" class="nav-link"
+                    data-en="Help" data-pt="Ajuda">Help</a>
 
-                <a
-                    href="#help"
-                    class="nav-link"
-                >
-                    Help
-                </a>
-
-                <a
-                    href="#cite"
-                    class="nav-link"
-                >
-                    Cite
-                </a>
-
+                <a href="#cite" class="nav-link"
+                    data-en="Cite" data-pt="Citação">Cite</a>
             </div>
-
         </nav>
-
     </header>
 
-
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
-
-    <section
-        class="hero"
-        id="home"
-    >
-
+    <!-- HERO -->
+    <section class="hero" id="home">
         <div class="container hero-content">
 
-
             <!-- HERO TEXT -->
-
             <div class="hero-text">
+                <span class="hero-tag"
+                    data-en="DOCUMENTATION"
+                    data-pt="DOCUMENTAÇÃO">DOCUMENTATION</span>
 
-                <span class="hero-tag">
-                    DOCUMENTATION
-                </span>
+                
+            <h1>
+                <span data-en="Protonation Analysis in CpHMD Simulations"
+                data-pt="Análise de Protonação em Simulações CpHMD">Análise de Protonação em Simulações CpHMD</span>
+            </h1>
 
-                <h1>
-                    Welcome to
-                    <span>Project</span>
-                    <span>documentation!</span>
-                </h1>
-
-                <p>
-                    Explore the documentation, learn how the
-                    project works and find everything you need
-                    to get started.
-                </p>
+            <p
+                data-en="A platform for tracking and thermodynamic analysis of protonation states and molecular microstates, applied to the research and development of biopharmaceuticals and immunotherapies, including anti-CD22 CAR-T."
+                data-pt="Plataforma de rastreamento e análise termodinâmica de estados de protonação e microestados moleculares, aplicada à pesquisa e ao desenvolvimento de biofármacos e imunoterapias, incluindo CAR-T anti-CD22."
+                >
+                Plataforma de rastreamento e análise termodinâmica de estados de protonação e microestados moleculares, aplicada à pesquisa e ao desenvolvimento de biofármacos e imunoterapias, incluindo CAR-T anti-CD22.
+            </p>
 
 
                 <div class="hero-buttons">
+                    <a href="#getting-started" class="btn btn-primary"
+                        data-en="Quick start" data-pt="Início rápido">Quick start</a>
 
-                    <a
-                        href="#getting-started"
-                        class="btn btn-primary"
-                    >
-                        Quick start
-                    </a>
-
-                    <a
-                        href="#help"
-                        class="btn btn-secondary"
-                    >
-                        Help
-                    </a>
-
+                    <a href="#help" class="btn btn-secondary"
+                        data-en="Help" data-pt="Ajuda">Help</a>
                 </div>
-
             </div>
 
-
-<!-- HERO VISUAL -->
-
-<div class="hero-visual">
-
-    <img
-        src="images/proteina-ligante.png"
-        alt="Estrutura molecular de uma proteína com ligante"
-        class="protein-image"
-    >
-
-</div>
-               
-                </div>
-
+            <!-- HERO VISUAL -->
+            <div class="hero-visual">
+                <img
+                    src="images/proteina-ligante.png"
+                    alt="Protein structure with a ligand"
+                    class="protein-image"
+                    data-alt-en="Protein structure with a ligand"
+                    data-alt-pt="Estrutura molecular de uma proteína com ligante"
+                >
             </div>
 
         </div>
 
-
-        <!-- =================================================
-             HERO WAVE
-        ================================================== -->
-
+        <!-- HERO WAVE -->
         <div class="hero-wave">
-
             <svg
                 viewBox="0 0 1440 260"
                 preserveAspectRatio="none"
                 aria-hidden="true"
             >
-
-               <path
-  d="
-    M0 220
-
-    C45 230,
-    105 235,
-    165 220
-
-    C245 195,
-    320 165,
-    410 165
-
-    C500 165,
-    560 215,
-    650 225
-
-    C740 235,
-    805 205,
-    855 175
-
-    C930 148,
-    1005 105,
-    1090 78
-
-    C1185 48,
-    1280 40,
-    1370 42
-
-    C1400 43,
-    1420 44,
-    1440 45
-
-    L1440 305
-    L0 305
-    Z
-"
-></path>
-
+                <path
+                    d="
+                        M0 220
+                        C45 230, 105 235, 165 220
+                        C245 195, 320 165, 410 165
+                        C500 165, 560 215, 650 225
+                        C740 235, 805 205, 855 175
+                        C930 148, 1005 105, 1090 78
+                        C1185 48, 1280 40, 1370 42
+                        C1400 43, 1420 44, 1440 45
+                        L1440 305
+                        L0 305
+                        Z
+                    "
+                ></path>
             </svg>
-
         </div>
-
     </section>
 
-
-    <!-- =====================================================
-         DOCUMENTATION
-    ====================================================== -->
-
+    <!-- DOCUMENTATION -->
     <main class="documentation">
-
         <div class="container documentation-layout">
 
-
             <!-- SIDEBAR -->
-
             <aside class="sidebar">
-
-                <div class="sidebar-title">
-                    Documentation
-                </div>
+                <div class="sidebar-title"
+                    data-en="Documentation"
+                    data-pt="Documentação">Documentation</div>
 
                 <ul class="sidebar-menu">
-
                     <li>
-                        <a
-                            href="#getting-started"
-                            class="sidebar-link active"
-                        >
-                            Getting started
-                        </a>
+                        <a href="#getting-started" class="sidebar-link active"
+                            data-en="Getting started" data-pt="Primeiros passos">Getting started</a>
                     </li>
-
                     <li>
-                        <a
-                            href="#project"
-                            class="sidebar-link"
-                        >
-                            Project
-                        </a>
+                        <a href="#project" class="sidebar-link"
+                            data-en="Project" data-pt="Projeto">Project</a>
                     </li>
-
                     <li>
-                        <a
-                            href="#installation"
-                            class="sidebar-link"
-                        >
-                            Installation
-                        </a>
+                        <a href="#installation" class="sidebar-link"
+                            data-en="Installation" data-pt="Instalação">Installation</a>
                     </li>
-
                     <li>
-                        <a
-                            href="#examples"
-                            class="sidebar-link"
-                        >
-                            Examples
-                        </a>
+                        <a href="#examples" class="sidebar-link"
+                            data-en="Examples" data-pt="Exemplos">Examples</a>
                     </li>
-
                     <li>
-                        <a
-                            href="#help"
-                            class="sidebar-link"
-                        >
-                            Help
-                        </a>
+                        <a href="#help" class="sidebar-link"
+                            data-en="Help" data-pt="Ajuda">Help</a>
                     </li>
-
                     <li>
-                        <a
-                            href="#cite"
-                            class="sidebar-link"
-                        >
-                            Cite
-                        </a>
+                        <a href="#cite" class="sidebar-link"
+                            data-en="Cite" data-pt="Citação">Cite</a>
                     </li>
-
                 </ul>
-
             </aside>
 
-
             <!-- DOCUMENTATION CONTENT -->
-
             <div class="documentation-content">
 
-
                 <!-- GETTING STARTED -->
+                <section class="doc-section" id="getting-started">
+                    <span class="section-label"
+                        data-en="OVERVIEW" data-pt="VISÃO GERAL">OVERVIEW</span>
 
-                <section
-                    class="doc-section"
-                    id="getting-started"
-                >
+                    <h2 data-en="Project Overview" data-pt="Visão Geral do Projeto">Project Overview</h2>
 
-                    <span class="section-label">
-                        GETTING STARTED
-                    </span>
-
-                    <h2>
-                        Getting started
-                    </h2>
-
-                    <p>
-                        Welcome to the project documentation.
-                        Here you can find the main information
-                        needed to understand the project and
-                        start using its features.
+                    <p
+                        data-en="The CpHMD / MM/PBSA suite aims to standardize protonation analysis and binding free-energy calculations for the scFv m971 × CD22 antibody–antigen system."
+                        data-pt="A suíte CpHMD / MM/PBSA busca padronizar a análise de protonação e os cálculos de energia livre de ligação para o sistema anticorpo–antígeno scFv m971 × CD22.">
+                        The CpHMD / MM/PBSA suite aims to standardize protonation analysis and binding free-energy calculations for the scFv m971 × CD22 antibody–antigen system.
                     </p>
-
-                    <p>
-                        Follow the sections below to learn
-                        about installation, usage and examples.
-                    </p>
-
 
                     <div class="info-card">
-
-                        <div class="info-icon">
-                            i
-                        </div>
-
+                        <div class="info-icon">i</div>
                         <div>
-
-                            <strong>
-                                Before you begin
-                            </strong>
-
-                            <p>
-                                Make sure you have all the
-                                required dependencies and
-                                files available before
-                                continuing.
+                            <strong data-en="Scientific Objective" data-pt="Objetivo Científico">Scientific Objective</strong>
+                            <p
+                                data-en="Provide a traceable workflow for protonation analysis, molecular simulation processing and free-energy validation."
+                                data-pt="Disponibilizar um fluxo rastreável para análise de protonação, processamento de simulações moleculares e validação de energia livre.">
+                                Provide a traceable workflow for protonation analysis, molecular simulation processing and free-energy validation.
                             </p>
-
                         </div>
-
                     </div>
-
                 </section>
 
+                <!-- PROJECT ARCHITECTURE -->
+                <section class="doc-section" id="project">
+                    <span class="section-label"
+                        data-en="ARCHITECTURE" data-pt="ARQUITETURA">ARCHITECTURE</span>
 
-                <!-- PROJECT -->
+                    <h2 data-en="System Architecture" data-pt="Arquitetura do Sistema">System Architecture</h2>
 
-                <section
-                    class="doc-section"
-                    id="project"
-                >
-
-                    <span class="section-label">
-                        PROJECT
-                    </span>
-
-                    <h2>
-                        Project overview
-                    </h2>
-
-                    <p>
-                        This section presents the main
-                        concepts and organization of the
-                        project.
+                    <p
+                        data-en="The system consists of three main products that connect protonation analysis, GROMACS processing and free-energy data validation."
+                        data-pt="O sistema consiste em três produtos principais que conectam a análise de protonação, o processamento GROMACS e a validação dos dados de energia livre.">
+                        The system consists of three main products that connect protonation analysis, GROMACS processing and free-energy data validation.
                     </p>
-
 
                     <div class="feature-grid">
-
-
                         <article class="feature-card">
-
-                            <div class="feature-number">
-                                01
-                            </div>
-
-                            <h3>
-                                Structure
-                            </h3>
-
-                            <p>
-                                Understand how the main
-                                components of the project
-                                are organized.
+                            <div class="feature-number">01</div>
+                            <h3>protonation-analysis</h3>
+                            <p
+                                data-en="Processes XVG files, classifies protonation states, applies hysteresis and extracts TRR microtrajectories."
+                                data-pt="Processa arquivos XVG, classifica estados de protonação, aplica histerese e extrai microtrajetórias TRR.">
+                                Processes XVG files, classifies protonation states, applies hysteresis and extracts TRR microtrajectories.
                             </p>
-
                         </article>
 
-
                         <article class="feature-card">
-
-                            <div class="feature-number">
-                                02
-                            </div>
-
-                            <h3>
-                                Workflow
-                            </h3>
-
-                            <p>
-                                Learn the basic workflow and
-                                how the different parts work
-                                together.
+                            <div class="feature-number">02</div>
+                            <h3>gromacs-pipeline</h3>
+                            <p
+                                data-en="Prepares GROMACS structures and trajectories and automates MM/PBSA calculations in HPC environments."
+                                data-pt="Prepara estruturas e trajetórias GROMACS e automatiza cálculos MM/PBSA em ambientes HPC.">
+                                Prepares GROMACS structures and trajectories and automates MM/PBSA calculations in HPC environments.
                             </p>
-
                         </article>
 
-
                         <article class="feature-card">
-
-                            <div class="feature-number">
-                                03
-                            </div>
-
-                            <h3>
-                                Resources
-                            </h3>
-
-                            <p>
-                                Access examples and additional
-                                resources throughout the
-                                documentation.
+                            <div class="feature-number">03</div>
+                            <h3>dg-analysis</h3>
+                            <p
+                                data-en="Aggregates free-energy results and checks data integrity and provenance."
+                                data-pt="Agrega resultados de energia livre e verifica a integridade e a proveniência dos dados.">
+                                Aggregates free-energy results and checks data integrity and provenance.
                             </p>
-
                         </article>
-
-
                     </div>
-
                 </section>
 
+                <!-- PRODUCT 1 -->
+                <section class="doc-section" id="installation">
+                    <span class="section-label"
+                        data-en="PRODUCT 1" data-pt="PRODUTO 1">PRODUCT 1</span>
 
-                <!-- INSTALLATION -->
+                    <h2>Protonation Analysis</h2>
 
-                <section
-                    class="doc-section"
-                    id="installation"
-                >
-
-                    <span class="section-label">
-                        INSTALLATION
-                    </span>
-
-                    <h2>
-                        Installation
-                    </h2>
-
-                    <p>
-                        Follow the instructions below to
-                        prepare the project environment.
+                    <p
+                        data-en="This module analyzes protonation states, hysteresis, histidine microstates and molecular trajectory segments."
+                        data-pt="Este módulo analisa estados de protonação, histerese, microestados da histidina e segmentos de trajetórias moleculares.">
+                        This module analyzes protonation states, hysteresis, histidine microstates and molecular trajectory segments.
                     </p>
 
+                    <h3 data-en="Protonation State Classification" data-pt="Classificação dos Estados de Protonação">Protonation State Classification</h3>
 
-                    <div class="code-block">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th data-en="State" data-pt="Estado">State</th>
+                                <th data-en="Lambda Criterion" data-pt="Critério Lambda">Lambda Criterion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-en="Protonated" data-pt="Protonado">Protonated</td>
+                                <td>λ ≤ 0.2</td>
+                            </tr>
+                            <tr>
+                                <td data-en="Transition Zone" data-pt="Zona de Transição">Transition Zone</td>
+                                <td>0.2 &lt; λ &lt; 0.8</td>
+                            </tr>
+                            <tr>
+                                <td data-en="Deprotonated" data-pt="Desprotonado">Deprotonated</td>
+                                <td>λ ≥ 0.8</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                        <div class="code-header">
+                    <p
+                        data-en="Lambda values outside the interval [0, 1] are retained without clamping."
+                        data-pt="Valores de lambda fora do intervalo [0, 1] são mantidos sem truncamento.">
+                        Lambda values outside the interval [0, 1] are retained without clamping.
+                    </p>
 
-                            <span>
-                                terminal
+                    <h3 data-en="Hysteresis and Microstates" data-pt="Histerese e Microestados">Hysteresis and Microstates</h3>
+
+                    <p
+                        data-en="Transition-zone frames are not discarded during microstate analysis. The effective state inherits the last confirmed physical state."
+                        data-pt="Frames na zona de transição não são descartados durante a análise de microestados. O estado efetivo herda o último estado físico confirmado.">
+                        Transition-zone frames are not discarded during microstate analysis. The effective state inherits the last confirmed physical state.
+                    </p>
+
+                    <ul>
+                        <li>
+                            <strong>state_raw:</strong>
+                            <span
+                                data-en="used to analyze dynamics, fluctuations and time in the transition zone."
+                                data-pt="utilizado para analisar dinâmica, flutuações e tempo na zona de transição.">
+                                used to analyze dynamics, fluctuations and time in the transition zone.
                             </span>
+                        </li>
+                        <li>
+                            <strong data-en="Effective state:" data-pt="Estado efetivo:">Effective state:</strong>
+                            <span
+                                data-en="used to define microstates and select frames for MM/PBSA."
+                                data-pt="utilizado para definir microestados e selecionar frames para MM/PBSA.">
+                                used to define microstates and select frames for MM/PBSA.
+                            </span>
+                        </li>
+                    </ul>
 
-                            <button
-                                class="copy-button"
-                                type="button"
-                            >
-                                Copy
-                            </button>
+                    <h3 data-en="Histidine Tautomers" data-pt="Tautômeros da Histidina">Histidine Tautomers</h3>
 
-                        </div>
-
-                        <pre><code>git clone repository
-cd project
-npm install
-npm start</code></pre>
-
-                    </div>
-
+                    <p
+                        data-en="The HSPT group is evaluated cooperatively under the physical constraint Σλ ≈ 1. HSP, HSD and HSE retain distinct identities in microstate signatures."
+                        data-pt="O grupo HSPT é avaliado cooperativamente sob a restrição física Σλ ≈ 1. HSP, HSD e HSE mantêm identidades distintas nas assinaturas dos microestados.">
+                        The HSPT group is evaluated cooperatively under the physical constraint Σλ ≈ 1. HSP, HSD and HSE retain distinct identities in microstate signatures.
+                    </p>
                 </section>
 
+                <!-- PRODUCT 2 -->
+                <section class="doc-section" id="examples">
+                    <span class="section-label"
+                        data-en="PRODUCT 2" data-pt="PRODUTO 2">PRODUCT 2</span>
 
-                <!-- EXAMPLES -->
+                    <h2>GROMACS Pipeline and MM/PBSA</h2>
 
-                <section
-                    class="doc-section"
-                    id="examples"
-                >
-
-                    <span class="section-label">
-                        EXAMPLES
-                    </span>
-
-                    <h2>
-                        Examples
-                    </h2>
-
-                    <p>
-                        Explore examples showing how the
-                        project can be used in different
-                        situations.
+                    <p
+                        data-en="This module prepares molecular structures, processes trajectories and runs binding free-energy calculations in high-performance computing environments."
+                        data-pt="Este módulo prepara estruturas moleculares, processa trajetórias e executa cálculos de energia livre de ligação em ambientes de computação de alto desempenho.">
+                        This module prepares molecular structures, processes trajectories and runs binding free-energy calculations in high-performance computing environments.
                     </p>
 
+                    <h3 data-en="Processing Workflow" data-pt="Fluxo de Processamento">Processing Workflow</h3>
 
-                    <div class="example-list">
-
-
-                        <div class="example-item">
-
-                            <span>
-                                01
+                    <ol>
+                        <li>
+                            <strong>pdb2gmx:</strong>
+                            <span data-en="generates the topology and structure files." data-pt="gera os arquivos de topologia e estrutura.">
+                                generates the topology and structure files.
                             </span>
-
-                            <div>
-
-                                <h3>
-                                    Basic example
-                                </h3>
-
-                                <p>
-                                    A simple example for getting
-                                    familiar with the project.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="example-item">
-
-                            <span>
-                                02
+                        </li>
+                        <li>
+                            <strong>grompp:</strong>
+                            <span data-en="creates the simulation run input file." data-pt="cria o arquivo de entrada para execução da simulação.">
+                                creates the simulation run input file.
                             </span>
-
-                            <div>
-
-                                <h3>
-                                    Advanced example
-                                </h3>
-
-                                <p>
-                                    A more complete example
-                                    demonstrating additional
-                                    functionality.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="example-item">
-
-                            <span>
-                                03
+                        </li>
+                        <li>
+                            <strong>make_ndx:</strong>
+                            <span data-en="configures receptor and ligand index groups." data-pt="configura os grupos de índice do receptor e do ligante.">
+                                configures receptor and ligand index groups.
                             </span>
+                        </li>
+                        <li>
+                            <strong>trjconv:</strong>
+                            <span data-en="processes periodic boundary conditions using the documented whole → mol sequence, without centering."
+                                data-pt="processa condições periódicas usando a sequência documentada whole → mol, sem centralização.">
+                                processes periodic boundary conditions using the documented whole → mol sequence, without centering.
+                            </span>
+                        </li>
+                        <li>
+                            <strong>gmx_MMPBSA:</strong>
+                            <span data-en="calculates binding free energy using the configured implicit membrane parameters."
+                                data-pt="calcula a energia livre de ligação usando os parâmetros configurados para membrana implícita.">
+                                calculates binding free energy using the configured implicit membrane parameters.
+                            </span>
+                        </li>
+                    </ol>
 
-                            <div>
+                    <h3 data-en="HPC Configuration" data-pt="Configuração HPC">HPC Configuration</h3>
 
-                                <h3>
-                                    Practical example
-                                </h3>
-
-                                <p>
-                                    An example focused on a
-                                    practical project workflow.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-                </section>
-
-
-                <!-- HELP -->
-
-                <section
-                    class="doc-section"
-                    id="help"
-                >
-
-                    <span class="section-label">
-                        HELP
-                    </span>
-
-                    <h2>
-                        Help
-                    </h2>
-
-                    <p>
-                        If you have questions or encounter
-                        problems, consult the available
-                        documentation and resources.
+                    <p
+                        data-en="The gromacs-pipeline.cfg file supports configurable worker counts and OMP/MPI parameters. The pipeline can also use membrana.json generated by Product 1 when membrane support is applicable."
+                        data-pt="O arquivo gromacs-pipeline.cfg permite configurar o número de workers e os parâmetros OMP/MPI. O pipeline também pode utilizar membrana.json gerado pelo Produto 1 quando o suporte a membrana for aplicável.">
+                        The gromacs-pipeline.cfg file supports configurable worker counts and OMP/MPI parameters. The pipeline can also use membrana.json generated by Product 1 when membrane support is applicable.
                     </p>
 
-
-                    <div class="help-card">
-
-                        <div class="help-card-icon">
-                            ?
-                        </div>
-
+                    <div class="info-card">
+                        <div class="info-icon">i</div>
                         <div>
-
-                            <h3>
-                                Need help?
-                            </h3>
-
-                            <p>
-                                Check the documentation,
-                                examples and repository for
-                                additional information.
+                            <strong data-en="Execution note" data-pt="Nota de execução">Execution note</strong>
+                            <p
+                                data-en="Use the configuration files and version-specific instructions from the project repository before running production calculations."
+                                data-pt="Utilize os arquivos de configuração e as instruções específicas de cada versão do repositório antes de executar cálculos de produção.">
+                                Use the configuration files and version-specific instructions from the project repository before running production calculations.
                             </p>
-
                         </div>
-
                     </div>
-
                 </section>
 
+                <!-- PRODUCT 3 -->
+                <section class="doc-section" id="help">
+                    <span class="section-label"
+                        data-en="PRODUCT 3" data-pt="PRODUTO 3">PRODUCT 3</span>
 
-                <!-- CITE -->
+                    <h2>ΔG Analysis and Validation</h2>
 
-                <section
-                    class="doc-section"
-                    id="cite"
-                >
-
-                    <span class="section-label">
-                        CITE
-                    </span>
-
-                    <h2>
-                        Cite the project
-                    </h2>
-
-                    <p>
-                        If you use this project in your work,
-                        you can reference it using the
-                        appropriate citation.
+                    <p
+                        data-en="This module aggregates free-energy results and verifies data integrity and provenance before a batch is accepted for reporting."
+                        data-pt="Este módulo agrega resultados de energia livre e verifica a integridade e a proveniência dos dados antes da aceitação de um lote para relatório.">
+                        This module aggregates free-energy results and verifies data integrity and provenance before a batch is accepted for reporting.
                     </p>
 
+                    <h3 data-en="Binding Free-Energy Relationship" data-pt="Relação da Energia Livre de Ligação">Binding Free-Energy Relationship</h3>
 
                     <div class="citation-box">
-
-                        <code>
-                            Project Documentation. Project
-                            documentation and resources.
-                        </code>
-
+                        <code>ΔGbinding = Gcomplex − Greceptor − Gligand</code>
                     </div>
 
+                    <h3 data-en="Data Integrity Contracts" data-pt="Contratos de Integridade dos Dados">Data Integrity Contracts</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th data-en="Contracts" data-pt="Contratos">Contracts</th>
+                                <th data-en="Validation Scope" data-pt="Escopo da Validação">Validation Scope</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>C1–C5</td>
+                                <td
+                                    data-en="Frame counts, temporal alignment, system identity, energy consistency and CSV/DAT agreement."
+                                    data-pt="Contagem de frames, alinhamento temporal, identidade do sistema, consistência das energias e concordância entre CSV/DAT.">
+                                    Frame counts, temporal alignment, system identity, energy consistency and CSV/DAT agreement.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>C6</td>
+                                <td
+                                    data-en="Consistency of Poisson–Boltzmann parameters across folders."
+                                    data-pt="Consistência dos parâmetros de Poisson–Boltzmann entre as pastas.">
+                                    Consistency of Poisson–Boltzmann parameters across folders.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>C7–C8</td>
+                                <td
+                                    data-en="Microstate signature validation and reconstruction from the corrected PDB."
+                                    data-pt="Validação das assinaturas dos microestados e reconstrução a partir do PDB corrigido.">
+                                    Microstate signature validation and reconstruction from the corrected PDB.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>C9–C10</td>
+                                <td
+                                    data-en="PBC processing provenance and consistency of software versions and membrane modes."
+                                    data-pt="Proveniência do processamento PBC e consistência das versões de software e dos modos de membrana.">
+                                    PBC processing provenance and consistency of software versions and membrane modes.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- TECHNICAL GOVERNANCE -->
+                <section class="doc-section" id="governance">
+                    <span class="section-label"
+                        data-en="TECHNICAL GOVERNANCE" data-pt="GOVERNANÇA TÉCNICA">TECHNICAL GOVERNANCE</span>
+
+                    <h2 data-en="Defect Reports and Methodological Decisions"
+                        data-pt="Relatórios de Defeitos e Decisões Metodológicas">
+                        Defect Reports and Methodological Decisions
+                    </h2>
+
+                    <h3 data-en="Selected Defect Reports (RDC)"
+                        data-pt="Relatórios de Defeitos Selecionados (RDC)">
+                        Selected Defect Reports (RDC)
+                    </h3>
+
+                    <ul>
+                        <li><strong>RDC-022:</strong> <span
+                            data-en="Change to the whole → mol PBC workflow."
+                            data-pt="Alteração do fluxo PBC whole → mol.">Change to the whole → mol PBC workflow.</span></li>
+                        <li><strong>RDC-025:</strong> <span
+                            data-en="Investigation of SIGILL failures on older CPUs and configurable execution resources."
+                            data-pt="Investigação de falhas SIGILL em CPUs mais antigas e de recursos de execução configuráveis.">Investigation of SIGILL failures on older CPUs and configurable execution resources.</span></li>
+                        <li><strong>RDC-027:</strong> <span
+                            data-en="Implementation of P2 provenance contracts C9 and C10 in P3."
+                            data-pt="Implementação dos contratos de proveniência C9 e C10 de P2 em P3.">Implementation of P2 provenance contracts C9 and C10 in P3.</span></li>
+                    </ul>
+
+                    <h3 data-en="Methodological Decisions (RDM)"
+                        data-pt="Decisões Metodológicas (RDM)">
+                        Methodological Decisions (RDM)
+                    </h3>
+
+                    <ul>
+                        <li><strong>RDM-001:</strong> <span
+                            data-en="Initial ternary classification policy."
+                            data-pt="Política inicial de classificação ternária.">Initial ternary classification policy.</span></li>
+                        <li><strong>RDM-003:</strong> <span
+                            data-en="Hysteresis and histidine tautomer signatures."
+                            data-pt="Histerese e assinaturas dos tautômeros da histidina.">Hysteresis and histidine tautomer signatures.</span></li>
+                    </ul>
+
+                    <p
+                        data-en="Each record should link to its original document, version, rationale and implementation evidence."
+                        data-pt="Cada registro deve apontar para o documento original, a versão, a justificativa e as evidências de implementação.">
+                        Each record should link to its original document, version, rationale and implementation evidence.
+                    </p>
+                </section>
+
+                <!-- TEAM AND INFRASTRUCTURE -->
+                <section class="doc-section" id="team">
+                    <span class="section-label"
+                        data-en="RESEARCH TEAM" data-pt="EQUIPE DE PESQUISA">RESEARCH TEAM</span>
+
+                    <h2 data-en="Team and Computing Infrastructure"
+                        data-pt="Equipe e Infraestrutura Computacional">
+                        Team and Computing Infrastructure
+                    </h2>
+
+                    <ul>
+                        <li><strong data-en="Principal Researcher / Advisor:"
+                            data-pt="Pesquisador Principal / Orientador:">Principal Researcher / Advisor:</strong> Prof. Dr. Marcos Lourenzoni</li>
+                        <li><strong data-en="Developer / PhD Researcher:"
+                            data-pt="Desenvolvedor / Pesquisador de Doutorado:">Developer / PhD Researcher:</strong> Prof. Sandro Mesquita</li>
+                        <li><strong data-en="Developer / Researcher:"
+                            data-pt="Desenvolvedor / Pesquisador:">Developer / Researcher:</strong> Alice Queiroz</li>
+                    </ul>
+
+                    <p>
+                        <strong data-en="Research Group:"
+                            data-pt="Grupo de Pesquisa:">Research Group:</strong>
+                        GEPEsS — Protein Engineering and Health Solutions Research Group.
+                    </p>
+
+                    <p>
+                        <strong data-en="Institution:"
+                            data-pt="Instituição:">Institution:</strong> Fiocruz Ceará.
+                    </p>
+
+                    <p>
+                        <strong data-en="Computing Infrastructure:"
+                            data-pt="Infraestrutura Computacional:">Computing Infrastructure:</strong>
+                        HPC cluster gepess3, including gn009/gn010 nodes with Gold 6130 processors.
+                    </p>
+                </section>
+
+                <!-- REFERENCES -->
+                <section class="doc-section" id="cite">
+                    <span class="section-label"
+                        data-en="REFERENCES" data-pt="REFERÊNCIAS">REFERENCES</span>
+
+                    <h2 data-en="Citation and Project Resources"
+                        data-pt="Citação e Recursos do Projeto">
+                        Citation and Project Resources
+                    </h2>
+
+                    <p
+                        data-en="Consult the original project documents, source code, version history, RDC/RDM records and scientific references for complete technical details."
+                        data-pt="Consulte os documentos originais do projeto, o código-fonte, o histórico de versões, os registros RDC/RDM e as referências científicas para obter os detalhes técnicos completos.">
+                        Consult the original project documents, source code, version history, RDC/RDM records and scientific references for complete technical details.
+                    </p>
+
+                    <div class="citation-box">
+                        <code>GEPEsS / Fiocruz Ceará — CpHMD / MM/PBSA Technical Documentation.</code>
+                    </div>
                 </section>
 
             </div>
-
         </div>
-
     </main>
 
-
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
-
+    <!-- FOOTER -->
     <footer class="footer">
-
         <div class="container footer-content">
 
-
             <div class="footer-brand">
-
-                <div class="footer-logo">
-                    PROJECT
-                </div>
-
-                <p>
-                    Project documentation.
-                </p>
-
+                <div class="footer-logo">PROJECT</div>
+                <p data-en="Project documentation." data-pt="Documentação do projeto.">Project documentation.</p>
             </div>
-
 
             <div class="footer-links">
-
-                <a href="#home">
-                    Home
-                </a>
-
-                <a href="#getting-started">
-                    Documentation
-                </a>
-
-                <a href="#help">
-                    Help
-                </a>
-
-                <a href="#cite">
-                    Cite
-                </a>
-
+                <a href="#home" data-en="Home" data-pt="Início">Home</a>
+                <a href="#getting-started" data-en="Documentation" data-pt="Documentação">Documentation</a>
+                <a href="#help" data-en="Help" data-pt="Ajuda">Help</a>
+                <a href="#cite" data-en="Cite" data-pt="Citação">Cite</a>
             </div>
-
         </div>
-
 
         <div class="container footer-bottom">
+            <span data-en="© 2026 Project Documentation"
+                data-pt="© 2026 Documentação do Projeto">© 2026 Project Documentation</span>
 
-            <span>
-                © 2026 Project Documentation
-            </span>
-
-            <span>
-                Documentation
-            </span>
-
+            <span data-en="Documentation" data-pt="Documentação">Documentation</span>
         </div>
-
     </footer>
 
-
     <script src="script.js"></script>
-
 <script src="version-selector.js"></script>
 </body>
-
 </html>
