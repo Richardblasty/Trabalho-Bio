@@ -12,10 +12,11 @@ Site publicado: <https://richardblasty.github.io/Trabalho-Bio/>
 ```
 .
 ├── index.html                    # Página principal da documentação (HTML estático)
-├── style.css                     # Estilos da página (inclui o tema escuro)
-├── script.js                     # Alternância de tema claro/escuro (salva em localStorage)
+├── style.css                     # Estilos (tokens de design, temas claro/escuro, responsividade)
+├── script.js                     # Tema, idioma EN/PT, menu móvel, busca e seção atual
 ├── version-selector.js           # Seletor de versões injetado no site publicado
-├── proteina-ligante.png          # Imagem da estrutura proteína–ligante usada no topo da página
+├── proteina-ligante.png          # Imagem original da estrutura proteína–ligante (fallback)
+├── images/                       # Versões WebP otimizadas da imagem (480, 640 e 1160 px)
 ├── docs/                         # Textos do trabalho em Markdown (introdução, metodologia, ...)
 ├── scripts/
 │   └── prepare_site.py           # Monta a pasta .versioned-docs/ usada no build
@@ -27,13 +28,30 @@ Site publicado: <https://richardblasty.github.io/Trabalho-Bio/>
 
 ### Página (`index.html`)
 
-A página é uma documentação em HTML puro, com:
+A página é uma documentação em HTML puro, sem dependências externas, com:
 
-- barra de novidades e aviso de versão no topo;
-- cabeçalho com logo, campo de busca e botão de tema claro/escuro;
-- seção inicial com a imagem da proteína com ligante;
-- seções **Getting started**, **Project overview** (estrutura, fluxo de trabalho e recursos),
-  **Installation**, **Examples** (básico, avançado e prático), **Help** e **Cite the project**.
+- cabeçalho fixo com busca, seletor de versão, idioma EN/PT, tema claro/escuro e link
+  para o repositório; abaixo de 1024 px esses controles ficam num menu;
+- seção inicial com o objetivo do projeto, o fluxo dos três produtos e a imagem da proteína;
+- seções **Overview**, **Architecture** (entradas e saídas de cada produto), **CpHMD**
+  (Produto 1), **GROMACS / MM-PBSA** (Produto 2), **ΔG Analysis** (Produto 3),
+  **Governance** (registros RDC/RDM com data, versão, status e link para a ficha original),
+  **Team & HPC** e **References**;
+- índice lateral "Nesta página" (a partir de 1024 px) que destaca a seção atual.
+
+Os IDs das seções (`#getting-started`, `#project`, `#installation`, `#examples`, `#help`,
+`#governance`, `#team`, `#cite`) foram mantidos para não quebrar links já publicados.
+
+**Idioma.** Cada texto traduzível tem os atributos `data-en` e `data-pt`. Quando o texto
+contém marcação (`<code>`, links), o elemento recebe também `data-html` e o `script.js`
+usa `innerHTML`. A escolha fica salva em `localStorage` (`project-language`).
+
+**Tema.** Um script inline no `<head>` aplica `data-theme` em `<html>` antes da primeira
+pintura, usando a escolha salva (`project-theme`) ou a preferência do sistema.
+
+**Busca.** O índice é montado a partir do texto da própria página (títulos, parágrafos,
+linhas de tabela), no idioma atual e no outro idioma. Atalho `/`; setas e Enter navegam
+pelos resultados.
 
 ### Textos do trabalho (`docs/`)
 

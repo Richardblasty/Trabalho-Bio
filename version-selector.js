@@ -13,13 +13,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   const selector = document.createElement("select");
 
   selector.id = "version-selector";
-  selector.setAttribute("aria-label", "Selecionar versão");
-
-  selector.style.padding = "8px 12px";
-  selector.style.borderRadius = "6px";
-  selector.style.cursor = "pointer";
-  selector.style.background = "#ffffff";
-  selector.style.color = "#222222";
+  selector.className = "version-select";
+  selector.setAttribute(
+    "aria-label",
+    document.documentElement.lang === "pt-BR"
+      ? "Versão da documentação"
+      : "Documentation version"
+  );
 
   try {
     const response = await fetch(base + "versions.json");

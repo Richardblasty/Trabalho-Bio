@@ -1,171 +1,221 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-en="Project Documentation" data-pt="Documentação do Projeto">Project Documentation</title>
+
+    <title data-en="Trabalho-Bio — CpHMD / MM/PBSA Technical Documentation"
+        data-pt="Trabalho-Bio — Documentação Técnica CpHMD / MM/PBSA">Trabalho-Bio — CpHMD / MM/PBSA Technical Documentation</title>
+
+    <meta name="description"
+        content="Technical documentation of the CpHMD / MM/PBSA suite (GEPEsS / Fiocruz Ceará): protonation analysis, GROMACS processing and binding free-energy validation for the scFv m971 × CD22 system."
+        data-content-en="Technical documentation of the CpHMD / MM/PBSA suite (GEPEsS / Fiocruz Ceará): protonation analysis, GROMACS processing and binding free-energy validation for the scFv m971 × CD22 system."
+        data-content-pt="Documentação técnica da suíte CpHMD / MM/PBSA (GEPEsS / Fiocruz Ceará): análise de protonação, processamento GROMACS e validação da energia livre de ligação para o sistema scFv m971 × CD22.">
+
+    <meta name="theme-color" content="#0b0d10">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Trabalho-Bio">
+    <meta property="og:title" content="Trabalho-Bio — CpHMD / MM/PBSA Technical Documentation">
+    <meta property="og:description"
+        content="Protonation analysis, GROMACS processing and binding free-energy validation for the scFv m971 × CD22 system.">
+
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b0d10'/%3E%3Cpath d='M16 6l9 10-9 10-9-10z' fill='%23f7941d'/%3E%3C/svg%3E">
+
+    <!-- Apply the saved (or system) theme before the first paint. -->
+    <script>
+        (function () {
+            var theme = null;
+            try { theme = localStorage.getItem("project-theme"); } catch (error) { }
+            if (theme !== "dark" && theme !== "light") {
+                theme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            }
+            document.documentElement.setAttribute("data-theme", theme);
+        })();
+    </script>
+
+    <!-- The hero image is the largest element on wide screens only; phones load it normally. -->
+    <link rel="preload" as="image" type="image/webp" media="(min-width: 768px)"
+        href="images/proteina-ligante-640.webp"
+        imagesrcset="images/proteina-ligante-480.webp 480w, images/proteina-ligante-640.webp 640w, images/proteina-ligante-1160.webp 1160w"
+        imagesizes="min(46vw, 560px)" fetchpriority="high">
+
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
 
-    <!-- NEWS BAR -->
-    <div class="news-bar">
-        <div class="container news-content">
-            <span class="news-label" data-en="NEWS" data-pt="NOVIDADES">NEWS</span>
-
-            <span class="news-text"
-                data-en="Welcome to the project documentation."
-                data-pt="Bem-vindo à documentação do projeto.">Welcome to the project documentation.</span>
-
-            <a href="#getting-started" class="news-link"
-                data-en="Learn more →" data-pt="Saiba mais →">Learn more →</a>
-        </div>
-    </div>
-
-    <!-- VERSION WARNING -->
-    <div class="version-warning">
-        <div class="container">
-            <strong data-en="Current version:" data-pt="Versão atual:">Current version:</strong>
-
-            <span
-                data-en="This documentation provides information, examples and guidelines about the project."
-                data-pt="Esta documentação apresenta informações, exemplos e orientações sobre o projeto.">
-                This documentation provides information, examples and guidelines about the project.
-            </span>
-        </div>
-    </div>
+    <a class="skip-link" href="#content" data-en="Skip to content" data-pt="Pular para o conteúdo">Skip to content</a>
 
     <!-- HEADER -->
-    <header class="header">
-        <div class="container header-content">
+    <header class="site-header" id="top">
+        <div class="container header-grid">
 
-            <!-- LOGO -->
-            <a href="#home" class="logo">
-                <span class="logo-symbol">◆</span>
-                <span>PROJECT</span>
-                <small data-en="Documentation" data-pt="Documentação">Documentation</small>
+            <a href="#top" class="brand">
+                <span class="brand-symbol" aria-hidden="true">◆</span>
+                <span class="brand-name">Trabalho-Bio</span>
+                <span class="brand-tagline">CpHMD · MM/PBSA</span>
             </a>
 
-            <!-- HEADER ACTIONS -->
-            <div class="header-actions">
+            <button class="icon-button search-launch" id="search-launch" type="button"
+                aria-label="Search the documentation"
+                data-aria-label-en="Search the documentation"
+                data-aria-label-pt="Pesquisar na documentação">
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+
+            <button class="menu-toggle" id="menu-toggle" type="button"
+                aria-expanded="false" aria-controls="site-menu">
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <span data-en="Menu" data-pt="Menu">Menu</span>
+            </button>
+
+            <div class="site-menu" id="site-menu">
 
                 <!-- SEARCH -->
-                <form class="search-box" id="search-form">
-                    <input
-                        type="search"
-                        id="search-input"
-                        placeholder="Search..."
-                        aria-label="Search"
-                        data-placeholder-en="Search..."
-                        data-placeholder-pt="Pesquisar..."
-                        data-aria-label-en="Search"
-                        data-aria-label-pt="Pesquisar"
-                    >
+                <div class="search" role="search">
+                    <label class="visually-hidden" for="search-input"
+                        data-en="Search the documentation"
+                        data-pt="Pesquisar na documentação">Search the documentation</label>
+
+                    <div class="search-field">
+                        <svg class="search-icon" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+
+                        <input
+                            type="search"
+                            id="search-input"
+                            autocomplete="off"
+                            spellcheck="false"
+                            role="combobox"
+                            aria-autocomplete="list"
+                            aria-expanded="false"
+                            aria-controls="search-results"
+                            aria-describedby="search-hint"
+                            placeholder="Search terms, e.g. RDC-025, trjconv, λ"
+                            data-placeholder-en="Search terms, e.g. RDC-025, trjconv, λ"
+                            data-placeholder-pt="Busque termos, ex.: RDC-025, trjconv, λ"
+                        >
+
+                        <kbd class="search-shortcut" aria-hidden="true">/</kbd>
+                    </div>
+
+                    <p class="visually-hidden" id="search-hint"
+                        data-en="Type at least 2 characters. Use the arrow keys to move through results and Enter to open one. Press / to focus the search."
+                        data-pt="Digite pelo menos 2 caracteres. Use as setas para percorrer os resultados e Enter para abrir um deles. Pressione / para ir à busca.">Type at least 2 characters. Use the arrow keys to move through results and Enter to open one. Press / to focus the search.</p>
+
+                    <ul class="search-results" id="search-results" role="listbox" hidden
+                        aria-label="Search results"
+                        data-aria-label-en="Search results"
+                        data-aria-label-pt="Resultados da busca"></ul>
+
+                    <p class="visually-hidden" id="search-status" role="status" aria-live="polite"></p>
+                </div>
+
+                <!-- NAVIGATION -->
+                <nav class="primary-nav" aria-label="Documentation sections"
+                    data-aria-label-en="Documentation sections"
+                    data-aria-label-pt="Seções da documentação">
+                    <ul>
+                        <li><a href="#getting-started" class="nav-link" data-en="Overview" data-pt="Visão geral">Overview</a></li>
+                        <li><a href="#project" class="nav-link" data-en="Architecture" data-pt="Arquitetura">Architecture</a></li>
+                        <li><a href="#installation" class="nav-link" data-en="CpHMD" data-pt="CpHMD">CpHMD</a></li>
+                        <li><a href="#examples" class="nav-link" data-en="GROMACS / MM-PBSA" data-pt="GROMACS / MM-PBSA">GROMACS / MM-PBSA</a></li>
+                        <li><a href="#help" class="nav-link" data-en="ΔG Analysis" data-pt="Análise ΔG">ΔG Analysis</a></li>
+                        <li><a href="#governance" class="nav-link" data-en="Governance" data-pt="Governança">Governance</a></li>
+                        <li><a href="#team" class="nav-link" data-en="Team &amp; HPC" data-pt="Equipe e HPC">Team &amp; HPC</a></li>
+                        <li><a href="#cite" class="nav-link" data-en="References" data-pt="Referências">References</a></li>
+                    </ul>
+                </nav>
+
+                <!-- HEADER ACTIONS (the version selector is inserted here on the published site) -->
+                <div class="header-actions">
 
                     <button
-                        type="submit"
-                        aria-label="Search"
-                        data-aria-label-en="Search"
-                        data-aria-label-pt="Pesquisar"
-                    >⌕</button>
-                </form>
+                        class="control-button language-toggle"
+                        id="language-toggle"
+                        type="button"
+                    >
+                        <span class="lang-option is-active" data-lang="en">EN</span>
+                        <span class="lang-separator" aria-hidden="true">/</span>
+                        <span class="lang-option" data-lang="pt" lang="pt-BR">PT</span>
+                        <span class="visually-hidden lang-hint"> — switch to Portuguese</span>
+                    </button>
 
-                <!-- LANGUAGE TOGGLE -->
-                <button
-                    class="language-toggle"
-                    id="language-toggle"
-                    type="button"
-                    aria-label="Switch language to Portuguese"
-                    title="Switch language to Portuguese"
-                >EN | PT</button>
+                    <button
+                        class="control-button theme-toggle"
+                        id="theme-toggle"
+                        type="button"
+                        aria-label="Switch to dark theme"
+                    >
+                        <svg class="icon-moon" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="currentColor"/></svg>
+                        <svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        <span class="control-label theme-label">Dark theme</span>
+                    </button>
 
-                <!-- THEME TOGGLE -->
-                <button
-                    class="theme-toggle"
-                    id="theme-toggle"
-                    type="button"
-                    aria-label="Switch to light theme"
-                    title="Switch to light theme"
-                    data-aria-label-en="Switch to light theme"
-                    data-aria-label-pt="Mudar para tema claro"
-                >
-                    <span class="theme-icon" id="theme-icon">☀</span>
-                </button>
-
-                <!-- REPOSITORY -->
-                <a
-                    href="https://github.com/Richardblasty/Trabalho-Bio/blob/main/index.html"
-                    class="repository"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <span class="github-icon">●</span>
-                    <span data-en="Repository" data-pt="Repositório">Repository</span>
-                </a>
-
+                    <a
+                        href="https://github.com/Richardblasty/Trabalho-Bio"
+                        class="control-button repository"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+                        <span class="control-label" data-en="Repository" data-pt="Repositório">Repository</span>
+                        <span class="visually-hidden" data-en="(GitHub, opens in a new tab)" data-pt="(GitHub, abre em nova aba)">(GitHub, opens in a new tab)</span>
+                    </a>
+                </div>
             </div>
         </div>
-
-        <!-- NAVIGATION -->
-        <nav class="main-nav">
-            <div class="container nav-content">
-
-                <a href="#home" class="nav-link active"
-                    data-en="Home" data-pt="Início">Home</a>
-
-                <a href="#getting-started" class="nav-link"
-                    data-en="Overview" data-pt="Visão geral">Overview</a>
-
-                <a href="#project" class="nav-link"
-                    data-en="Architecture" data-pt="Arquitetura">Architecture</a>
-
-                <a href="#installation" class="nav-link"
-                    data-en="CpHMD" data-pt="CpHMD">CpHMD</a>
-
-                <a href="#examples" class="nav-link"
-                    data-en="GROMACS / MM-PBSA" data-pt="GROMACS / MM-PBSA">GROMACS / MM-PBSA</a>
-
-                <a href="#help" class="nav-link"
-                    data-en="ΔG Analysis" data-pt="Análise ΔG">ΔG Analysis</a>
-
-                <a href="#governance" class="nav-link"
-                    data-en="Governance" data-pt="Governança">Governance</a>
-
-                <a href="#team" class="nav-link"
-                    data-en="Team &amp; HPC" data-pt="Equipe e HPC">Team &amp; HPC</a>
-
-                <a href="#cite" class="nav-link"
-                    data-en="References" data-pt="Referências">References</a>
-
-            </div>
-        </nav>
     </header>
 
     <!-- HERO -->
-    <section class="hero" id="home">
-        <div class="container hero-content">
+    <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero-grid">
 
-            <!-- HERO TEXT -->
             <div class="hero-text">
-                <span class="hero-tag"
-                    data-en="DOCUMENTATION"
-                    data-pt="DOCUMENTAÇÃO">DOCUMENTATION</span>
+                <p class="eyebrow eyebrow-light"
+                    data-en="Technical documentation · GEPEsS / Fiocruz Ceará"
+                    data-pt="Documentação técnica · GEPEsS / Fiocruz Ceará">Technical documentation · GEPEsS / Fiocruz Ceará</p>
 
-                <h1>
-                    <span
-                        data-en="Protonation Analysis in CpHMD Simulations"
-                        data-pt="Análise de Protonação em Simulações CpHMD">Análise de Protonação em Simulações CpHMD</span>
-                </h1>
+                <h1 id="hero-title"
+                    data-en="Protonation Analysis in CpHMD Simulations"
+                    data-pt="Análise de Protonação em Simulações CpHMD">Protonation Analysis in CpHMD Simulations</h1>
 
-                <p
+                <p class="hero-lead"
                     data-en="A platform for tracking and thermodynamic analysis of protonation states and molecular microstates, applied to the research and development of biopharmaceuticals and immunotherapies, including anti-CD22 CAR-T."
                     data-pt="Plataforma de rastreamento e análise termodinâmica de estados de protonação e microestados moleculares, aplicada à pesquisa e ao desenvolvimento de biofármacos e imunoterapias, incluindo CAR-T anti-CD22."
-                >
-                    Plataforma de rastreamento e análise termodinâmica de estados de protonação e microestados moleculares, aplicada à pesquisa e ao desenvolvimento de biofármacos e imunoterapias, incluindo CAR-T anti-CD22.
-                </p>
+                >A platform for tracking and thermodynamic analysis of protonation states and molecular microstates, applied to the research and development of biopharmaceuticals and immunotherapies, including anti-CD22 CAR-T.</p>
+
+                <ol class="hero-flow">
+                    <li>
+                        <a href="#installation">
+                            <span class="flow-step">1</span>
+                            <span class="flow-text">
+                                <strong data-en="Protonation" data-pt="Protonação">Protonation</strong>
+                                <span data-en="CpHMD λ → states and microstates" data-pt="λ da CpHMD → estados e microestados">CpHMD λ → states and microstates</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#examples">
+                            <span class="flow-step">2</span>
+                            <span class="flow-text">
+                                <strong data-en="GROMACS / MM-PBSA" data-pt="GROMACS / MM-PBSA">GROMACS / MM-PBSA</strong>
+                                <span data-en="Microtrajectories → binding free energy" data-pt="Microtrajetórias → energia livre de ligação">Microtrajectories → binding free energy</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#help">
+                            <span class="flow-step">3</span>
+                            <span class="flow-text">
+                                <strong data-en="ΔG validation" data-pt="Validação de ΔG">ΔG validation</strong>
+                                <span data-en="Aggregation, integrity and provenance" data-pt="Agregação, integridade e proveniência">Aggregation, integrity and provenance</span>
+                            </span>
+                        </a>
+                    </li>
+                </ol>
 
                 <div class="hero-buttons">
                     <a href="#project" class="btn btn-primary"
@@ -178,562 +228,681 @@
                 </div>
             </div>
 
-            <!-- HERO VISUAL -->
             <div class="hero-visual">
-                <img
-                    src="images/proteina-ligante.png"
-                    alt="Protein structure with a ligand"
-                    class="protein-image"
-                    data-alt-en="Protein structure with a ligand"
-                    data-alt-pt="Estrutura molecular de uma proteína com ligante"
-                >
+                <picture>
+                    <source type="image/webp"
+                        srcset="images/proteina-ligante-480.webp 480w, images/proteina-ligante-640.webp 640w, images/proteina-ligante-1160.webp 1160w"
+                        sizes="(max-width: 767px) min(80vw, 420px), min(46vw, 560px)">
+                    <img
+                        src="images/proteina-ligante.png"
+                        width="1448"
+                        height="1086"
+                        alt="Protein structure with a ligand"
+                        class="protein-image"
+                        decoding="async"
+                        data-alt-en="Protein structure with a ligand"
+                        data-alt-pt="Estrutura molecular de uma proteína com ligante"
+                    >
+                </picture>
             </div>
-
-        </div>
-
-        <!-- HERO WAVE -->
-        <div class="hero-wave">
-            <svg viewBox="0 0 1440 260" preserveAspectRatio="none" aria-hidden="true">
-                <path d="
-                    M0 220
-                    C45 230, 105 235, 165 220
-                    C245 195, 320 165, 410 165
-                    C500 165, 560 215, 650 225
-                    C740 235, 805 205, 855 175
-                    C930 148, 1005 105, 1090 78
-                    C1185 48, 1280 40, 1370 42
-                    C1400 43, 1420 44, 1440 45
-                    L1440 305
-                    L0 305
-                    Z
-                "></path>
-            </svg>
         </div>
     </section>
 
     <!-- DOCUMENTATION -->
-    <main class="documentation">
+    <main class="documentation" id="content" tabindex="-1">
         <div class="container documentation-layout">
 
-            <!-- SIDEBAR -->
+            <!-- SIDEBAR: table of contents -->
             <aside class="sidebar">
-                <div class="sidebar-title"
-                    data-en="Documentation"
-                    data-pt="Documentação">Documentation</div>
+                <nav class="toc" aria-labelledby="toc-title">
+                    <p class="toc-title" id="toc-title"
+                        data-en="On this page"
+                        data-pt="Nesta página">On this page</p>
 
-                <ul class="sidebar-menu">
-                    <li>
-                        <a href="#getting-started" class="sidebar-link active"
-                            data-en="Overview" data-pt="Visão geral">Overview</a>
-                    </li>
-
-                    <li>
-                        <a href="#project" class="sidebar-link"
-                            data-en="System Architecture"
-                            data-pt="Arquitetura do sistema">System Architecture</a>
-                    </li>
-
-                    <li>
-                        <a href="#installation" class="sidebar-link"
-                            data-en="Protonation Analysis (CpHMD)"
-                            data-pt="Análise de protonação (CpHMD)">Protonation Analysis (CpHMD)</a>
-                    </li>
-
-                    <li>
-                        <a href="#examples" class="sidebar-link"
-                            data-en="GROMACS Pipeline &amp; MM/PBSA"
-                            data-pt="Pipeline GROMACS e MM/PBSA">GROMACS Pipeline &amp; MM/PBSA</a>
-                    </li>
-
-                    <li>
-                        <a href="#help" class="sidebar-link"
-                            data-en="ΔG Analysis &amp; Validation"
-                            data-pt="Análise de ΔG e validação">ΔG Analysis &amp; Validation</a>
-                    </li>
-
-                    <li>
-                        <a href="#governance" class="sidebar-link"
-                            data-en="Technical Governance (RDC/RDM)"
-                            data-pt="Governança técnica (RDC/RDM)">Technical Governance (RDC/RDM)</a>
-                    </li>
-
-                    <li>
-                        <a href="#team" class="sidebar-link"
-                            data-en="Team &amp; Infrastructure"
-                            data-pt="Equipe e infraestrutura">Team &amp; Infrastructure</a>
-                    </li>
-
-                    <li>
-                        <a href="#cite" class="sidebar-link"
-                            data-en="References &amp; Citation"
-                            data-pt="Referências e citação">References &amp; Citation</a>
-                    </li>
-                </ul>
+                    <ol class="toc-list">
+                        <li>
+                            <a href="#getting-started" class="toc-link" data-en="Overview" data-pt="Visão geral">Overview</a>
+                        </li>
+                        <li>
+                            <a href="#project" class="toc-link" data-en="System Architecture" data-pt="Arquitetura do sistema">System Architecture</a>
+                        </li>
+                        <li>
+                            <a href="#installation" class="toc-link" data-en="Protonation Analysis (CpHMD)" data-pt="Análise de protonação (CpHMD)">Protonation Analysis (CpHMD)</a>
+                            <ol>
+                                <li><a href="#protonation-states" class="toc-link toc-sub" data-en="State classification" data-pt="Classificação dos estados">State classification</a></li>
+                                <li><a href="#hysteresis" class="toc-link toc-sub" data-en="Hysteresis and microstates" data-pt="Histerese e microestados">Hysteresis and microstates</a></li>
+                                <li><a href="#histidine" class="toc-link toc-sub" data-en="Histidine tautomers" data-pt="Tautômeros da histidina">Histidine tautomers</a></li>
+                            </ol>
+                        </li>
+                        <li>
+                            <a href="#examples" class="toc-link" data-en="GROMACS Pipeline &amp; MM/PBSA" data-pt="Pipeline GROMACS e MM/PBSA">GROMACS Pipeline &amp; MM/PBSA</a>
+                            <ol>
+                                <li><a href="#workflow" class="toc-link toc-sub" data-en="Processing workflow" data-pt="Fluxo de processamento">Processing workflow</a></li>
+                                <li><a href="#hpc-config" class="toc-link toc-sub" data-en="HPC configuration" data-pt="Configuração HPC">HPC configuration</a></li>
+                            </ol>
+                        </li>
+                        <li>
+                            <a href="#help" class="toc-link" data-en="ΔG Analysis &amp; Validation" data-pt="Análise de ΔG e validação">ΔG Analysis &amp; Validation</a>
+                            <ol>
+                                <li><a href="#binding-energy" class="toc-link toc-sub" data-en="Binding free energy" data-pt="Energia livre de ligação">Binding free energy</a></li>
+                                <li><a href="#contracts" class="toc-link toc-sub" data-en="Integrity contracts" data-pt="Contratos de integridade">Integrity contracts</a></li>
+                            </ol>
+                        </li>
+                        <li>
+                            <a href="#governance" class="toc-link" data-en="Technical Governance (RDC/RDM)" data-pt="Governança técnica (RDC/RDM)">Technical Governance (RDC/RDM)</a>
+                        </li>
+                        <li>
+                            <a href="#team" class="toc-link" data-en="Team &amp; Infrastructure" data-pt="Equipe e infraestrutura">Team &amp; Infrastructure</a>
+                        </li>
+                        <li>
+                            <a href="#cite" class="toc-link" data-en="References &amp; Citation" data-pt="Referências e citação">References &amp; Citation</a>
+                        </li>
+                    </ol>
+                </nav>
             </aside>
 
             <!-- DOCUMENTATION CONTENT -->
             <div class="documentation-content">
 
                 <!-- OVERVIEW -->
-                <section class="doc-section" id="getting-started">
-                    <span class="section-label"
-                        data-en="OVERVIEW" data-pt="VISÃO GERAL">OVERVIEW</span>
+                <section class="doc-section" id="getting-started" aria-labelledby="h-overview">
+                    <p class="eyebrow" data-en="Overview" data-pt="Visão geral">Overview</p>
 
-                    <h2 data-en="Project Overview" data-pt="Visão Geral do Projeto">Project Overview</h2>
+                    <h2 id="h-overview" data-en="Project Overview" data-pt="Visão Geral do Projeto">Project Overview</h2>
 
-                    <p
+                    <p class="lead"
                         data-en="The CpHMD / MM/PBSA suite aims to standardize protonation analysis and binding free-energy calculations for the scFv m971 × CD22 antibody–antigen system."
                         data-pt="A suíte CpHMD / MM/PBSA busca padronizar a análise de protonação e os cálculos de energia livre de ligação para o sistema anticorpo–antígeno scFv m971 × CD22."
-                    >
-                        The CpHMD / MM/PBSA suite aims to standardize protonation analysis and binding free-energy calculations for the scFv m971 × CD22 antibody–antigen system.
-                    </p>
+                    >The CpHMD / MM/PBSA suite aims to standardize protonation analysis and binding free-energy calculations for the scFv m971 × CD22 antibody–antigen system.</p>
 
-                    <div class="info-card">
-                        <div class="info-icon">i</div>
-                        <div>
-                            <strong data-en="Scientific Objective" data-pt="Objetivo Científico">Scientific Objective</strong>
-
-                            <p
-                                data-en="Provide a traceable workflow for protonation analysis, molecular simulation processing and free-energy validation."
-                                data-pt="Disponibilizar um fluxo rastreável para análise de protonação, processamento de simulações moleculares e validação de energia livre."
-                            >
-                                Provide a traceable workflow for protonation analysis, molecular simulation processing and free-energy validation.
-                            </p>
-                        </div>
+                    <div class="callout callout-info" role="note">
+                        <p class="callout-title">
+                            <span class="callout-icon" aria-hidden="true">i</span>
+                            <span data-en="Scientific Objective" data-pt="Objetivo Científico">Scientific Objective</span>
+                        </p>
+                        <p
+                            data-en="Provide a traceable workflow for protonation analysis, molecular simulation processing and free-energy validation."
+                            data-pt="Disponibilizar um fluxo rastreável para análise de protonação, processamento de simulações moleculares e validação de energia livre."
+                        >Provide a traceable workflow for protonation analysis, molecular simulation processing and free-energy validation.</p>
                     </div>
+
+                    <h3 id="research-question" data-en="Research question" data-pt="Questão de pesquisa">Research question</h3>
+
+                    <p data-html
+                        data-en="The project records in its methodological decisions (RDM) its subject: the <strong>effect of pH on the antibody–antigen interface (scFv m971 ↔ CD22)</strong> studied by constant-pH molecular dynamics. In λ-dynamics, each titratable site is described by a continuous coordinate λ; the suite turns those λ series into protonation states and microstates, computes the binding free energy of each microstate with MM/PBSA and checks the integrity of the results before they are reported."
+                        data-pt="O projeto registra em suas decisões metodológicas (RDM) o seu objeto: o <strong>efeito do pH na interface anticorpo–antígeno (scFv m971 ↔ CD22)</strong> estudado por dinâmica molecular a pH constante. Na λ-dinâmica, cada sítio titulável é descrito por uma coordenada contínua λ; a suíte transforma essas séries de λ em estados de protonação e microestados, calcula a energia livre de ligação de cada microestado com MM/PBSA e verifica a integridade dos resultados antes de reportá-los."
+                    >The project records in its methodological decisions (RDM) its subject: the <strong>effect of pH on the antibody–antigen interface (scFv m971 ↔ CD22)</strong> studied by constant-pH molecular dynamics. In λ-dynamics, each titratable site is described by a continuous coordinate λ; the suite turns those λ series into protonation states and microstates, computes the binding free energy of each microstate with MM/PBSA and checks the integrity of the results before they are reported.</p>
+
+                    <h3 id="how-to-read" data-en="How to read this documentation" data-pt="Como ler esta documentação">How to read this documentation</h3>
+
+                    <p data-en="Each technical subsection is labelled by the kind of content it holds:"
+                        data-pt="Cada subseção técnica é identificada pelo tipo de conteúdo:">Each technical subsection is labelled by the kind of content it holds:</p>
+
+                    <ul class="legend-list">
+                        <li><span class="tag tag-concept" data-en="Concept" data-pt="Conceito">Concept</span> <span data-en="definitions, criteria and scientific rules;" data-pt="definições, critérios e regras científicas;">definitions, criteria and scientific rules;</span></li>
+                        <li><span class="tag tag-procedure" data-en="Procedure" data-pt="Procedimento">Procedure</span> <span data-en="operational steps and configuration;" data-pt="etapas operacionais e configuração;">operational steps and configuration;</span></li>
+                        <li><span class="tag tag-validation" data-en="Validation" data-pt="Validação">Validation</span> <span data-en="checks applied before results are accepted." data-pt="verificações aplicadas antes da aceitação dos resultados.">checks applied before results are accepted.</span></li>
+                    </ul>
                 </section>
 
                 <!-- SYSTEM ARCHITECTURE -->
-                <section class="doc-section" id="project">
-                    <span class="section-label"
-                        data-en="ARCHITECTURE" data-pt="ARQUITETURA">ARCHITECTURE</span>
+                <section class="doc-section" id="project" aria-labelledby="h-architecture">
+                    <p class="eyebrow" data-en="Architecture" data-pt="Arquitetura">Architecture</p>
 
-                    <h2 data-en="System Architecture" data-pt="Arquitetura do Sistema">System Architecture</h2>
+                    <h2 id="h-architecture" data-en="System Architecture" data-pt="Arquitetura do Sistema">System Architecture</h2>
 
-                    <p
+                    <p class="lead"
                         data-en="The system consists of three main products that connect protonation analysis, GROMACS processing and free-energy data validation."
                         data-pt="O sistema consiste em três produtos principais que conectam a análise de protonação, o processamento GROMACS e a validação dos dados de energia livre."
-                    >
-                        The system consists of three main products that connect protonation analysis, GROMACS processing and free-energy data validation.
-                    </p>
+                    >The system consists of three main products that connect protonation analysis, GROMACS processing and free-energy data validation.</p>
 
-                    <div class="feature-grid">
-                        <article class="feature-card">
-                            <div class="feature-number">01</div>
-                            <h3>protonation-analysis</h3>
+                    <ol class="module-flow">
+
+                        <li class="module-card">
+                            <header class="module-head">
+                                <span class="module-number">P1</span>
+                                <h3 id="module-protonation"><code>protonation-analysis</code></h3>
+                            </header>
                             <p
                                 data-en="Processes XVG files, classifies protonation states, applies hysteresis and extracts TRR microtrajectories."
                                 data-pt="Processa arquivos XVG, classifica estados de protonação, aplica histerese e extrai microtrajetórias TRR."
-                            >
-                                Processes XVG files, classifies protonation states, applies hysteresis and extracts TRR microtrajectories.
-                            </p>
-                        </article>
+                            >Processes XVG files, classifies protonation states, applies hysteresis and extracts TRR microtrajectories.</p>
+                            <dl class="module-io">
+                                <dt data-en="Inputs" data-pt="Entradas">Inputs</dt>
+                                <dd data-html data-en="λ coordinate series (<code>.xvg</code>) and the CpHMD trajectory (<code>.trr</code>)" data-pt="Séries da coordenada λ (<code>.xvg</code>) e a trajetória CpHMD (<code>.trr</code>)">λ coordinate series (<code>.xvg</code>) and the CpHMD trajectory (<code>.trr</code>)</dd>
+                                <dt data-en="Outputs" data-pt="Saídas">Outputs</dt>
+                                <dd data-html data-en="Microstates and microtrajectories (<code>sub_msN</code>), and <code>membrana.json</code> when membrane support applies" data-pt="Microestados e microtrajetórias (<code>sub_msN</code>) e <code>membrana.json</code> quando o suporte a membrana se aplica">Microstates and microtrajectories (<code>sub_msN</code>), and <code>membrana.json</code> when membrane support applies</dd>
+                            </dl>
+                            <a class="module-link" href="#installation" data-en="Read Product 1 →" data-pt="Ler o Produto 1 →">Read Product 1 →</a>
+                        </li>
 
-                        <article class="feature-card">
-                            <div class="feature-number">02</div>
-                            <h3>gromacs-pipeline</h3>
+                        <li class="module-card">
+                            <header class="module-head">
+                                <span class="module-number">P2</span>
+                                <h3 id="module-gromacs"><code>gromacs-pipeline</code></h3>
+                            </header>
                             <p
                                 data-en="Prepares GROMACS structures and trajectories and automates MM/PBSA calculations in HPC environments."
                                 data-pt="Prepara estruturas e trajetórias GROMACS e automatiza cálculos MM/PBSA em ambientes HPC."
-                            >
-                                Prepares GROMACS structures and trajectories and automates MM/PBSA calculations in HPC environments.
-                            </p>
-                        </article>
+                            >Prepares GROMACS structures and trajectories and automates MM/PBSA calculations in HPC environments.</p>
+                            <dl class="module-io">
+                                <dt data-en="Inputs" data-pt="Entradas">Inputs</dt>
+                                <dd data-html data-en="P1 microtrajectories, <code>membrana.json</code> (optional) and <code>gromacs-pipeline.cfg</code>" data-pt="Microtrajetórias do P1, <code>membrana.json</code> (opcional) e <code>gromacs-pipeline.cfg</code>">P1 microtrajectories, <code>membrana.json</code> (optional) and <code>gromacs-pipeline.cfg</code></dd>
+                                <dt data-en="Outputs" data-pt="Saídas">Outputs</dt>
+                                <dd data-html data-en="<code>FINAL_RESULTS_MMPBSA.csv</code> / <code>.dat</code> and the per-folder status <code>passo6_status.txt</code>" data-pt="<code>FINAL_RESULTS_MMPBSA.csv</code> / <code>.dat</code> e o status por pasta <code>passo6_status.txt</code>"><code>FINAL_RESULTS_MMPBSA.csv</code> / <code>.dat</code> and the per-folder status <code>passo6_status.txt</code></dd>
+                            </dl>
+                            <a class="module-link" href="#examples" data-en="Read Product 2 →" data-pt="Ler o Produto 2 →">Read Product 2 →</a>
+                        </li>
 
-                        <article class="feature-card">
-                            <div class="feature-number">03</div>
-                            <h3>dg-analysis</h3>
+                        <li class="module-card">
+                            <header class="module-head">
+                                <span class="module-number">P3</span>
+                                <h3 id="module-dg"><code>dg-analysis</code></h3>
+                            </header>
                             <p
                                 data-en="Aggregates free-energy results and checks data integrity and provenance."
                                 data-pt="Agrega resultados de energia livre e verifica a integridade e a proveniência dos dados."
-                            >
-                                Aggregates free-energy results and checks data integrity and provenance.
-                            </p>
-                        </article>
-                    </div>
-                </section>
-
-                <!-- PROTONATION ANALYSIS -->
-                <section class="doc-section" id="installation">
-                    <span class="section-label"
-                        data-en="PRODUCT 1" data-pt="PRODUTO 1">PRODUCT 1</span>
-
-                    <h2 data-en="Protonation Analysis" data-pt="Análise de Protonação">Protonation Analysis</h2>
-
-                    <p
-                        data-en="This module analyzes protonation states, hysteresis, histidine microstates and molecular trajectory segments."
-                        data-pt="Este módulo analisa estados de protonação, histerese, microestados da histidina e segmentos de trajetórias moleculares."
-                    >
-                        This module analyzes protonation states, hysteresis, histidine microstates and molecular trajectory segments.
-                    </p>
-
-                    <h3 data-en="Protonation State Classification" data-pt="Classificação dos Estados de Protonação">Protonation State Classification</h3>
-
-                    <table>
-                        <thead>
-                            <tr>
-                                <th data-en="State" data-pt="Estado">State</th>
-                                <th data-en="Lambda Criterion" data-pt="Critério Lambda">Lambda Criterion</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td data-en="Protonated" data-pt="Protonado">Protonated</td>
-                                <td>λ ≤ 0.2</td>
-                            </tr>
-                            <tr>
-                                <td data-en="Transition Zone" data-pt="Zona de Transição">Transition Zone</td>
-                                <td>0.2 &lt; λ &lt; 0.8</td>
-                            </tr>
-                            <tr>
-                                <td data-en="Deprotonated" data-pt="Desprotonado">Deprotonated</td>
-                                <td>λ ≥ 0.8</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <p
-                        data-en="Lambda values outside the interval [0, 1] are retained without clamping."
-                        data-pt="Valores de lambda fora do intervalo [0, 1] são mantidos sem truncamento."
-                    >
-                        Lambda values outside the interval [0, 1] are retained without clamping.
-                    </p>
-
-                    <h3 data-en="Hysteresis and Microstates" data-pt="Histerese e Microestados">Hysteresis and Microstates</h3>
-
-                    <p
-                        data-en="Transition-zone frames are not discarded during microstate analysis. The effective state inherits the last confirmed physical state."
-                        data-pt="Frames na zona de transição não são descartados durante a análise de microestados. O estado efetivo herda o último estado físico confirmado."
-                    >
-                        Transition-zone frames are not discarded during microstate analysis. The effective state inherits the last confirmed physical state.
-                    </p>
-
-                    <ul>
-                        <li>
-                            <strong>state_raw:</strong>
-                            <span
-                                data-en="used to analyze dynamics, fluctuations and time in the transition zone."
-                                data-pt="utilizado para analisar dinâmica, flutuações e tempo na zona de transição."
-                            >
-                                used to analyze dynamics, fluctuations and time in the transition zone.
-                            </span>
-                        </li>
-
-                        <li>
-                            <strong data-en="Effective state:" data-pt="Estado efetivo:">Effective state:</strong>
-                            <span
-                                data-en="used to define microstates and select frames for MM/PBSA."
-                                data-pt="utilizado para definir microestados e selecionar frames para MM/PBSA."
-                            >
-                                used to define microstates and select frames for MM/PBSA.
-                            </span>
-                        </li>
-                    </ul>
-
-                    <h3 data-en="Histidine Tautomers" data-pt="Tautômeros da Histidina">Histidine Tautomers</h3>
-
-                    <p
-                        data-en="The HSPT group is evaluated cooperatively under the physical constraint Σλ ≈ 1. HSP, HSD and HSE retain distinct identities in microstate signatures."
-                        data-pt="O grupo HSPT é avaliado cooperativamente sob a restrição física Σλ ≈ 1. HSP, HSD e HSE mantêm identidades distintas nas assinaturas dos microestados."
-                    >
-                        The HSPT group is evaluated cooperatively under the physical constraint Σλ ≈ 1. HSP, HSD and HSE retain distinct identities in microstate signatures.
-                    </p>
-                </section>
-
-                <!-- GROMACS PIPELINE AND MM/PBSA -->
-                <section class="doc-section" id="examples">
-                    <span class="section-label"
-                        data-en="PRODUCT 2" data-pt="PRODUTO 2">PRODUCT 2</span>
-
-                    <h2 data-en="GROMACS Pipeline and MM/PBSA" data-pt="Pipeline GROMACS e MM/PBSA">GROMACS Pipeline and MM/PBSA</h2>
-
-                    <p
-                        data-en="This module prepares molecular structures, processes trajectories and runs binding free-energy calculations in high-performance computing environments."
-                        data-pt="Este módulo prepara estruturas moleculares, processa trajetórias e executa cálculos de energia livre de ligação em ambientes de computação de alto desempenho."
-                    >
-                        This module prepares molecular structures, processes trajectories and runs binding free-energy calculations in high-performance computing environments.
-                    </p>
-
-                    <h3 data-en="Processing Workflow" data-pt="Fluxo de Processamento">Processing Workflow</h3>
-
-                    <ol>
-                        <li>
-                            <strong>pdb2gmx:</strong>
-                            <span data-en="generates the topology and structure files." data-pt="gera os arquivos de topologia e estrutura.">
-                                generates the topology and structure files.
-                            </span>
-                        </li>
-
-                        <li>
-                            <strong>grompp:</strong>
-                            <span data-en="creates the simulation run input file." data-pt="cria o arquivo de entrada para execução da simulação.">
-                                creates the simulation run input file.
-                            </span>
-                        </li>
-
-                        <li>
-                            <strong>make_ndx:</strong>
-                            <span data-en="configures receptor and ligand index groups." data-pt="configura os grupos de índice do receptor e do ligante.">
-                                configures receptor and ligand index groups.
-                            </span>
-                        </li>
-
-                        <li>
-                            <strong>trjconv:</strong>
-                            <span
-                                data-en="processes periodic boundary conditions using the documented whole → mol sequence, without centering."
-                                data-pt="processa condições periódicas usando a sequência documentada whole → mol, sem centralização."
-                            >
-                                processes periodic boundary conditions using the documented whole → mol sequence, without centering.
-                            </span>
-                        </li>
-
-                        <li>
-                            <strong>gmx_MMPBSA:</strong>
-                            <span
-                                data-en="calculates binding free energy using the configured implicit membrane parameters."
-                                data-pt="calcula a energia livre de ligação usando os parâmetros configurados para membrana implícita."
-                            >
-                                calculates binding free energy using the configured implicit membrane parameters.
-                            </span>
+                            >Aggregates free-energy results and checks data integrity and provenance.</p>
+                            <dl class="module-io">
+                                <dt data-en="Inputs" data-pt="Entradas">Inputs</dt>
+                                <dd data-en="Results and status files of Product 2; outputs of Product 1 (read only)" data-pt="Resultados e arquivos de status do Produto 2; saídas do Produto 1 (somente leitura)">Results and status files of Product 2; outputs of Product 1 (read only)</dd>
+                                <dt data-en="Outputs" data-pt="Saídas">Outputs</dt>
+                                <dd data-html data-en="Aggregated ΔG, contract checks C1–C10 and provenance tables (<code>proveniencia_p2</code>, <code>parametros_membrana</code>)" data-pt="ΔG agregado, verificações dos contratos C1–C10 e tabelas de proveniência (<code>proveniencia_p2</code>, <code>parametros_membrana</code>)">Aggregated ΔG, contract checks C1–C10 and provenance tables (<code>proveniencia_p2</code>, <code>parametros_membrana</code>)</dd>
+                            </dl>
+                            <a class="module-link" href="#help" data-en="Read Product 3 →" data-pt="Ler o Produto 3 →">Read Product 3 →</a>
                         </li>
                     </ol>
 
-                    <h3 data-en="HPC Configuration" data-pt="Configuração HPC">HPC Configuration</h3>
+                    <p class="source-note" data-html
+                        data-en="Source of inputs and outputs: records <a href=&quot;#governance&quot;>RDC-027 and RDC-000</a>. Products only read the outputs of the previous product; Product 3 does not modify coordinates."
+                        data-pt="Fonte das entradas e saídas: registros <a href=&quot;#governance&quot;>RDC-027 e RDC-000</a>. Cada produto apenas lê as saídas do produto anterior; o Produto 3 não altera coordenadas."
+                    >Source of inputs and outputs: records <a href="#governance">RDC-027 and RDC-000</a>. Products only read the outputs of the previous product; Product 3 does not modify coordinates.</p>
+                </section>
 
-                    <p
-                        data-en="The gromacs-pipeline.cfg file supports configurable worker counts and OMP/MPI parameters. The pipeline can also use membrana.json generated by Product 1 when membrane support is applicable."
-                        data-pt="O arquivo gromacs-pipeline.cfg permite configurar o número de workers e os parâmetros OMP/MPI. O pipeline também pode utilizar membrana.json gerado pelo Produto 1 quando o suporte a membrana for aplicável."
-                    >
-                        The gromacs-pipeline.cfg file supports configurable worker counts and OMP/MPI parameters. The pipeline can also use membrana.json generated by Product 1 when membrane support is applicable.
-                    </p>
+                <!-- PROTONATION ANALYSIS -->
+                <section class="doc-section" id="installation" aria-labelledby="h-protonation">
+                    <p class="eyebrow" data-en="Product 1" data-pt="Produto 1">Product 1</p>
 
-                    <div class="info-card">
-                        <div class="info-icon">i</div>
-                        <div>
-                            <strong data-en="Execution note" data-pt="Nota de execução">Execution note</strong>
+                    <h2 id="h-protonation" data-en="Protonation Analysis" data-pt="Análise de Protonação">Protonation Analysis</h2>
 
+                    <p class="lead"
+                        data-en="This module analyzes protonation states, hysteresis, histidine microstates and molecular trajectory segments."
+                        data-pt="Este módulo analisa estados de protonação, histerese, microestados da histidina e segmentos de trajetórias moleculares."
+                    >This module analyzes protonation states, hysteresis, histidine microstates and molecular trajectory segments.</p>
+
+                    <div class="subsection" id="protonation-states">
+                        <div class="subsection-head">
+                            <h3 data-en="Protonation State Classification" data-pt="Classificação dos Estados de Protonação">Protonation State Classification</h3>
+                            <span class="tag tag-concept" data-en="Concept" data-pt="Conceito">Concept</span>
+                        </div>
+
+                        <div class="table-wrap" role="region" tabindex="0"
+                            aria-label="Protonation state classification"
+                            data-aria-label-en="Protonation state classification"
+                            data-aria-label-pt="Classificação dos estados de protonação">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th scope="col" data-en="State" data-pt="Estado">State</th>
+                                        <th scope="col" data-en="Lambda Criterion" data-pt="Critério Lambda">Lambda Criterion</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" data-en="Protonated" data-pt="Protonado">Protonated</th>
+                                        <td class="math">λ ≤ 0.2</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" data-en="Transition Zone" data-pt="Zona de Transição">Transition Zone</th>
+                                        <td class="math">0.2 &lt; λ &lt; 0.8</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" data-en="Deprotonated" data-pt="Desprotonado">Deprotonated</th>
+                                        <td class="math">λ ≥ 0.8</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="callout callout-important" role="note">
+                            <p class="callout-title">
+                                <span class="callout-icon" aria-hidden="true">!</span>
+                                <span data-en="Important" data-pt="Importante">Important</span>
+                            </p>
+                            <p
+                                data-en="Lambda values outside the interval [0, 1] are retained without clamping."
+                                data-pt="Valores de lambda fora do intervalo [0, 1] são mantidos sem truncamento."
+                            >Lambda values outside the interval [0, 1] are retained without clamping.</p>
+                        </div>
+                    </div>
+
+                    <div class="subsection" id="hysteresis">
+                        <div class="subsection-head">
+                            <h3 data-en="Hysteresis and Microstates" data-pt="Histerese e Microestados">Hysteresis and Microstates</h3>
+                            <span class="tag tag-concept" data-en="Concept" data-pt="Conceito">Concept</span>
+                        </div>
+
+                        <p
+                            data-en="Transition-zone frames are not discarded during microstate analysis. The effective state inherits the last confirmed physical state."
+                            data-pt="Frames na zona de transição não são descartados durante a análise de microestados. O estado efetivo herda o último estado físico confirmado."
+                        >Transition-zone frames are not discarded during microstate analysis. The effective state inherits the last confirmed physical state.</p>
+
+                        <dl class="definition-list">
+                            <div>
+                                <dt><code>state_raw</code></dt>
+                                <dd
+                                    data-en="used to analyze dynamics, fluctuations and time in the transition zone."
+                                    data-pt="utilizado para analisar dinâmica, flutuações e tempo na zona de transição."
+                                >used to analyze dynamics, fluctuations and time in the transition zone.</dd>
+                            </div>
+                            <div>
+                                <dt data-en="Effective state" data-pt="Estado efetivo">Effective state</dt>
+                                <dd
+                                    data-en="used to define microstates and select frames for MM/PBSA."
+                                    data-pt="utilizado para definir microestados e selecionar frames para MM/PBSA."
+                                >used to define microstates and select frames for MM/PBSA.</dd>
+                            </div>
+                        </dl>
+
+                        <p class="source-note" data-html
+                            data-en="Decision record: <a href=&quot;#rdm-003&quot;>RDM-003</a>, which replaced the transition-zone policy of <a href=&quot;#rdm-001&quot;>RDM-001</a>."
+                            data-pt="Registro de decisão: <a href=&quot;#rdm-003&quot;>RDM-003</a>, que substituiu a política de zona de transição da <a href=&quot;#rdm-001&quot;>RDM-001</a>."
+                        >Decision record: <a href="#rdm-003">RDM-003</a>, which replaced the transition-zone policy of <a href="#rdm-001">RDM-001</a>.</p>
+                    </div>
+
+                    <div class="subsection" id="histidine">
+                        <div class="subsection-head">
+                            <h3 data-en="Histidine Tautomers" data-pt="Tautômeros da Histidina">Histidine Tautomers</h3>
+                            <span class="tag tag-concept" data-en="Concept" data-pt="Conceito">Concept</span>
+                        </div>
+
+                        <p
+                            data-en="The HSPT group is evaluated cooperatively under the physical constraint Σλ ≈ 1. HSP, HSD and HSE retain distinct identities in microstate signatures."
+                            data-pt="O grupo HSPT é avaliado cooperativamente sob a restrição física Σλ ≈ 1. HSP, HSD e HSE mantêm identidades distintas nas assinaturas dos microestados."
+                        >The HSPT group is evaluated cooperatively under the physical constraint Σλ ≈ 1. HSP, HSD and HSE retain distinct identities in microstate signatures.</p>
+                    </div>
+                </section>
+
+                <!-- GROMACS PIPELINE AND MM/PBSA -->
+                <section class="doc-section" id="examples" aria-labelledby="h-gromacs">
+                    <p class="eyebrow" data-en="Product 2" data-pt="Produto 2">Product 2</p>
+
+                    <h2 id="h-gromacs" data-en="GROMACS Pipeline and MM/PBSA" data-pt="Pipeline GROMACS e MM/PBSA">GROMACS Pipeline and MM/PBSA</h2>
+
+                    <p class="lead"
+                        data-en="This module prepares molecular structures, processes trajectories and runs binding free-energy calculations in high-performance computing environments."
+                        data-pt="Este módulo prepara estruturas moleculares, processa trajetórias e executa cálculos de energia livre de ligação em ambientes de computação de alto desempenho."
+                    >This module prepares molecular structures, processes trajectories and runs binding free-energy calculations in high-performance computing environments.</p>
+
+                    <div class="subsection" id="workflow">
+                        <div class="subsection-head">
+                            <h3 data-en="Processing Workflow" data-pt="Fluxo de Processamento">Processing Workflow</h3>
+                            <span class="tag tag-procedure" data-en="Procedure" data-pt="Procedimento">Procedure</span>
+                        </div>
+
+                        <ol class="steps">
+                            <li>
+                                <code class="step-command">pdb2gmx</code>
+                                <span data-en="generates the topology and structure files." data-pt="gera os arquivos de topologia e estrutura.">generates the topology and structure files.</span>
+                            </li>
+                            <li>
+                                <code class="step-command">grompp</code>
+                                <span data-en="creates the simulation run input file." data-pt="cria o arquivo de entrada para execução da simulação.">creates the simulation run input file.</span>
+                            </li>
+                            <li>
+                                <code class="step-command">make_ndx</code>
+                                <span data-en="configures receptor and ligand index groups." data-pt="configura os grupos de índice do receptor e do ligante.">configures receptor and ligand index groups.</span>
+                            </li>
+                            <li>
+                                <code class="step-command">trjconv</code>
+                                <span
+                                    data-en="processes periodic boundary conditions using the documented whole → mol sequence, without centering."
+                                    data-pt="processa condições periódicas usando a sequência documentada whole → mol, sem centralização."
+                                >processes periodic boundary conditions using the documented whole → mol sequence, without centering.</span>
+                                <span class="step-note" data-html
+                                    data-en="See <a href=&quot;#rdc-022&quot;>RDC-022</a>."
+                                    data-pt="Ver <a href=&quot;#rdc-022&quot;>RDC-022</a>.">See <a href="#rdc-022">RDC-022</a>.</span>
+                            </li>
+                            <li>
+                                <code class="step-command">gmx_MMPBSA</code>
+                                <span
+                                    data-en="calculates binding free energy using the configured implicit membrane parameters."
+                                    data-pt="calcula a energia livre de ligação usando os parâmetros configurados para membrana implícita."
+                                >calculates binding free energy using the configured implicit membrane parameters.</span>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="subsection" id="hpc-config">
+                        <div class="subsection-head">
+                            <h3 data-en="HPC Configuration" data-pt="Configuração HPC">HPC Configuration</h3>
+                            <span class="tag tag-procedure" data-en="Procedure" data-pt="Procedimento">Procedure</span>
+                        </div>
+
+                        <p data-html
+                            data-en="The <code>gromacs-pipeline.cfg</code> file supports configurable worker counts and OMP/MPI parameters. The pipeline can also use <code>membrana.json</code> generated by Product 1 when membrane support is applicable."
+                            data-pt="O arquivo <code>gromacs-pipeline.cfg</code> permite configurar o número de workers e os parâmetros OMP/MPI. O pipeline também pode utilizar <code>membrana.json</code> gerado pelo Produto 1 quando o suporte a membrana for aplicável."
+                        >The <code>gromacs-pipeline.cfg</code> file supports configurable worker counts and OMP/MPI parameters. The pipeline can also use <code>membrana.json</code> generated by Product 1 when membrane support is applicable.</p>
+
+                        <div class="callout callout-info" role="note">
+                            <p class="callout-title">
+                                <span class="callout-icon" aria-hidden="true">i</span>
+                                <span data-en="Execution note" data-pt="Nota de execução">Execution note</span>
+                            </p>
                             <p
                                 data-en="Use the configuration files and version-specific instructions from the project repository before running production calculations."
                                 data-pt="Utilize os arquivos de configuração e as instruções específicas de cada versão do repositório antes de executar cálculos de produção."
-                            >
-                                Use the configuration files and version-specific instructions from the project repository before running production calculations.
-                            </p>
+                            >Use the configuration files and version-specific instructions from the project repository before running production calculations.</p>
                         </div>
                     </div>
                 </section>
 
                 <!-- DELTA G ANALYSIS -->
-                <section class="doc-section" id="help">
-                    <span class="section-label"
-                        data-en="PRODUCT 3" data-pt="PRODUTO 3">PRODUCT 3</span>
+                <section class="doc-section" id="help" aria-labelledby="h-dg">
+                    <p class="eyebrow" data-en="Product 3" data-pt="Produto 3">Product 3</p>
 
-                    <h2 data-en="ΔG Analysis and Validation" data-pt="Análise de ΔG e Validação">ΔG Analysis and Validation</h2>
+                    <h2 id="h-dg" data-en="ΔG Analysis and Validation" data-pt="Análise de ΔG e Validação">ΔG Analysis and Validation</h2>
 
-                    <p
+                    <p class="lead"
                         data-en="This module aggregates free-energy results and verifies data integrity and provenance before a batch is accepted for reporting."
                         data-pt="Este módulo agrega resultados de energia livre e verifica a integridade e a proveniência dos dados antes da aceitação de um lote para relatório."
-                    >
-                        This module aggregates free-energy results and verifies data integrity and provenance before a batch is accepted for reporting.
-                    </p>
+                    >This module aggregates free-energy results and verifies data integrity and provenance before a batch is accepted for reporting.</p>
 
-                    <h3 data-en="Binding Free-Energy Relationship" data-pt="Relação da Energia Livre de Ligação">Binding Free-Energy Relationship</h3>
+                    <div class="subsection" id="binding-energy">
+                        <div class="subsection-head">
+                            <h3 data-en="Binding Free-Energy Relationship" data-pt="Relação da Energia Livre de Ligação">Binding Free-Energy Relationship</h3>
+                            <span class="tag tag-concept" data-en="Concept" data-pt="Conceito">Concept</span>
+                        </div>
 
-                    <div class="citation-box">
-                        <code>ΔGbinding = Gcomplex − Greceptor − Gligand</code>
+                        <div class="equation" role="math" aria-label="Delta G binding equals G complex minus G receptor minus G ligand"
+                            data-aria-label-en="Delta G binding equals G complex minus G receptor minus G ligand"
+                            data-aria-label-pt="Delta G de ligação é igual a G do complexo menos G do receptor menos G do ligante">
+                            ΔG<sub>binding</sub> = G<sub>complex</sub> − G<sub>receptor</sub> − G<sub>ligand</sub>
+                        </div>
                     </div>
 
-                    <h3 data-en="Data Integrity Contracts" data-pt="Contratos de Integridade dos Dados">Data Integrity Contracts</h3>
+                    <div class="subsection" id="contracts">
+                        <div class="subsection-head">
+                            <h3 data-en="Data Integrity Contracts" data-pt="Contratos de Integridade dos Dados">Data Integrity Contracts</h3>
+                            <span class="tag tag-validation" data-en="Validation" data-pt="Validação">Validation</span>
+                        </div>
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <th data-en="Contracts" data-pt="Contratos">Contracts</th>
-                                <th data-en="Validation Scope" data-pt="Escopo da Validação">Validation Scope</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>C1–C5</td>
-                                <td
-                                    data-en="Frame counts, temporal alignment, system identity, energy consistency and CSV/DAT agreement."
-                                    data-pt="Contagem de frames, alinhamento temporal, identidade do sistema, consistência das energias e concordância entre CSV/DAT."
-                                >
-                                    Frame counts, temporal alignment, system identity, energy consistency and CSV/DAT agreement.
-                                </td>
-                            </tr>
+                        <div class="table-wrap" role="region" tabindex="0"
+                            aria-label="Data integrity contracts"
+                            data-aria-label-en="Data integrity contracts"
+                            data-aria-label-pt="Contratos de integridade dos dados">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th scope="col" data-en="Contracts" data-pt="Contratos">Contracts</th>
+                                        <th scope="col" data-en="Validation Scope" data-pt="Escopo da Validação">Validation Scope</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><code>C1–C5</code></th>
+                                        <td
+                                            data-en="Frame counts, temporal alignment, system identity, energy consistency and CSV/DAT agreement."
+                                            data-pt="Contagem de frames, alinhamento temporal, identidade do sistema, consistência das energias e concordância entre CSV/DAT."
+                                        >Frame counts, temporal alignment, system identity, energy consistency and CSV/DAT agreement.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><code>C6</code></th>
+                                        <td
+                                            data-en="Consistency of Poisson–Boltzmann parameters across folders."
+                                            data-pt="Consistência dos parâmetros de Poisson–Boltzmann entre as pastas."
+                                        >Consistency of Poisson–Boltzmann parameters across folders.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><code>C7–C8</code></th>
+                                        <td
+                                            data-en="Microstate signature validation and reconstruction from the corrected PDB."
+                                            data-pt="Validação das assinaturas dos microestados e reconstrução a partir do PDB corrigido."
+                                        >Microstate signature validation and reconstruction from the corrected PDB.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><code>C9–C10</code></th>
+                                        <td
+                                            data-en="PBC processing provenance and consistency of software versions and membrane modes."
+                                            data-pt="Proveniência do processamento PBC e consistência das versões de software e dos modos de membrana."
+                                        >PBC processing provenance and consistency of software versions and membrane modes.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
-                            <tr>
-                                <td>C6</td>
-                                <td
-                                    data-en="Consistency of Poisson–Boltzmann parameters across folders."
-                                    data-pt="Consistência dos parâmetros de Poisson–Boltzmann entre as pastas."
-                                >
-                                    Consistency of Poisson–Boltzmann parameters across folders.
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>C7–C8</td>
-                                <td
-                                    data-en="Microstate signature validation and reconstruction from the corrected PDB."
-                                    data-pt="Validação das assinaturas dos microestados e reconstrução a partir do PDB corrigido."
-                                >
-                                    Microstate signature validation and reconstruction from the corrected PDB.
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>C9–C10</td>
-                                <td
-                                    data-en="PBC processing provenance and consistency of software versions and membrane modes."
-                                    data-pt="Proveniência do processamento PBC e consistência das versões de software e dos modos de membrana."
-                                >
-                                    PBC processing provenance and consistency of software versions and membrane modes.
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                        <p class="source-note" data-html
+                            data-en="C1–C8 check the internal consistency of each folder. C9 is applied per folder and blocks invalid results; C10 checks that the whole batch is homogeneous. Introduced in <code>dg-analysis</code> 1.3.0 — see <a href=&quot;#rdc-027&quot;>RDC-027</a>."
+                            data-pt="C1–C8 verificam a coerência interna de cada pasta. C9 é aplicado por pasta e bloqueia resultados inválidos; C10 verifica se o lote inteiro é homogêneo. Introduzidos no <code>dg-analysis</code> 1.3.0 — ver <a href=&quot;#rdc-027&quot;>RDC-027</a>."
+                        >C1–C8 check the internal consistency of each folder. C9 is applied per folder and blocks invalid results; C10 checks that the whole batch is homogeneous. Introduced in <code>dg-analysis</code> 1.3.0 — see <a href="#rdc-027">RDC-027</a>.</p>
+                    </div>
                 </section>
 
                 <!-- TECHNICAL GOVERNANCE -->
-                <section class="doc-section" id="governance">
-                    <span class="section-label"
-                        data-en="TECHNICAL GOVERNANCE" data-pt="GOVERNANÇA TÉCNICA">TECHNICAL GOVERNANCE</span>
+                <section class="doc-section" id="governance" aria-labelledby="h-governance">
+                    <p class="eyebrow" data-en="Technical governance" data-pt="Governança técnica">Technical governance</p>
 
-                    <h2
+                    <h2 id="h-governance"
                         data-en="Defect Reports and Methodological Decisions"
                         data-pt="Relatórios de Defeitos e Decisões Metodológicas"
-                    >
-                        Defect Reports and Methodological Decisions
-                    </h2>
+                    >Defect Reports and Methodological Decisions</h2>
 
-                    <h3 data-en="Selected Defect Reports (RDC)"
-                        data-pt="Relatórios de Defeitos Selecionados (RDC)">
-                        Selected Defect Reports (RDC)
-                    </h3>
+                    <p class="lead" data-html
+                        data-en="<strong>RDC</strong> (defect and correction record) documents each software defect: symptom, root cause, fix, verification and release impact. <strong>RDM</strong> (methodological decision record) documents scientific decisions."
+                        data-pt="<strong>RDC</strong> (Registro de Defeito e Correção) documenta cada defeito de software: sintoma, causa raiz, correção, verificação e impacto na release. <strong>RDM</strong> (Registro de Decisão Metodológica) documenta decisões científicas."
+                    ><strong>RDC</strong> (defect and correction record) documents each software defect: symptom, root cause, fix, verification and release impact. <strong>RDM</strong> (methodological decision record) documents scientific decisions.</p>
 
-                    <ul>
-                        <li>
-                            <strong>RDC-022:</strong>
-                            <span data-en="Change to the whole → mol PBC workflow."
-                                data-pt="Alteração do fluxo PBC whole → mol.">Change to the whole → mol PBC workflow.</span>
-                        </li>
+                    <h3 id="rdc-records" data-en="Selected Defect Reports (RDC)" data-pt="Relatórios de Defeitos Selecionados (RDC)">Selected Defect Reports (RDC)</h3>
 
-                        <li>
-                            <strong>RDC-025:</strong>
-                            <span
-                                data-en="Investigation of SIGILL failures on older CPUs and configurable execution resources."
-                                data-pt="Investigação de falhas SIGILL em CPUs mais antigas e de recursos de execução configuráveis."
-                            >Investigation of SIGILL failures on older CPUs and configurable execution resources.</span>
-                        </li>
+                    <div class="table-wrap" role="region" tabindex="0"
+                        aria-label="Selected defect reports"
+                        data-aria-label-en="Selected defect reports"
+                        data-aria-label-pt="Relatórios de defeitos selecionados">
+                        <table class="records">
+                            <thead>
+                                <tr>
+                                    <th scope="col" data-en="Record" data-pt="Registro">Record</th>
+                                    <th scope="col" data-en="Description" data-pt="Descrição">Description</th>
+                                    <th scope="col" data-en="Fixed in · date" data-pt="Corrigido em · data">Fixed in · date</th>
+                                    <th scope="col" data-en="Status · source" data-pt="Status · fonte">Status · source</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="rdc-022">
+                                    <th scope="row"><span class="record-id">RDC-022</span></th>
+                                    <td>
+                                        <span data-en="Change to the whole → mol PBC workflow." data-pt="Alteração do fluxo PBC whole → mol.">Change to the whole → mol PBC workflow.</span>
+                                        <span class="record-detail" data-html
+                                            data-en="<code>trjconv -pbc cluster -center</code> made the membrane appear to move; replaced by <code>-pbc whole</code> → <code>-pbc mol</code>. Severity: high."
+                                            data-pt="<code>trjconv -pbc cluster -center</code> fazia a membrana parecer se mover; substituído por <code>-pbc whole</code> → <code>-pbc mol</code>. Severidade: alta."><code>trjconv -pbc cluster -center</code> made the membrane appear to move; replaced by <code>-pbc whole</code> → <code>-pbc mol</code>. Severity: high.</span>
+                                    </td>
+                                    <td class="record-version"><code>gromacs-pipeline</code> v2.1.0<span class="record-meta"><time datetime="2026-09-30">2026-09-30</time></span></td>
+                                    <td><span class="status status-unknown" data-en="Not stated in the index" data-pt="Não informado no índice">Not stated in the index</span>
+                                        <a href="https://drive.google.com/file/d/1TM1ohRibPA6P8cZ2Li2arC9jYwn9YpnI/view" target="_blank" rel="noopener noreferrer"
+                                            data-en="RDC-000 index (Drive)" data-pt="Índice RDC-000 (Drive)" class="record-source">RDC-000 index (Drive)</a>
+                                    </td>
+                                </tr>
+                                <tr id="rdc-025">
+                                    <th scope="row"><span class="record-id">RDC-025</span></th>
+                                    <td>
+                                        <span data-en="Investigation of SIGILL failures on older CPUs and configurable execution resources." data-pt="Investigação de falhas SIGILL em CPUs mais antigas e de recursos de execução configuráveis.">Investigation of SIGILL failures on older CPUs and configurable execution resources.</span>
+                                        <span class="record-detail" data-html
+                                            data-en="Defect CP2-20261013, reported on 2026-10-13. CPU and parallelism parameters now come from <code>gromacs-pipeline.cfg</code> (decision DEC-CFG-1019). Severity: high."
+                                            data-pt="Defeito CP2-20261013, relatado em 2026-10-13. Os parâmetros de CPU e paralelismo passam a vir de <code>gromacs-pipeline.cfg</code> (decisão DEC-CFG-1019). Severidade: alta.">Defect CP2-20261013, reported on 2026-10-13. CPU and parallelism parameters now come from <code>gromacs-pipeline.cfg</code> (decision DEC-CFG-1019). Severity: high.</span>
+                                    </td>
+                                    <td class="record-version"><code>gromacs-pipeline</code> v2.2.2<span class="record-meta"><time datetime="2026-10-19">2026-10-19</time></span></td>
+                                    <td><span class="status status-pending" data-en="Delivered — awaiting validation on the cluster" data-pt="Entregue — aguardando validação no cluster">Delivered — awaiting validation on the cluster</span>
+                                        <a href="https://docs.google.com/document/d/1RJuqYSxt3P6Z7YKs3aaljsm5MXDzI_IKWNhw4coCZs0/edit" target="_blank" rel="noopener noreferrer"
+                                            data-en="RDC-025 record (Docs)" data-pt="Ficha RDC-025 (Docs)" class="record-source">RDC-025 record (Docs)</a>
+                                    </td>
+                                </tr>
+                                <tr id="rdc-027">
+                                    <th scope="row"><span class="record-id">RDC-027</span></th>
+                                    <td>
+                                        <span data-en="Implementation of P2 provenance contracts C9 and C10 in P3." data-pt="Implementação dos contratos de proveniência C9 e C10 de P2 em P3.">Implementation of P2 provenance contracts C9 and C10 in P3.</span>
+                                        <span class="record-detail"
+                                            data-en="Defect CP3-20261019 (latent defect found by auditing the Product 2 changes). Severity: medium."
+                                            data-pt="Defeito CP3-20261019 (defeito latente encontrado na auditoria das mudanças do Produto 2). Severidade: média.">Defect CP3-20261019 (latent defect found by auditing the Product 2 changes). Severity: medium.</span>
+                                    </td>
+                                    <td class="record-version"><code>dg-analysis</code> 1.3.0<span class="record-meta"><time datetime="2026-10-19">2026-10-19</time></span></td>
+                                    <td><span class="status status-pending" data-en="Delivered — awaiting approval and validation on the cluster" data-pt="Entregue — aguardando aprovação e validação no cluster">Delivered — awaiting approval and validation on the cluster</span>
+                                        <a href="https://drive.google.com/file/d/1ta7Ee8V0KgXOeJAJ0qhVpHFcQXzGVzTe/view" target="_blank" rel="noopener noreferrer"
+                                            data-en="RDC-027 record (Drive)" data-pt="Ficha RDC-027 (Drive)" class="record-source">RDC-027 record (Drive)</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-                        <li>
-                            <strong>RDC-027:</strong>
-                            <span
-                                data-en="Implementation of P2 provenance contracts C9 and C10 in P3."
-                                data-pt="Implementação dos contratos de proveniência C9 e C10 de P2 em P3."
-                            >Implementation of P2 provenance contracts C9 and C10 in P3.</span>
-                        </li>
-                    </ul>
+                    <h3 id="rdm-records" data-en="Methodological Decisions (RDM)" data-pt="Decisões Metodológicas (RDM)">Methodological Decisions (RDM)</h3>
 
-                    <h3 data-en="Methodological Decisions (RDM)"
-                        data-pt="Decisões Metodológicas (RDM)">
-                        Methodological Decisions (RDM)
-                    </h3>
+                    <div class="table-wrap" role="region" tabindex="0"
+                        aria-label="Methodological decisions"
+                        data-aria-label-en="Methodological decisions"
+                        data-aria-label-pt="Decisões metodológicas">
+                        <table class="records">
+                            <thead>
+                                <tr>
+                                    <th scope="col" data-en="Record" data-pt="Registro">Record</th>
+                                    <th scope="col" data-en="Description" data-pt="Descrição">Description</th>
+                                    <th scope="col" data-en="Code version · date" data-pt="Versão do código · data">Code version · date</th>
+                                    <th scope="col" data-en="Status · source" data-pt="Status · fonte">Status · source</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="rdm-001">
+                                    <th scope="row"><span class="record-id">RDM-001</span></th>
+                                    <td>
+                                        <span data-en="Initial ternary classification policy." data-pt="Política inicial de classificação ternária.">Initial ternary classification policy.</span>
+                                        <span class="record-detail"
+                                            data-en="Treatment of transition-zone frames: ternary classification by threshold, without hysteresis; transition frames discarded when cutting microtrajectories."
+                                            data-pt="Tratamento dos frames em zona de transição: classificação ternária por limiar, sem histerese; frames em transição descartados no recorte de microtrajetórias.">Treatment of transition-zone frames: ternary classification by threshold, without hysteresis; transition frames discarded when cutting microtrajectories.</span>
+                                    </td>
+                                    <td class="record-version"><code>protonation-analysis</code> v0.10.0<span class="record-meta"><time datetime="2026-07-21">2026-07-21</time></span></td>
+                                    <td><span class="status status-superseded" data-en="Superseded by RDM-003" data-pt="Substituída pela RDM-003">Superseded by RDM-003</span>
+                                        <a href="https://docs.google.com/document/d/1xgPAA1X6pbt2_DArx-o5kQb9TKAYJ_xaslOHfsU57Cs/edit" target="_blank" rel="noopener noreferrer"
+                                            data-en="RDM-001 record (Docs)" data-pt="Registro RDM-001 (Docs)" class="record-source">RDM-001 record (Docs)</a>
+                                    </td>
+                                </tr>
+                                <tr id="rdm-003">
+                                    <th scope="row"><span class="record-id">RDM-003</span></th>
+                                    <td>
+                                        <span data-en="Hysteresis and histidine tautomer signatures." data-pt="Histerese e assinaturas dos tautômeros da histidina.">Hysteresis and histidine tautomer signatures.</span>
+                                        <span class="record-detail"
+                                            data-en="Hysteresis adopted for all titratable residues; microstate signatures encode the histidine tautomer (H = HSP, D = HSD, E = HSE)."
+                                            data-pt="Histerese adotada em todos os resíduos tituláveis; as assinaturas dos microestados codificam o tautômero da histidina (H = HSP, D = HSD, E = HSE).">Hysteresis adopted for all titratable residues; microstate signatures encode the histidine tautomer (H = HSP, D = HSD, E = HSE).</span>
+                                    </td>
+                                    <td class="record-version"><code>protonation-analysis</code> v0.11.0<span class="record-meta"><time datetime="2026-07-23">2026-07-23</time></span></td>
+                                    <td><span class="status status-current" data-en="In force" data-pt="Vigente">In force</span>
+                                        <a href="https://docs.google.com/document/d/1WqpBjRAsGjOiYwKcmui2vvFcYIBdD-ab6JGqFmcV0XY/edit" target="_blank" rel="noopener noreferrer"
+                                            data-en="RDM-003 record (Docs)" data-pt="Registro RDM-003 (Docs)" class="record-source">RDM-003 record (Docs)</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-                    <ul>
-                        <li>
-                            <strong>RDM-001:</strong>
-                            <span data-en="Initial ternary classification policy."
-                                data-pt="Política inicial de classificação ternária.">Initial ternary classification policy.</span>
-                        </li>
-
-                        <li>
-                            <strong>RDM-003:</strong>
-                            <span data-en="Hysteresis and histidine tautomer signatures."
-                                data-pt="Histerese e assinaturas dos tautômeros da histidina.">Hysteresis and histidine tautomer signatures.</span>
-                        </li>
-                    </ul>
-
-                    <p
-                        data-en="Each record should link to its original document, version, rationale and implementation evidence."
-                        data-pt="Cada registro deve apontar para o documento original, a versão, a justificativa e as evidências de implementação."
-                    >
-                        Each record should link to its original document, version, rationale and implementation evidence.
-                    </p>
+                    <p class="source-note" data-html
+                        data-en="Data taken from the original records and from the <a href=&quot;https://drive.google.com/file/d/1TM1ohRibPA6P8cZ2Li2arC9jYwn9YpnI/view&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>RDC-000 index (series RDC-001 to RDC-027, updated on 2026-10-19)</a>. Dates are given as YYYY-MM-DD. External links open the project folder on Google Drive in a new tab."
+                        data-pt="Dados extraídos das fichas originais e do <a href=&quot;https://drive.google.com/file/d/1TM1ohRibPA6P8cZ2Li2arC9jYwn9YpnI/view&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>índice RDC-000 (série RDC-001 a RDC-027, atualizado em 2026-10-19)</a>. Datas no formato AAAA-MM-DD. Os links externos abrem a pasta do projeto no Google Drive em uma nova aba."
+                    >Data taken from the original records and from the <a href="https://drive.google.com/file/d/1TM1ohRibPA6P8cZ2Li2arC9jYwn9YpnI/view" target="_blank" rel="noopener noreferrer">RDC-000 index (series RDC-001 to RDC-027, updated on 2026-10-19)</a>. Dates are given as YYYY-MM-DD. External links open the project folder on Google Drive in a new tab.</p>
                 </section>
 
                 <!-- TEAM AND INFRASTRUCTURE -->
-                <section class="doc-section" id="team">
-                    <span class="section-label"
-                        data-en="RESEARCH TEAM" data-pt="EQUIPE DE PESQUISA">RESEARCH TEAM</span>
+                <section class="doc-section" id="team" aria-labelledby="h-team">
+                    <p class="eyebrow" data-en="Research team" data-pt="Equipe de pesquisa">Research team</p>
 
-                    <h2
+                    <h2 id="h-team"
                         data-en="Team and Computing Infrastructure"
                         data-pt="Equipe e Infraestrutura Computacional"
-                    >
-                        Team and Computing Infrastructure
-                    </h2>
+                    >Team and Computing Infrastructure</h2>
 
-                    <ul>
-                        <li>
-                            <strong data-en="Principal Researcher / Advisor:"
-                                data-pt="Pesquisador Principal / Orientador:">Principal Researcher / Advisor:</strong>
-                            Prof. Dr. Marcos Lourenzoni
-                        </li>
+                    <dl class="team-list">
+                        <div class="team-item">
+                            <dt data-en="Principal Researcher / Advisor" data-pt="Pesquisador Principal / Orientador">Principal Researcher / Advisor</dt>
+                            <dd>Prof. Dr. Marcos Lourenzoni</dd>
+                        </div>
+                        <div class="team-item">
+                            <dt data-en="Developer / PhD Researcher" data-pt="Desenvolvedor / Pesquisador de Doutorado">Developer / PhD Researcher</dt>
+                            <dd>Prof. Sandro Mesquita</dd>
+                        </div>
+                        <div class="team-item">
+                            <dt data-en="Developer / Researcher" data-pt="Desenvolvedor / Pesquisador">Developer / Researcher</dt>
+                            <dd>Alice Queiroz</dd>
+                        </div>
+                    </dl>
 
-                        <li>
-                            <strong data-en="Developer / PhD Researcher:"
-                                data-pt="Desenvolvedor / Pesquisador de Doutorado:">Developer / PhD Researcher:</strong>
-                            Prof. Sandro Mesquita
-                        </li>
-
-                        <li>
-                            <strong data-en="Developer / Researcher:"
-                                data-pt="Desenvolvedor / Pesquisador:">Developer / Researcher:</strong>
-                            Alice Queiroz
-                        </li>
-                    </ul>
-
-                    <p>
-                        <strong data-en="Research Group:" data-pt="Grupo de Pesquisa:">Research Group:</strong>
-                        GEPEsS — Protein Engineering and Health Solutions Research Group.
-                    </p>
-
-                    <p>
-                        <strong data-en="Institution:" data-pt="Instituição:">Institution:</strong>
-                        Fiocruz Ceará.
-                    </p>
-
-                    <p>
-                        <strong data-en="Computing Infrastructure:"
-                            data-pt="Infraestrutura Computacional:">Computing Infrastructure:</strong>
-                        HPC cluster gepess3, including gn009/gn010 nodes with Gold 6130 processors.
-                    </p>
+                    <dl class="facts">
+                        <div>
+                            <dt data-en="Research Group" data-pt="Grupo de Pesquisa">Research Group</dt>
+                            <dd>GEPEsS — Protein Engineering and Health Solutions Research Group.</dd>
+                        </div>
+                        <div>
+                            <dt data-en="Institution" data-pt="Instituição">Institution</dt>
+                            <dd>Fiocruz Ceará.</dd>
+                        </div>
+                        <div>
+                            <dt data-en="Computing Infrastructure" data-pt="Infraestrutura Computacional">Computing Infrastructure</dt>
+                            <dd data-en="HPC cluster gepess3, including gn009/gn010 nodes with Gold 6130 processors."
+                                data-pt="Cluster HPC gepess3, incluindo os nós gn009/gn010 com processadores Gold 6130.">HPC cluster gepess3, including gn009/gn010 nodes with Gold 6130 processors.</dd>
+                        </div>
+                    </dl>
                 </section>
 
                 <!-- REFERENCES -->
-                <section class="doc-section" id="cite">
-                    <span class="section-label"
-                        data-en="REFERENCES" data-pt="REFERÊNCIAS">REFERENCES</span>
+                <section class="doc-section" id="cite" aria-labelledby="h-cite">
+                    <p class="eyebrow" data-en="References" data-pt="Referências">References</p>
 
-                    <h2
+                    <h2 id="h-cite"
                         data-en="Citation and Project Resources"
                         data-pt="Citação e Recursos do Projeto"
-                    >
-                        Citation and Project Resources
-                    </h2>
+                    >Citation and Project Resources</h2>
 
                     <p
                         data-en="Consult the original project documents, source code, version history, RDC/RDM records and scientific references for complete technical details."
                         data-pt="Consulte os documentos originais do projeto, o código-fonte, o histórico de versões, os registros RDC/RDM e as referências científicas para obter os detalhes técnicos completos."
-                    >
-                        Consult the original project documents, source code, version history, RDC/RDM records and scientific references for complete technical details.
-                    </p>
+                    >Consult the original project documents, source code, version history, RDC/RDM records and scientific references for complete technical details.</p>
+
+                    <h3 id="how-to-cite" data-en="How to cite" data-pt="Como citar">How to cite</h3>
 
                     <div class="citation-box">
                         <code>GEPEsS / Fiocruz Ceará — CpHMD / MM/PBSA Technical Documentation.</code>
+                    </div>
+
+                    <h3 id="resources" data-en="Project resources" data-pt="Recursos do projeto">Project resources</h3>
+
+                    <ul class="resource-list">
+                        <li>
+                            <a href="https://github.com/Richardblasty/Trabalho-Bio" target="_blank" rel="noopener noreferrer"
+                                data-en="Source code of this documentation (GitHub: Richardblasty/Trabalho-Bio)"
+                                data-pt="Código-fonte desta documentação (GitHub: Richardblasty/Trabalho-Bio)">Source code of this documentation (GitHub: Richardblasty/Trabalho-Bio)</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Richardblasty/Trabalho-Bio/commits/main" target="_blank" rel="noopener noreferrer"
+                                data-en="Version history of the documentation (commits on main)"
+                                data-pt="Histórico de versões da documentação (commits na main)">Version history of the documentation (commits on main)</a>
+                        </li>
+                        <li>
+                            <a href="https://drive.google.com/drive/folders/1YouaqqQ5MRB6zbFItjCZtYcHC0bajqsv" target="_blank" rel="noopener noreferrer"
+                                data-en="Project documents folder “PH-Controlado” (Google Drive): products, releases and RDC/RDM records"
+                                data-pt="Pasta de documentos do projeto “PH-Controlado” (Google Drive): produtos, versões e registros RDC/RDM">Project documents folder “PH-Controlado” (Google Drive): products, releases and RDC/RDM records</a>
+                        </li>
+                        <li>
+                            <a href="https://drive.google.com/file/d/1TM1ohRibPA6P8cZ2Li2arC9jYwn9YpnI/view" target="_blank" rel="noopener noreferrer"
+                                data-en="RDC-000 — index of the RDC series (RDC-001 to RDC-027)"
+                                data-pt="RDC-000 — índice da série RDC (RDC-001 a RDC-027)">RDC-000 — index of the RDC series (RDC-001 to RDC-027)</a>
+                        </li>
+                    </ul>
+
+                    <div class="callout callout-pending" role="note">
+                        <p class="callout-title">
+                            <span class="callout-icon" aria-hidden="true">…</span>
+                            <span data-en="Pending" data-pt="Pendente">Pending</span>
+                        </p>
+                        <p
+                            data-en="The bibliographic reference list has not yet been added to this documentation."
+                            data-pt="A lista de referências bibliográficas ainda não foi incluída nesta documentação."
+                        >The bibliographic reference list has not yet been added to this documentation.</p>
                     </div>
                 </section>
 
@@ -742,31 +911,35 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container footer-content">
-
+    <footer class="site-footer">
+        <div class="container footer-grid">
             <div class="footer-brand">
-                <div class="footer-logo">PROJECT</div>
-                <p data-en="Project documentation." data-pt="Documentação do projeto.">Project documentation.</p>
+                <p class="footer-logo"><span aria-hidden="true">◆</span> Trabalho-Bio</p>
+                <p data-en="CpHMD / MM/PBSA technical documentation — GEPEsS, Fiocruz Ceará."
+                    data-pt="Documentação técnica CpHMD / MM/PBSA — GEPEsS, Fiocruz Ceará.">CpHMD / MM/PBSA technical documentation — GEPEsS, Fiocruz Ceará.</p>
             </div>
 
-            <div class="footer-links">
-                <a href="#home" data-en="Home" data-pt="Início">Home</a>
-                <a href="#getting-started" data-en="Overview" data-pt="Visão geral">Overview</a>
-                <a href="#governance" data-en="Governance" data-pt="Governança">Governance</a>
-                <a href="#cite" data-en="References" data-pt="Referências">References</a>
-            </div>
+            <nav class="footer-links" aria-label="Footer"
+                data-aria-label-en="Footer"
+                data-aria-label-pt="Rodapé">
+                <a href="#top" data-en="Back to top" data-pt="Voltar ao topo">Back to top</a>
+                <a href="#governance" data-en="Governance records" data-pt="Registros de governança">Governance records</a>
+                <a href="https://github.com/Richardblasty/Trabalho-Bio" target="_blank" rel="noopener noreferrer"
+                    data-en="Repository on GitHub" data-pt="Repositório no GitHub">Repository on GitHub</a>
+            </nav>
         </div>
 
         <div class="container footer-bottom">
-            <span data-en="© 2026 Project Documentation"
-                data-pt="© 2026 Documentação do Projeto">© 2026 Project Documentation</span>
+            <p data-html
+                data-en="© 2026 · Code under the <a href=&quot;https://github.com/Richardblasty/Trabalho-Bio/blob/main/LICENSE&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>MIT License</a>"
+                data-pt="© 2026 · Código sob a <a href=&quot;https://github.com/Richardblasty/Trabalho-Bio/blob/main/LICENSE&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>Licença MIT</a>"
+            >© 2026 · Code under the <a href="https://github.com/Richardblasty/Trabalho-Bio/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a></p>
 
-            <span data-en="Documentation" data-pt="Documentação">Documentation</span>
+            <p data-en="Records current as of the RDC-000 index of 2026-10-19."
+                data-pt="Registros atualizados conforme o índice RDC-000 de 2026-10-19.">Records current as of the RDC-000 index of 2026-10-19.</p>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
 </body>
 
 </html>
