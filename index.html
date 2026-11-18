@@ -1,52 +1,28 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-en="Project Documentation" data-pt="Documentação do Projeto">Project Documentation</title>
+    <title data-en="CpHMD / MM-PBSA" data-pt="CpHMD / MM-PBSA" data-es="CpHMD / MM-PBSA">CpHMD / MM-PBSA</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-
-    <!-- NEWS BAR -->
-    <div class="news-bar">
-        <div class="container news-content">
-            <span class="news-label" data-en="NEWS" data-pt="NOVIDADES">NEWS</span>
-
-            <span class="news-text"
-                data-en="Welcome to the project documentation."
-                data-pt="Bem-vindo à documentação do projeto.">Welcome to the project documentation.</span>
-
-            <a href="#getting-started" class="news-link"
-                data-en="Learn more →" data-pt="Saiba mais →">Learn more →</a>
-        </div>
-    </div>
-
-    <!-- VERSION WARNING -->
-    <div class="version-warning">
-        <div class="container">
-            <strong data-en="Current version:" data-pt="Versão atual:">Current version:</strong>
-
-            <span
-                data-en="This documentation provides information, examples and guidelines about the project."
-                data-pt="Esta documentação apresenta informações, exemplos e orientações sobre o projeto.">
-                This documentation provides information, examples and guidelines about the project.
-            </span>
-        </div>
-    </div>
 
     <!-- HEADER -->
     <header class="header">
         <div class="container header-content">
 
             <!-- LOGO -->
-            <a href="#home" class="logo">
-                <span class="logo-symbol">◆</span>
-                <span>PROJECT</span>
-                <small data-en="Documentation" data-pt="Documentação">Documentation</small>
+           <a href="https://ceara.fiocruz.br/portal/"
+                class="site-brand"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Acessar o site da Fiocruz Ceará">
+
+                <img src="images/logo-fiocruz.png" alt="Fiocruz">
+
             </a>
 
             <!-- HEADER ACTIONS -->
@@ -60,28 +36,45 @@
                         placeholder="Search..."
                         aria-label="Search"
                         data-placeholder-en="Search..."
-                        data-placeholder-pt="Pesquisar..."
+                        data-placeholder-pt="Pesquisar..." data-placeholder-es="Buscar..."
                         data-aria-label-en="Search"
-                        data-aria-label-pt="Pesquisar"
+                        data-aria-label-pt="Pesquisar" data-aria-label-es="Buscar"
                     >
 
                     <button
                         type="submit"
                         aria-label="Search"
                         data-aria-label-en="Search"
-                        data-aria-label-pt="Pesquisar"
+                        data-aria-label-pt="Pesquisar" data-aria-label-es="Buscar"
                     >⌕</button>
                 </form>
 
-                <!-- LANGUAGE TOGGLE -->
-                <button
-                    class="language-toggle"
-                    id="language-toggle"
-                    type="button"
-                    aria-label="Switch language to Portuguese"
-                    title="Switch language to Portuguese"
-                >EN | PT</button>
+                <!-- LANGUAGE SELECTOR -->
+<div class="language-selector" id="language-selector" aria-label="Select language">
+    <button
+        type="button"
+        class="language-option"
+        data-language="en"
+        aria-label="English"
+        title="English"
+    >ENG</button>
 
+    <button
+        type="button"
+        class="language-option"
+        data-language="pt"
+        aria-label="Português"
+        title="Português"
+    >POR</button>
+
+    <button
+        type="button"
+        class="language-option"
+        data-language="es"
+        aria-label="Español"
+        title="Español"
+    >ESP</button>
+</div>
                 <!-- THEME TOGGLE -->
                 <button
                     class="theme-toggle"
@@ -103,7 +96,7 @@
                     rel="noopener noreferrer"
                 >
                     <span class="github-icon">●</span>
-                    <span data-en="Repository" data-pt="Repositório">Repository</span>
+                    <span data-en="Repository" data-pt="Repositório" data-es="Repositorio">Repository</span>
                 </a>
 
             </div>
@@ -114,31 +107,31 @@
             <div class="container nav-content">
 
                 <a href="#home" class="nav-link active"
-                    data-en="Home" data-pt="Início">Home</a>
+                    data-en="Home" data-pt="Início" data-es="Inicio">Home</a>
 
                 <a href="#getting-started" class="nav-link"
-                    data-en="Overview" data-pt="Visão geral">Overview</a>
+                    data-en="Overview" data-pt="Visão geral" data-es="Visión general">Overview</a>
 
                 <a href="#project" class="nav-link"
-                    data-en="Architecture" data-pt="Arquitetura">Architecture</a>
+                    data-en="Architecture" data-pt="Arquitetura" data-es="Arquitectura">Architecture</a>
 
                 <a href="#installation" class="nav-link"
-                    data-en="CpHMD" data-pt="CpHMD">CpHMD</a>
+                    data-en="CpHMD" data-pt="CpHMD" data-es="CpHMD">CpHMD</a>
 
                 <a href="#examples" class="nav-link"
-                    data-en="GROMACS / MM-PBSA" data-pt="GROMACS / MM-PBSA">GROMACS / MM-PBSA</a>
+                    data-en="GROMACS / MM-PBSA" data-pt="GROMACS / MM-PBSA" data-es="GROMACS / MM-PBSA">GROMACS / MM-PBSA</a>
 
                 <a href="#help" class="nav-link"
-                    data-en="ΔG Analysis" data-pt="Análise ΔG">ΔG Analysis</a>
+                    data-en="ΔG Analysis" data-pt="Análise ΔG" data-es="Análisis de ΔG">ΔG Analysis</a>
 
                 <a href="#governance" class="nav-link"
-                    data-en="Governance" data-pt="Governança">Governance</a>
+                    data-en="Governance" data-pt="Governança" data-es="Gobernanza">Governance</a>
 
                 <a href="#team" class="nav-link"
-                    data-en="Team &amp; HPC" data-pt="Equipe e HPC">Team &amp; HPC</a>
+                    data-en="Team &amp; HPC" data-pt="Equipe e HPC" data-es="Equipo y HPC">Team &amp; HPC</a>
 
                 <a href="#cite" class="nav-link"
-                    data-en="References" data-pt="Referências">References</a>
+                    data-en="References" data-pt="Referências" data-es="Referencias">References</a>
 
             </div>
         </nav>
@@ -152,29 +145,29 @@
             <div class="hero-text">
                 <span class="hero-tag"
                     data-en="DOCUMENTATION"
-                    data-pt="DOCUMENTAÇÃO">DOCUMENTATION</span>
+                    data-pt="DOCUMENTAÇÃO" data-es="DOCUMENTACIÓN">DOCUMENTATION</span>
 
                 <h1>
                     <span
-                        data-en="Protonation Analysis in CpHMD Simulations"
-                        data-pt="Análise de Protonação em Simulações CpHMD">Análise de Protonação em Simulações CpHMD</span>
+                        data-en="CpHMD / MM-PBSA"
+                        data-pt="CpHMD / MM-PBSA" data-es="CpHMD / MM-PBSA">CpHMD / MM-PBSA</span>
                 </h1>
 
                 <p
-                    data-en="A platform for tracking and thermodynamic analysis of protonation states and molecular microstates, applied to the research and development of biopharmaceuticals and immunotherapies, including anti-CD22 CAR-T."
-                    data-pt="Plataforma de rastreamento e análise termodinâmica de estados de protonação e microestados moleculares, aplicada à pesquisa e ao desenvolvimento de biofármacos e imunoterapias, incluindo CAR-T anti-CD22."
-                >
-                    Plataforma de rastreamento e análise termodinâmica de estados de protonação e microestados moleculares, aplicada à pesquisa e ao desenvolvimento de biofármacos e imunoterapias, incluindo CAR-T anti-CD22.
+                    data-en="A computational workflow for protonation analysis, molecular microstates and binding free-energy calculations in biomolecular systems."
+                    data-pt="Um fluxo computacional para análise de protonação, microestados moleculares e cálculos de energia livre de ligação em sistemas biomoleculares."
+                 data-es="Un flujo computacional para el análisis de protonación, los microestados moleculares y los cálculos de energía libre de unión en sistemas biomoleculares.">
+                    Um fluxo computacional para análise de protonação, microestados moleculares e cálculos de energia livre de ligação em sistemas biomoleculares.
                 </p>
 
                 <div class="hero-buttons">
                     <a href="#project" class="btn btn-primary"
                         data-en="Explore Methodology"
-                        data-pt="Ver metodologia">Explore Methodology</a>
+                        data-pt="Ver metodologia" data-es="Explorar metodología">Explore Methodology</a>
 
                     <a href="#installation" class="btn btn-secondary"
                         data-en="Explore CpHMD"
-                        data-pt="Ver CpHMD">Explore CpHMD</a>
+                        data-pt="Ver CpHMD" data-es="Explorar CpHMD">Explore CpHMD</a>
                 </div>
             </div>
 
@@ -185,31 +178,69 @@
                     alt="Protein structure with a ligand"
                     class="protein-image"
                     data-alt-en="Protein structure with a ligand"
-                    data-alt-pt="Estrutura molecular de uma proteína com ligante"
+                    data-alt-pt="Estrutura molecular de uma proteína com ligante" data-alt-es="Estructura molecular de una proteína con ligando"
                 >
             </div>
 
         </div>
 
         <!-- HERO WAVE -->
-        <div class="hero-wave">
-            <svg viewBox="0 0 1440 260" preserveAspectRatio="none" aria-hidden="true">
-                <path d="
-                    M0 220
-                    C45 230, 105 235, 165 220
-                    C245 195, 320 165, 410 165
-                    C500 165, 560 215, 650 225
-                    C740 235, 805 205, 855 175
-                    C930 148, 1005 105, 1090 78
-                    C1185 48, 1280 40, 1370 42
-                    C1400 43, 1420 44, 1440 45
-                    L1440 305
-                    L0 305
-                    Z
-                "></path>
-            </svg>
-        </div>
-    </section>
+       <div class="hero-wave">
+    <svg viewBox="0 0 1440 260"
+         preserveAspectRatio="none"
+         aria-hidden="true">
+
+        <!-- Preenchimento branco da onda -->
+        <path class="wave-fill"
+            d="
+                M0 220
+                C45 230, 105 235, 165 220
+                C245 195, 320 165, 410 165
+                C500 165, 560 215, 650 225
+                C740 235, 805 205, 855 175
+                C930 148, 1005 105, 1090 78
+                C1185 48, 1280 40, 1370 42
+                C1400 43, 1420 44, 1440 45
+                L1440 300
+                L0 300
+                Z
+            "
+        />
+
+     <!-- Primeira linha: acompanha a onda azul -->
+<path class="wave-line"
+    transform="translate(0, -18)"
+    d="
+        M0 220
+        C45 230, 105 235, 165 220
+        C245 195, 320 165, 410 165
+        C500 165, 560 215, 650 225
+        C740 235, 805 205, 855 175
+        C930 148, 1005 105, 1090 78
+        C1185 48, 1280 40, 1370 42
+        C1400 43, 1420 44, 1440 45
+    "
+/>
+
+<!-- Segunda linha: acompanha a mesma onda -->
+<path class="wave-line wave-line-secondary"
+    transform="translate(0, -36)"
+    d="
+        M0 220
+        C45 230, 105 235, 165 220
+        C245 195, 320 165, 410 165
+        C500 165, 560 215, 650 225
+        C740 235, 805 205, 855 175
+        C930 148, 1005 105, 1090 78
+        C1185 48, 1280 40, 1370 42
+        C1400 43, 1420 44, 1440 45
+    "
+/>
+
+    </svg>
+</div>
+
+</section> <!-- FECHA A HERO -->
 
     <!-- DOCUMENTATION -->
     <main class="documentation">
@@ -219,57 +250,57 @@
             <aside class="sidebar">
                 <div class="sidebar-title"
                     data-en="Documentation"
-                    data-pt="Documentação">Documentation</div>
+                    data-pt="Documentação" data-es="Documentación">Documentation</div>
 
                 <ul class="sidebar-menu">
                     <li>
                         <a href="#getting-started" class="sidebar-link active"
-                            data-en="Overview" data-pt="Visão geral">Overview</a>
+                            data-en="Overview" data-pt="Visão geral" data-es="Visión general">Overview</a>
                     </li>
 
                     <li>
                         <a href="#project" class="sidebar-link"
                             data-en="System Architecture"
-                            data-pt="Arquitetura do sistema">System Architecture</a>
+                            data-pt="Arquitetura do sistema" data-es="Arquitectura del sistema">System Architecture</a>
                     </li>
 
                     <li>
                         <a href="#installation" class="sidebar-link"
                             data-en="Protonation Analysis (CpHMD)"
-                            data-pt="Análise de protonação (CpHMD)">Protonation Analysis (CpHMD)</a>
+                            data-pt="Análise de protonação (CpHMD)" data-es="Análisis de protonación (CpHMD)">Protonation Analysis (CpHMD)</a>
                     </li>
 
                     <li>
                         <a href="#examples" class="sidebar-link"
                             data-en="GROMACS Pipeline &amp; MM/PBSA"
-                            data-pt="Pipeline GROMACS e MM/PBSA">GROMACS Pipeline &amp; MM/PBSA</a>
+                            data-pt="Pipeline GROMACS e MM/PBSA" data-es="Flujo de GROMACS y MM/PBSA">GROMACS Pipeline &amp; MM/PBSA</a>
                     </li>
 
                     <li>
                         <a href="#help" class="sidebar-link"
                             data-en="ΔG Analysis &amp; Validation"
-                            data-pt="Análise de ΔG e validação">ΔG Analysis &amp; Validation</a>
+                            data-pt="Análise de ΔG e validação" data-es="Análisis y validación de ΔG">ΔG Analysis &amp; Validation</a>
                     </li>
 
                     <li>
                         <a href="#governance" class="sidebar-link"
                             data-en="Technical Governance (RDC/RDM)"
-                            data-pt="Governança técnica (RDC/RDM)">Technical Governance (RDC/RDM)</a>
+                            data-pt="Governança técnica (RDC/RDM)" data-es="Gobernanza técnica (RDC/RDM)">Technical Governance (RDC/RDM)</a>
                     </li>
 
                     <li>
                         <a href="#team" class="sidebar-link"
                             data-en="Team &amp; Infrastructure"
-                            data-pt="Equipe e infraestrutura">Team &amp; Infrastructure</a>
+                            data-pt="Equipe e infraestrutura" data-es="Equipo e infraestructura">Team &amp; Infrastructure</a>
                     </li>
 
                     <li>
                         <a href="#cite" class="sidebar-link"
-                            data-en="References &amp; Citation"
-                            data-pt="Referências e citação">References &amp; Citation</a>
+                            data-en="References"
+                            data-pt="Referências" data-es="Referencias">References</a>
                     </li>
                 </ul>
-            </aside>
+                            </aside>
 
             <!-- DOCUMENTATION CONTENT -->
             <div class="documentation-content">
@@ -277,26 +308,26 @@
                 <!-- OVERVIEW -->
                 <section class="doc-section" id="getting-started">
                     <span class="section-label"
-                        data-en="OVERVIEW" data-pt="VISÃO GERAL">OVERVIEW</span>
+                        data-en="OVERVIEW" data-pt="VISÃO GERAL" data-es="DESCRIPCIÓN GENERAL">OVERVIEW</span>
 
-                    <h2 data-en="Project Overview" data-pt="Visão Geral do Projeto">Project Overview</h2>
+                    <h2 data-en="Project Overview" data-pt="Visão Geral do Projeto" data-es="Descripción general del proyecto">Project Overview</h2>
 
                     <p
-                        data-en="The CpHMD / MM/PBSA suite aims to standardize protonation analysis and binding free-energy calculations for the scFv m971 × CD22 antibody–antigen system."
-                        data-pt="A suíte CpHMD / MM/PBSA busca padronizar a análise de protonação e os cálculos de energia livre de ligação para o sistema anticorpo–antígeno scFv m971 × CD22."
-                    >
-                        The CpHMD / MM/PBSA suite aims to standardize protonation analysis and binding free-energy calculations for the scFv m971 × CD22 antibody–antigen system.
+                        data-en="The CpHMD / MM-PBSA suite provides a general-purpose workflow for protonation analysis, molecular simulation processing and binding free-energy calculations in biomolecular systems. Specific systems are presented as application examples."
+                        data-pt="A suíte CpHMD / MM-PBSA oferece um fluxo de uso geral para análise de protonação, processamento de simulações moleculares e cálculos de energia livre de ligação em sistemas biomoleculares. Sistemas específicos são apresentados como exemplos de aplicação."
+                     data-es="La suite CpHMD / MM-PBSA ofrece un flujo de trabajo de propósito general para el análisis de protonación, el procesamiento de simulaciones moleculares y los cálculos de energía libre de unión en sistemas biomoleculares. Los sistemas específicos se presentan como ejemplos de aplicación.">
+                        The CpHMD / MM-PBSA suite provides a general-purpose workflow for protonation analysis, molecular simulation processing and binding free-energy calculations in biomolecular systems. Specific systems are presented as application examples.
                     </p>
 
                     <div class="info-card">
                         <div class="info-icon">i</div>
                         <div>
-                            <strong data-en="Scientific Objective" data-pt="Objetivo Científico">Scientific Objective</strong>
+                            <strong data-en="Scientific Objective" data-pt="Objetivo Científico" data-es="Objetivo científico">Scientific Objective</strong>
 
                             <p
                                 data-en="Provide a traceable workflow for protonation analysis, molecular simulation processing and free-energy validation."
                                 data-pt="Disponibilizar um fluxo rastreável para análise de protonação, processamento de simulações moleculares e validação de energia livre."
-                            >
+                             data-es="Proporcionar un flujo de trabajo trazable para el análisis de protonación, el procesamiento de simulaciones moleculares y la validación de energía libre.">
                                 Provide a traceable workflow for protonation analysis, molecular simulation processing and free-energy validation.
                             </p>
                         </div>
@@ -306,14 +337,14 @@
                 <!-- SYSTEM ARCHITECTURE -->
                 <section class="doc-section" id="project">
                     <span class="section-label"
-                        data-en="ARCHITECTURE" data-pt="ARQUITETURA">ARCHITECTURE</span>
+                        data-en="ARCHITECTURE" data-pt="ARQUITETURA" data-es="ARQUITECTURA">ARCHITECTURE</span>
 
-                    <h2 data-en="System Architecture" data-pt="Arquitetura do Sistema">System Architecture</h2>
+                    <h2 data-en="System Architecture" data-pt="Arquitetura do Sistema" data-es="Arquitectura del sistema">System Architecture</h2>
 
                     <p
                         data-en="The system consists of three main products that connect protonation analysis, GROMACS processing and free-energy data validation."
                         data-pt="O sistema consiste em três produtos principais que conectam a análise de protonação, o processamento GROMACS e a validação dos dados de energia livre."
-                    >
+                     data-es="El sistema consta de tres productos principales que conectan el análisis de protonación, el procesamiento con GROMACS y la validación de datos de energía libre.">
                         The system consists of three main products that connect protonation analysis, GROMACS processing and free-energy data validation.
                     </p>
 
@@ -324,7 +355,7 @@
                             <p
                                 data-en="Processes XVG files, classifies protonation states, applies hysteresis and extracts TRR microtrajectories."
                                 data-pt="Processa arquivos XVG, classifica estados de protonação, aplica histerese e extrai microtrajetórias TRR."
-                            >
+                             data-es="Procesa archivos XVG, clasifica los estados de protonación, aplica histéresis y extrae microtrayectorias TRR.">
                                 Processes XVG files, classifies protonation states, applies hysteresis and extracts TRR microtrajectories.
                             </p>
                         </article>
@@ -335,7 +366,7 @@
                             <p
                                 data-en="Prepares GROMACS structures and trajectories and automates MM/PBSA calculations in HPC environments."
                                 data-pt="Prepara estruturas e trajetórias GROMACS e automatiza cálculos MM/PBSA em ambientes HPC."
-                            >
+                             data-es="Prepara estructuras y trayectorias de GROMACS y automatiza los cálculos MM/PBSA en entornos HPC.">
                                 Prepares GROMACS structures and trajectories and automates MM/PBSA calculations in HPC environments.
                             </p>
                         </article>
@@ -346,7 +377,7 @@
                             <p
                                 data-en="Aggregates free-energy results and checks data integrity and provenance."
                                 data-pt="Agrega resultados de energia livre e verifica a integridade e a proveniência dos dados."
-                            >
+                             data-es="Agrupa los resultados de energía libre y comprueba la integridad y la trazabilidad de los datos.">
                                 Aggregates free-energy results and checks data integrity and provenance.
                             </p>
                         </article>
@@ -356,37 +387,37 @@
                 <!-- PROTONATION ANALYSIS -->
                 <section class="doc-section" id="installation">
                     <span class="section-label"
-                        data-en="PRODUCT 1" data-pt="PRODUTO 1">PRODUCT 1</span>
+                        data-en="PRODUCT 1" data-pt="PRODUTO 1" data-es="PRODUCTO 1">PRODUCT 1</span>
 
-                    <h2 data-en="Protonation Analysis" data-pt="Análise de Protonação">Protonation Analysis</h2>
+                    <h2 data-en="Protonation Analysis" data-pt="Análise de Protonação" data-es="Análisis de protonación">Protonation Analysis</h2>
 
                     <p
                         data-en="This module analyzes protonation states, hysteresis, histidine microstates and molecular trajectory segments."
                         data-pt="Este módulo analisa estados de protonação, histerese, microestados da histidina e segmentos de trajetórias moleculares."
-                    >
+                     data-es="Este módulo analiza los estados de protonación, la histéresis, los microestados de histidina y los segmentos de trayectorias moleculares.">
                         This module analyzes protonation states, hysteresis, histidine microstates and molecular trajectory segments.
                     </p>
 
-                    <h3 data-en="Protonation State Classification" data-pt="Classificação dos Estados de Protonação">Protonation State Classification</h3>
+                    <h3 data-en="Protonation State Classification" data-pt="Classificação dos Estados de Protonação" data-es="Clasificación de los estados de protonación">Protonation State Classification</h3>
 
                     <table>
                         <thead>
                             <tr>
-                                <th data-en="State" data-pt="Estado">State</th>
-                                <th data-en="Lambda Criterion" data-pt="Critério Lambda">Lambda Criterion</th>
+                                <th data-en="State" data-pt="Estado" data-es="Estado">State</th>
+                                <th data-en="Lambda Criterion" data-pt="Critério Lambda" data-es="Criterio de lambda">Lambda Criterion</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td data-en="Protonated" data-pt="Protonado">Protonated</td>
+                                <td data-en="Protonated" data-pt="Protonado" data-es="Protonado">Protonated</td>
                                 <td>λ ≤ 0.2</td>
                             </tr>
                             <tr>
-                                <td data-en="Transition Zone" data-pt="Zona de Transição">Transition Zone</td>
+                                <td data-en="Transition Zone" data-pt="Zona de Transição" data-es="Zona de transición">Transition Zone</td>
                                 <td>0.2 &lt; λ &lt; 0.8</td>
                             </tr>
                             <tr>
-                                <td data-en="Deprotonated" data-pt="Desprotonado">Deprotonated</td>
+                                <td data-en="Deprotonated" data-pt="Desprotonado" data-es="Desprotonado">Deprotonated</td>
                                 <td>λ ≥ 0.8</td>
                             </tr>
                         </tbody>
@@ -395,16 +426,16 @@
                     <p
                         data-en="Lambda values outside the interval [0, 1] are retained without clamping."
                         data-pt="Valores de lambda fora do intervalo [0, 1] são mantidos sem truncamento."
-                    >
+                     data-es="Los valores de lambda fuera del intervalo [0, 1] se conservan sin limitarse al intervalo.">
                         Lambda values outside the interval [0, 1] are retained without clamping.
                     </p>
 
-                    <h3 data-en="Hysteresis and Microstates" data-pt="Histerese e Microestados">Hysteresis and Microstates</h3>
+                    <h3 data-en="Hysteresis and Microstates" data-pt="Histerese e Microestados" data-es="Histéresis y microestados">Hysteresis and Microstates</h3>
 
                     <p
                         data-en="Transition-zone frames are not discarded during microstate analysis. The effective state inherits the last confirmed physical state."
                         data-pt="Frames na zona de transição não são descartados durante a análise de microestados. O estado efetivo herda o último estado físico confirmado."
-                    >
+                     data-es="Los fotogramas de la zona de transición no se descartan durante el análisis de microestados. El estado efectivo hereda el último estado físico confirmado.">
                         Transition-zone frames are not discarded during microstate analysis. The effective state inherits the last confirmed physical state.
                     </p>
 
@@ -414,28 +445,28 @@
                             <span
                                 data-en="used to analyze dynamics, fluctuations and time in the transition zone."
                                 data-pt="utilizado para analisar dinâmica, flutuações e tempo na zona de transição."
-                            >
+                             data-es="se utiliza para analizar la dinámica, las fluctuaciones y el tiempo en la zona de transición.">
                                 used to analyze dynamics, fluctuations and time in the transition zone.
                             </span>
                         </li>
 
                         <li>
-                            <strong data-en="Effective state:" data-pt="Estado efetivo:">Effective state:</strong>
+                            <strong data-en="Effective state:" data-pt="Estado efetivo:" data-es="Estado efectivo:">Effective state:</strong>
                             <span
                                 data-en="used to define microstates and select frames for MM/PBSA."
                                 data-pt="utilizado para definir microestados e selecionar frames para MM/PBSA."
-                            >
+                             data-es="se utiliza para definir microestados y seleccionar fotogramas para MM/PBSA.">
                                 used to define microstates and select frames for MM/PBSA.
                             </span>
                         </li>
                     </ul>
 
-                    <h3 data-en="Histidine Tautomers" data-pt="Tautômeros da Histidina">Histidine Tautomers</h3>
+                    <h3 data-en="Histidine Tautomers" data-pt="Tautômeros da Histidina" data-es="Tautómeros de histidina">Histidine Tautomers</h3>
 
                     <p
                         data-en="The HSPT group is evaluated cooperatively under the physical constraint Σλ ≈ 1. HSP, HSD and HSE retain distinct identities in microstate signatures."
                         data-pt="O grupo HSPT é avaliado cooperativamente sob a restrição física Σλ ≈ 1. HSP, HSD e HSE mantêm identidades distintas nas assinaturas dos microestados."
-                    >
+                     data-es="El grupo HSPT se evalúa de forma cooperativa bajo la restricción física Σλ ≈ 1. HSP, HSD y HSE conservan identidades distintas en las firmas de los microestados.">
                         The HSPT group is evaluated cooperatively under the physical constraint Σλ ≈ 1. HSP, HSD and HSE retain distinct identities in microstate signatures.
                     </p>
                 </section>
@@ -443,37 +474,43 @@
                 <!-- GROMACS PIPELINE AND MM/PBSA -->
                 <section class="doc-section" id="examples">
                     <span class="section-label"
-                        data-en="PRODUCT 2" data-pt="PRODUTO 2">PRODUCT 2</span>
+                        data-en="PRODUCT 2" data-pt="PRODUTO 2" data-es="PRODUCTO 2">PRODUCT 2</span>
 
-                    <h2 data-en="GROMACS Pipeline and MM/PBSA" data-pt="Pipeline GROMACS e MM/PBSA">GROMACS Pipeline and MM/PBSA</h2>
+                    <h2 data-en="GROMACS Pipeline and MM/PBSA" data-pt="Pipeline GROMACS e MM/PBSA" data-es="Flujo de trabajo de GROMACS y MM/PBSA">GROMACS Pipeline and MM/PBSA</h2>
+                    <p class="equation-note" data-en="The workflow is not limited to membrane systems. Membrane-specific settings are optional and should be enabled only when the molecular system requires them."
+                       data-pt="O fluxo não se limita a sistemas de membrana. Configurações específicas para membranas são opcionais e devem ser habilitadas apenas quando o sistema molecular exigir."
+                       data-es="El flujo no se limita a sistemas de membrana. Los ajustes específicos para membranas son opcionales y deben activarse solo cuando el sistema molecular lo requiera.">
+                       The workflow is not limited to membrane systems. Membrane-specific settings are optional and should be enabled only when the molecular system requires them.
+                    </p>
+
 
                     <p
                         data-en="This module prepares molecular structures, processes trajectories and runs binding free-energy calculations in high-performance computing environments."
                         data-pt="Este módulo prepara estruturas moleculares, processa trajetórias e executa cálculos de energia livre de ligação em ambientes de computação de alto desempenho."
-                    >
+                     data-es="Este módulo prepara estructuras moleculares, procesa trayectorias y ejecuta cálculos de energía libre de unión en entornos de computación de alto rendimiento.">
                         This module prepares molecular structures, processes trajectories and runs binding free-energy calculations in high-performance computing environments.
                     </p>
 
-                    <h3 data-en="Processing Workflow" data-pt="Fluxo de Processamento">Processing Workflow</h3>
+                    <h3 data-en="Processing Workflow" data-pt="Fluxo de Processamento" data-es="Flujo de procesamiento">Processing Workflow</h3>
 
                     <ol>
                         <li>
                             <strong>pdb2gmx:</strong>
-                            <span data-en="generates the topology and structure files." data-pt="gera os arquivos de topologia e estrutura.">
+                            <span data-en="generates the topology and structure files." data-pt="gera os arquivos de topologia e estrutura." data-es="genera los archivos de topología y estructura.">
                                 generates the topology and structure files.
                             </span>
                         </li>
 
                         <li>
                             <strong>grompp:</strong>
-                            <span data-en="creates the simulation run input file." data-pt="cria o arquivo de entrada para execução da simulação.">
+                            <span data-en="creates the simulation run input file." data-pt="cria o arquivo de entrada para execução da simulação." data-es="crea el archivo de entrada para ejecutar la simulación.">
                                 creates the simulation run input file.
                             </span>
                         </li>
 
                         <li>
                             <strong>make_ndx:</strong>
-                            <span data-en="configures receptor and ligand index groups." data-pt="configura os grupos de índice do receptor e do ligante.">
+                            <span data-en="configures receptor and ligand index groups." data-pt="configura os grupos de índice do receptor e do ligante." data-es="configura los grupos de índices del receptor y del ligando.">
                                 configures receptor and ligand index groups.
                             </span>
                         </li>
@@ -481,10 +518,10 @@
                         <li>
                             <strong>trjconv:</strong>
                             <span
-                                data-en="processes periodic boundary conditions using the documented whole → mol sequence, without centering."
-                                data-pt="processa condições periódicas usando a sequência documentada whole → mol, sem centralização."
-                            >
-                                processes periodic boundary conditions using the documented whole → mol sequence, without centering.
+                                data-en="processes periodic boundary conditions using the documented whole → mol sequence, without centering. The workflow performs this preparation internally; users are not expected to upload a trajectory that has already been converted."
+                                data-pt="processa condições periódicas usando a sequência documentada whole → mol, sem centralização. Essa preparação é realizada pelo fluxo; não é necessário enviar uma trajetória previamente convertida."
+                             data-es="procesa las condiciones de contorno periódicas mediante la secuencia documentada whole → mol, sin centrar. El flujo realiza esta preparación internamente; no se espera que los usuarios carguen una trayectoria que ya haya sido convertida.">
+                                processes periodic boundary conditions using the documented whole → mol sequence, without centering. The workflow performs this preparation internally; users are not expected to upload a trajectory that has already been converted.
                             </span>
                         </li>
 
@@ -493,92 +530,117 @@
                             <span
                                 data-en="calculates binding free energy using the configured implicit membrane parameters."
                                 data-pt="calcula a energia livre de ligação usando os parâmetros configurados para membrana implícita."
-                            >
+                             data-es="calcula la energía libre de unión utilizando los parámetros configurados para la membrana implícita.">
                                 calculates binding free energy using the configured implicit membrane parameters.
                             </span>
                         </li>
                     </ol>
-
-                    <h3 data-en="HPC Configuration" data-pt="Configuração HPC">HPC Configuration</h3>
+                                        <h3 data-en="HPC Configuration" data-pt="Configuração HPC" data-es="Configuración de HPC">HPC Configuration</h3>
 
                     <p
                         data-en="The gromacs-pipeline.cfg file supports configurable worker counts and OMP/MPI parameters. The pipeline can also use membrana.json generated by Product 1 when membrane support is applicable."
                         data-pt="O arquivo gromacs-pipeline.cfg permite configurar o número de workers e os parâmetros OMP/MPI. O pipeline também pode utilizar membrana.json gerado pelo Produto 1 quando o suporte a membrana for aplicável."
-                    >
+                     data-es="El archivo gromacs-pipeline.cfg permite configurar el número de procesos de trabajo y los parámetros OMP/MPI. El flujo también puede utilizar membrana.json, generado por el Producto 1, cuando corresponda habilitar la compatibilidad con membranas.">
                         The gromacs-pipeline.cfg file supports configurable worker counts and OMP/MPI parameters. The pipeline can also use membrana.json generated by Product 1 when membrane support is applicable.
                     </p>
 
                     <div class="info-card">
                         <div class="info-icon">i</div>
                         <div>
-                            <strong data-en="Execution note" data-pt="Nota de execução">Execution note</strong>
+                            <strong data-en="Execution note" data-pt="Nota de execução" data-es="Nota de ejecución">Execution note</strong>
 
                             <p
                                 data-en="Use the configuration files and version-specific instructions from the project repository before running production calculations."
                                 data-pt="Utilize os arquivos de configuração e as instruções específicas de cada versão do repositório antes de executar cálculos de produção."
-                            >
+                             data-es="Antes de ejecutar cálculos de producción, utiliza los archivos de configuración y las instrucciones específicas de cada versión disponibles en el repositorio del proyecto.">
                                 Use the configuration files and version-specific instructions from the project repository before running production calculations.
                             </p>
                         </div>
                     </div>
-                </section>
+
+                    <div class="subsection-divider"></div>
+                    <span class="section-label" data-en="APPLICATIONS" data-pt="APLICAÇÕES" data-es="APLICACIONES">APPLICATIONS</span>
+                    <h3 id="tutorials" data-en="Examples and Tutorials" data-pt="Exemplos e Tutoriais" data-es="Ejemplos y tutoriales">Examples and Tutorials</h3>
+                    <p data-en="This section will bring together practical walkthroughs showing how the suite can be applied to different biomolecular systems. The examples are applications of the general workflow, not restrictions on the systems it supports."
+                       data-pt="Esta seção reunirá orientações práticas que demonstram como a suíte pode ser aplicada a diferentes sistemas biomoleculares. Os exemplos são aplicações do fluxo geral, não limitações dos sistemas aceitos."
+                       data-es="Esta sección reunirá guías prácticas que muestran cómo aplicar la suite a distintos sistemas biomoleculares. Los ejemplos son aplicaciones del flujo general, no restricciones sobre los sistemas compatibles.">
+                       This section will bring together practical walkthroughs showing how the suite can be applied to different biomolecular systems. The examples are applications of the general workflow, not restrictions on the systems it supports.
+                    </p>
+                    <div class="tutorial-card">
+                        <span class="tutorial-status" data-en="COMING SOON" data-pt="EM PREPARAÇÃO" data-es="PRÓXIMAMENTE">COMING SOON</span>
+                        <h4 data-en="CD22 / scFv m971 application" data-pt="Aplicação CD22 / scFv m971" data-es="Aplicación CD22 / scFv m971">CD22 / scFv m971 application</h4>
+                        <p data-en="A dedicated example based on Alana's current application will be added when its workflow details and supporting materials are organized."
+                           data-pt="Um exemplo dedicado à aplicação atual de Alana será incluído quando os detalhes do fluxo e os materiais de apoio estiverem organizados."
+                           data-es="Se añadirá un ejemplo específico de la aplicación actual de Alana cuando estén organizados los detalles del flujo y los materiales de apoyo.">
+                           A dedicated example based on Alana's current application will be added when its workflow details and supporting materials are organized.
+                        </p>
+                    </div>
+                    <div class="tutorial-card">
+                        <span class="tutorial-status" data-en="PLANNED" data-pt="PLANEJADO" data-es="PLANIFICADO">PLANNED</span>
+                        <h4 data-en="General workflow walkthrough" data-pt="Tutorial do fluxo geral" data-es="Guía del flujo general">General workflow walkthrough</h4>
+                        <p data-en="A step-by-step guide to input preparation, trajectory processing and result interpretation will be documented here."
+                           data-pt="Um guia passo a passo sobre preparação de entradas, processamento de trajetórias e interpretação dos resultados será documentado aqui."
+                           data-es="Aquí se documentará una guía paso a paso sobre preparación de entradas, procesamiento de trayectorias e interpretación de resultados.">
+                           A step-by-step guide to input preparation, trajectory processing and result interpretation will be documented here.
+                        </p>
+                    </div>
+</section>
 
                 <!-- DELTA G ANALYSIS -->
                 <section class="doc-section" id="help">
                     <span class="section-label"
-                        data-en="PRODUCT 3" data-pt="PRODUTO 3">PRODUCT 3</span>
+                        data-en="PRODUCT 3" data-pt="PRODUTO 3" data-es="PRODUCTO 3">PRODUCT 3</span>
 
-                    <h2 data-en="ΔG Analysis and Validation" data-pt="Análise de ΔG e Validação">ΔG Analysis and Validation</h2>
+                    <h2 data-en="ΔG Analysis and Validation" data-pt="Análise de ΔG e Validação" data-es="Análisis y validación de ΔG">ΔG Analysis and Validation</h2>
 
                     <p
                         data-en="This module aggregates free-energy results and verifies data integrity and provenance before a batch is accepted for reporting."
                         data-pt="Este módulo agrega resultados de energia livre e verifica a integridade e a proveniência dos dados antes da aceitação de um lote para relatório."
-                    >
+                     data-es="Este módulo agrupa los resultados de energía libre y verifica la integridad y la trazabilidad de los datos antes de aceptar un lote para la elaboración de informes.">
                         This module aggregates free-energy results and verifies data integrity and provenance before a batch is accepted for reporting.
                     </p>
 
-                    <h3 data-en="Binding Free-Energy Relationship" data-pt="Relação da Energia Livre de Ligação">Binding Free-Energy Relationship</h3>
+                    <h3 data-en="Binding Free-Energy Relationship" data-pt="Relação da Energia Livre de Ligação" data-es="Relación de energía libre de unión">Binding Free-Energy Relationship</h3>
 
                     <div class="citation-box">
-                        <code>ΔGbinding = Gcomplex − Greceptor − Gligand</code>
+                        <code>ΔGbind = ΔEMM + ΔGsolv − TΔS
+ΔEMM = ΔEvdW + ΔEele + ΔEint
+ΔGsolv = ΔGPB + ΔGnp</code>
                     </div>
+                    <p class="equation-note" data-en="In the MM/PBSA decomposition, the molecular-mechanics contribution is commonly separated into van der Waals, electrostatic and internal energy terms; solvation includes polar (PB) and nonpolar contributions. The entropic term (−TΔS) is optional and depends on the calculation protocol. The exact terms used in this project must be confirmed from its input configuration."
+                       data-pt="Na decomposição MM/PBSA, a contribuição de mecânica molecular costuma ser separada em termos de van der Waals, eletrostático e energia interna; a solvatação inclui contribuições polar (PB) e apolar. O termo entrópico (−TΔS) é opcional e depende do protocolo de cálculo. Os termos efetivamente utilizados neste projeto devem ser confirmados pela configuração de entrada."
+                       data-es="En la descomposición MM/PBSA, la contribución de mecánica molecular suele separarse en términos de van der Waals, electrostático y energía interna; la solvatación incluye contribuciones polar (PB) y no polar. El término entrópico (−TΔS) es opcional y depende del protocolo de cálculo. Los términos utilizados realmente en este proyecto deben confirmarse mediante la configuración de entrada.">
+                       In the MM/PBSA decomposition, the molecular-mechanics contribution is commonly separated into van der Waals, electrostatic and internal energy terms; solvation includes polar (PB) and nonpolar contributions. The entropic term (−TΔS) is optional and depends on the calculation protocol. The exact terms used in this project must be confirmed from its input configuration.
+                    </p>
+                    <p class="reference-link"><strong>gmx_MMPBSA:</strong> <a href="https://valdes-tresanco-ms.github.io/gmx_MMPBSA/" target="_blank" rel="noopener noreferrer">official documentation</a> · <a href="https://doi.org/10.1021/acs.jctc.1c00645" target="_blank" rel="noopener noreferrer">Valdés-Tresanco et al. (2021)</a>.</p>
 
-                    <h3 data-en="Data Integrity Contracts" data-pt="Contratos de Integridade dos Dados">Data Integrity Contracts</h3>
+
+                    <h3 data-en="Data Integrity Contracts" data-pt="Contratos de Integridade dos Dados" data-es="Contratos de integridad de datos">Data Integrity Contracts</h3>
 
                     <table>
                         <thead>
                             <tr>
-                                <th data-en="Contracts" data-pt="Contratos">Contracts</th>
-                                <th data-en="Validation Scope" data-pt="Escopo da Validação">Validation Scope</th>
+                                <th data-en="Contracts" data-pt="Contratos" data-es="Contratos">Contracts</th>
+                                <th data-en="Validation Scope" data-pt="Escopo da Validação" data-es="Alcance de la validación">Validation Scope</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>C1–C5</td>
                                 <td
-                                    data-en="Frame counts, temporal alignment, system identity, energy consistency and CSV/DAT agreement."
-                                    data-pt="Contagem de frames, alinhamento temporal, identidade do sistema, consistência das energias e concordância entre CSV/DAT."
-                                >
-                                    Frame counts, temporal alignment, system identity, energy consistency and CSV/DAT agreement.
+                                    data-en="Input files, topology and trajectory consistency."
+                                    data-pt="Consistência dos arquivos de entrada, topologia e trajetória."
+                                 data-es="Coherencia de los archivos de entrada, la topología y la trayectoria.">
+                                    Input files, topology and trajectory consistency.
                                 </td>
                             </tr>
 
                             <tr>
-                                <td>C6</td>
-                                <td
-                                    data-en="Consistency of Poisson–Boltzmann parameters across folders."
-                                    data-pt="Consistência dos parâmetros de Poisson–Boltzmann entre as pastas."
-                                >
-                                    Consistency of Poisson–Boltzmann parameters across folders.
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>C7–C8</td>
+                                <td>C6–C8</td>
                                 <td
                                     data-en="Microstate signature validation and reconstruction from the corrected PDB."
                                     data-pt="Validação das assinaturas dos microestados e reconstrução a partir do PDB corrigido."
-                                >
+                                 data-es="Validación de las firmas de los microestados y reconstrucción a partir del archivo PDB corregido.">
                                     Microstate signature validation and reconstruction from the corrected PDB.
                                 </td>
                             </tr>
@@ -588,7 +650,7 @@
                                 <td
                                     data-en="PBC processing provenance and consistency of software versions and membrane modes."
                                     data-pt="Proveniência do processamento PBC e consistência das versões de software e dos modos de membrana."
-                                >
+                                 data-es="Trazabilidad del procesamiento PBC y coherencia de las versiones de software y de los modos de membrana.">
                                     PBC processing provenance and consistency of software versions and membrane modes.
                                 </td>
                             </tr>
@@ -599,17 +661,17 @@
                 <!-- TECHNICAL GOVERNANCE -->
                 <section class="doc-section" id="governance">
                     <span class="section-label"
-                        data-en="TECHNICAL GOVERNANCE" data-pt="GOVERNANÇA TÉCNICA">TECHNICAL GOVERNANCE</span>
+                        data-en="TECHNICAL GOVERNANCE" data-pt="GOVERNANÇA TÉCNICA" data-es="GOBERNANZA TÉCNICA">TECHNICAL GOVERNANCE</span>
 
                     <h2
                         data-en="Defect Reports and Methodological Decisions"
                         data-pt="Relatórios de Defeitos e Decisões Metodológicas"
-                    >
+                     data-es="Informes de defectos y decisiones metodológicas">
                         Defect Reports and Methodological Decisions
                     </h2>
 
                     <h3 data-en="Selected Defect Reports (RDC)"
-                        data-pt="Relatórios de Defeitos Selecionados (RDC)">
+                        data-pt="Relatórios de Defeitos Selecionados (RDC)" data-es="Informes de defectos seleccionados (RDC)">
                         Selected Defect Reports (RDC)
                     </h3>
 
@@ -617,7 +679,7 @@
                         <li>
                             <strong>RDC-022:</strong>
                             <span data-en="Change to the whole → mol PBC workflow."
-                                data-pt="Alteração do fluxo PBC whole → mol.">Change to the whole → mol PBC workflow.</span>
+                                data-pt="Alteração do fluxo PBC whole → mol." data-es="Cambio en el flujo de trabajo PBC whole → mol.">Change to the whole → mol PBC workflow.</span>
                         </li>
 
                         <li>
@@ -625,7 +687,7 @@
                             <span
                                 data-en="Investigation of SIGILL failures on older CPUs and configurable execution resources."
                                 data-pt="Investigação de falhas SIGILL em CPUs mais antigas e de recursos de execução configuráveis."
-                            >Investigation of SIGILL failures on older CPUs and configurable execution resources.</span>
+                             data-es="Investigación de fallos SIGILL en CPU antiguas y de recursos de ejecución configurables.">Investigation of SIGILL failures on older CPUs and configurable execution resources.</span>
                         </li>
 
                         <li>
@@ -633,12 +695,12 @@
                             <span
                                 data-en="Implementation of P2 provenance contracts C9 and C10 in P3."
                                 data-pt="Implementação dos contratos de proveniência C9 e C10 de P2 em P3."
-                            >Implementation of P2 provenance contracts C9 and C10 in P3.</span>
+                             data-es="Implementación en P3 de los contratos de trazabilidad C9 y C10 de P2.">Implementation of P2 provenance contracts C9 and C10 in P3.</span>
                         </li>
                     </ul>
 
                     <h3 data-en="Methodological Decisions (RDM)"
-                        data-pt="Decisões Metodológicas (RDM)">
+                        data-pt="Decisões Metodológicas (RDM)" data-es="Decisiones metodológicas (RDM)">
                         Methodological Decisions (RDM)
                     </h3>
 
@@ -646,89 +708,52 @@
                         <li>
                             <strong>RDM-001:</strong>
                             <span data-en="Initial ternary classification policy."
-                                data-pt="Política inicial de classificação ternária.">Initial ternary classification policy.</span>
+                                data-pt="Política inicial de classificação ternária." data-es="Política inicial de clasificación ternaria.">Initial ternary classification policy.</span>
                         </li>
 
                         <li>
                             <strong>RDM-003:</strong>
                             <span data-en="Hysteresis and histidine tautomer signatures."
-                                data-pt="Histerese e assinaturas dos tautômeros da histidina.">Hysteresis and histidine tautomer signatures.</span>
+                                data-pt="Histerese e assinaturas dos tautômeros da histidina." data-es="Histéresis y firmas de los tautómeros de histidina.">Hysteresis and histidine tautomer signatures.</span>
                         </li>
                     </ul>
 
                     <p
                         data-en="Each record should link to its original document, version, rationale and implementation evidence."
                         data-pt="Cada registro deve apontar para o documento original, a versão, a justificativa e as evidências de implementação."
-                    >
+                     data-es="Cada registro debe enlazar con su documento original, versión, justificación y evidencias de implementación.">
                         Each record should link to its original document, version, rationale and implementation evidence.
                     </p>
                 </section>
 
                 <!-- TEAM AND INFRASTRUCTURE -->
                 <section class="doc-section" id="team">
-                    <span class="section-label"
-                        data-en="RESEARCH TEAM" data-pt="EQUIPE DE PESQUISA">RESEARCH TEAM</span>
-
-                    <h2
-                        data-en="Team and Computing Infrastructure"
-                        data-pt="Equipe e Infraestrutura Computacional"
-                    >
-                        Team and Computing Infrastructure
-                    </h2>
-
-                    <ul>
-                        <li>
-                            <strong data-en="Principal Researcher / Advisor:"
-                                data-pt="Pesquisador Principal / Orientador:">Principal Researcher / Advisor:</strong>
-                            Prof. Dr. Marcos Lourenzoni
-                        </li>
-
-                        <li>
-                            <strong data-en="Developer / PhD Researcher:"
-                                data-pt="Desenvolvedor / Pesquisador de Doutorado:">Developer / PhD Researcher:</strong>
-                            Prof. Sandro Mesquita
-                        </li>
-
-                        <li>
-                            <strong data-en="Developer / Researcher:"
-                                data-pt="Desenvolvedor / Pesquisador:">Developer / Researcher:</strong>
-                            Alice Queiroz
-                        </li>
-                    </ul>
-
-                    <p>
-                        <strong data-en="Research Group:" data-pt="Grupo de Pesquisa:">Research Group:</strong>
-                        GEPEsS — Protein Engineering and Health Solutions Research Group.
+                    <span class="section-label" data-en="COMPUTING INFRASTRUCTURE" data-pt="INFRAESTRUTURA COMPUTACIONAL" data-es="INFRAESTRUCTURA DE CÓMPUTO">COMPUTING INFRASTRUCTURE</span>
+                    <h2 data-en="Computing Infrastructure" data-pt="Infraestrutura Computacional" data-es="Infraestructura de cómputo">Computing Infrastructure</h2>
+                    <p data-en="The project uses the gepess3 HPC cluster, including the gn009 and gn010 nodes with Intel Gold 6130 processors." data-pt="O projeto utiliza o cluster HPC gepess3, incluindo os nós gn009 e gn010 com processadores Intel Gold 6130." data-es="El proyecto utiliza el clúster HPC gepess3, incluidos los nodos gn009 y gn010 con procesadores Intel Gold 6130.">
+                        The project uses the gepess3 HPC cluster, including the gn009 and gn010 nodes with Intel Gold 6130 processors.
                     </p>
-
-                    <p>
-                        <strong data-en="Institution:" data-pt="Instituição:">Institution:</strong>
-                        Fiocruz Ceará.
-                    </p>
-
-                    <p>
-                        <strong data-en="Computing Infrastructure:"
-                            data-pt="Infraestrutura Computacional:">Computing Infrastructure:</strong>
-                        HPC cluster gepess3, including gn009/gn010 nodes with Gold 6130 processors.
+                    <p class="muted-note" data-en="Research team members, academic degrees, graduate programs and institutional affiliations will be added after confirmation." data-pt="Os integrantes da equipe, titulações acadêmicas, programas de pós-graduação e vínculos institucionais serão adicionados após confirmação." data-es="Los integrantes del equipo, grados académicos, programas de posgrado y afiliaciones institucionales se añadirán después de su confirmación.">
+                        Research team members, academic degrees, graduate programs and institutional affiliations will be added after confirmation.
                     </p>
                 </section>
 
                 <!-- REFERENCES -->
                 <section class="doc-section" id="cite">
                     <span class="section-label"
-                        data-en="REFERENCES" data-pt="REFERÊNCIAS">REFERENCES</span>
+                        data-en="REFERENCES" data-pt="REFERÊNCIAS" data-es="REFERENCIAS">REFERENCES</span>
 
                     <h2
                         data-en="Citation and Project Resources"
                         data-pt="Citação e Recursos do Projeto"
-                    >
+                     data-es="Citas y recursos del proyecto">
                         Citation and Project Resources
                     </h2>
 
                     <p
                         data-en="Consult the original project documents, source code, version history, RDC/RDM records and scientific references for complete technical details."
                         data-pt="Consulte os documentos originais do projeto, o código-fonte, o histórico de versões, os registros RDC/RDM e as referências científicas para obter os detalhes técnicos completos."
-                    >
+                     data-es="Consulta los documentos originales del proyecto, el código fuente, el historial de versiones, los registros RDC/RDM y las referencias científicas para obtener todos los detalles técnicos.">
                         Consult the original project documents, source code, version history, RDC/RDM records and scientific references for complete technical details.
                     </p>
 
@@ -747,22 +772,22 @@
 
             <div class="footer-brand">
                 <div class="footer-logo">PROJECT</div>
-                <p data-en="Project documentation." data-pt="Documentação do projeto.">Project documentation.</p>
+                <p data-en="Project documentation." data-pt="Documentação do projeto." data-es="Documentación del proyecto.">Project documentation.</p>
             </div>
 
             <div class="footer-links">
-                <a href="#home" data-en="Home" data-pt="Início">Home</a>
-                <a href="#getting-started" data-en="Overview" data-pt="Visão geral">Overview</a>
-                <a href="#governance" data-en="Governance" data-pt="Governança">Governance</a>
-                <a href="#cite" data-en="References" data-pt="Referências">References</a>
+                <a href="#home" data-en="Home" data-pt="Início" data-es="Inicio">Home</a>
+                <a href="#getting-started" data-en="Overview" data-pt="Visão geral" data-es="Visión general">Overview</a>
+                <a href="#governance" data-en="Governance" data-pt="Governança" data-es="Gobernanza">Governance</a>
+                <a href="#cite" data-en="References" data-pt="Referências" data-es="Referencias">References</a>
             </div>
         </div>
 
         <div class="container footer-bottom">
             <span data-en="© 2026 Project Documentation"
-                data-pt="© 2026 Documentação do Projeto">© 2026 Project Documentation</span>
+                data-pt="© 2026 Documentação do Projeto" data-es="© 2026 Documentación del proyecto">© 2026 Project Documentation</span>
 
-            <span data-en="Documentation" data-pt="Documentação">Documentation</span>
+            <span data-en="Documentation" data-pt="Documentação" data-es="Documentación">Documentation</span>
         </div>
     </footer>
 
